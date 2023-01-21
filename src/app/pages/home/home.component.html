@@ -1,0 +1,26 @@
+<h1 class="title">¿Qué vas a comer hoy?</h1>
+<div class="container">
+  <div class="options">
+  <div class="options" *ngFor="let cat of categoryList" >
+    <div class="category">
+      <a routerLink="../menu" [queryParams]="{category: cat}">{{cat.toUpperCase() | titlecase }}</a>
+    </div>
+  </div>
+  <!-- <div class="options">
+    <div class="category">
+      <a routerLink="../menu" [queryParams]="{category: 'postres'}">Postres</a>
+    </div>
+    <div class="category">
+      <a routerLink="../menu" [queryParams]="{category: 'bebidas'}">Bebidas</a>
+    </div>
+    <div class="category">
+      <a routerLink="../menu" [queryParams]="{category: 'empanadas'}">Empanadas</a>
+    </div>
+    <div class="category">
+      <a routerLink="../menu" [queryParams]="{category: 'pizza'}">Pizzas</a>
+    </div>
+    <div class="category">
+      <a routerLink="../menu" [queryParams]="{category: 'descuentos'}">Descuentos</a>
+    </div>
+  </div> -->
+</div>
