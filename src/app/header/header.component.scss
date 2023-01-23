@@ -1,3 +1,36 @@
-*{
-    border: 1px solid blue;
+* {
+    background-color: red;
+}
+
+header {
+    box-sizing: border-box;
+    margin-bottom: 100px;
+    height: 100px;
+
+    .logo {
+        position: absolute;
+        left: 50px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .icon-header {
+        height: 30px;
+    }
+
+    ul {
+        height: 150px;
+        display: flex;
+        align-items: center;
+
+        li {
+            line-height: 1;
+
+            a {
+                margin: 0 25px;
+                font-size: 20px;
+                color: aliceblue;
+            }
+        }
+    }
 }
