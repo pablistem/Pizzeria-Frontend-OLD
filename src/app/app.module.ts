@@ -6,6 +6,9 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ProductComponent } from './component/product/product.component';
 
 @NgModule({
   declarations: [
@@ -13,11 +16,14 @@ import { MenuComponent } from './pages/menu/menu.component';
     HeaderComponent,
     HomeComponent,
     NotFoundComponent,
-    MenuComponent
+    MenuComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public categoryList: string[] = [
+  categoryList: string[] = [
     'postres',
     'bebidas',
     'empanadas',
