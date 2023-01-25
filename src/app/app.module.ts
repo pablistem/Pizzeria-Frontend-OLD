@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ProductComponent } from './component/product/product.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { MatIconModule } from '@angular/material/icon';
     HomeComponent,
     NotFoundComponent,
     MenuComponent,
-    LoginComponent
+    LoginComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

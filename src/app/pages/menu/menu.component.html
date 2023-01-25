@@ -1,1 +1,11 @@
-<p>Pagina de {{category}}</p>
+<div style="margin: 20px;">
+
+  <div class="menuContainer">
+    <button *ngFor="let menuPage of menuPages; index as i" (click)="switchMenuPage(i)" type="button" class="menuOption">
+      <img [src]="menuPage.image" [alt]="menuPage.name">
+    </button>
+  </div>
+
+  <app-product></app-product>
+
+</div>
