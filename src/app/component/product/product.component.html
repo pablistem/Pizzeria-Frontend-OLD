@@ -1,19 +1,21 @@
-<div class="accordion-item" *ngFor="let pizza of pizzas">
+<div class="accordion-item" *ngFor="let product of products">
   <mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" >
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{pizza.name}}
+          {{product.name}}
         </mat-panel-title>
         <mat-panel-description>
           <!-- Descripción -->
         </mat-panel-description>
       </mat-expansion-panel-header>
 
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quis suscipit quam incidunt amet aperiam debitis expedita minus, accusamus soluta quibusdam culpa qui, corrupti fuga nostrum recusandae voluptas eum atque.</p>
-      <img src="https://source.unsplash.com/random" width="200" height="200">
-      <p class="h3">$2000</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quis suscipit quam incidunt amet aperiam
+        debitis expedita minus, accusamus soluta quibusdam culpa qui, corrupti fuga nostrum recusandae voluptas eum
+        atque.</p>
+      <img [src]="product.image" width="200" height="200">
+      <p class="h3">${{product.price}}</p>
 
     </mat-expansion-panel>
   </mat-accordion>
-<div>
+  <div>
