@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from 'src/app/model/product';
 import { Category } from 'src/app/model/category';
 
 @Component({
@@ -260,14 +259,29 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParamMap.subscribe((params) => {
       this.queryParamCategory = params.get('category');
-      console.log(`ngOnInit() -> ${this.queryParamCategory}`);
+      this.determineUrlCategory();
     })
+  }
+
+  private determineUrlCategory() {
+    if (this.categories && this.queryParamCategory) {
+      for (let categoryId = 0; categoryId < this.categories.length; categoryId++) {
+        if (this.equalsIgnoreCase(this.categories[categoryId].name, this.queryParamCategory)) {
+          this.selectedCategory = categoryId;
+          break;
+        }
+      }
+    }
+    console.log(`Categoría seleccionada: ${this.selectedCategory}`);
+  }
+
+  private equalsIgnoreCase(str1: string, str2: string): boolean {
+    return str1.toLowerCase() === str2.toLowerCase();
   }
 
   selectCategory(index: number): void {
     if (this.categories) {
       this.selectedCategory = index;
-      console.log(`selectCategory() -> ${this.categories[index].name}`);
       this.queryParamCategory = this.categories[index].name;
     }
   }

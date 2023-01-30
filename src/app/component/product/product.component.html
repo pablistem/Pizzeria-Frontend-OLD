@@ -1,6 +1,6 @@
-<div class="accordion-item" *ngFor="let product of products">
+<div class="accordion-item" *ngFor="let product of products; index as i">
   <mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel [expanded]="(i == urlProductId)" (opened)="onOpenProduct(i)" (closed)="onCloseProduct(i)">
       <mat-expansion-panel-header>
         <mat-panel-title>
           {{product.name}}
@@ -18,4 +18,4 @@
 
     </mat-expansion-panel>
   </mat-accordion>
-  <div>
+</div>
