@@ -1,24 +1,15 @@
-<h1>Inicia sesión</h1>
-<div class="login">
-    <div class="example-container">
-        <mat-form-field appearance="fill">
-          <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="pat@example.com" [formControl]="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-      </div>
-      <div class="example-container">
-        <mat-form-field appearance="fill">
-          <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="pat@example.com" [formControl]="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-      </div>
-      <div class="example-container">
-        <mat-form-field appearance="fill">
-          <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="pat@example.com" [formControl]="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-      </div>
+<div class="login-container">
+  <div class="input-container">
+    <label for="input-mail">Mail</label>
+    <input id="input-mail" type="email" required>
+  </div>
+  <div class="input-container">
+    <label for="input-password">Contraseña</label>
+    <input id="input-password" type="password" required>
+  </div>
+  <button type="submit">Iniciar sesión</button>
+  <div class="linea"></div>
+  <a href="#">¿No tenés cuenta?</a>
+  <a class="a-registrarme" href="#"><strong>Registrarme</strong></a>
+  <a href="#"><strong>No recuerdo mi clave</strong></a>
 </div>

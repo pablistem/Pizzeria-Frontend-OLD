@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ProductComponent } from './component/product/product.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { ProductComponent } from './component/product/product.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatToolbarModule,
+    MatMenuModule,
     MatIconModule,
     MatExpansionModule
   ],

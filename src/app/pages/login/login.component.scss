@@ -1,11 +1,51 @@
-.example-container mat-form-field + mat-form-field {
-    margin-left: 8px;
+.example-container mat-form-field+mat-form-field {
+  margin-left: 8px;
+}
+
+.login-container {
+  margin-top: 75px;
+  text-align: center;
+
+  .input-container {
+    width: max-content;
+    margin: auto;
+    label {
+      display: block;
+      text-align: left;
+    }
+
+    input {
+      border-radius: 10px;
+    }
+
+    #input-mail {
+      margin-bottom: 25px;
+    }
+  }
+  button {
+    width: 248px;
+    height: 34px;
+    margin-top: 73px;
+    margin-bottom: 62px;
+    background-color: red;
   }
 
-  h1 {
-    text-align: center;
-    margin-bottom: 50px;
+  .linea {
+    width: 271px;
+    height: 0;
+    margin: auto;
+    margin-bottom: 60px;
+    border-top: 2px solid;
   }
-  .login {
-    text-align: center;
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 18px;
   }
+
+  .a-registrarme {
+    margin-bottom: 82px;
+  }
+}

@@ -1,16 +1,37 @@
 <header>
-  <div>
-    <button class="hamburguesa_izq" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </div>
-  
-  <img class="logo" src="../../assets/images/logo.jpg" alt="logo">
 
-  <div>
-    <button class="hamburguesa_der" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </div>
+  <mat-toolbar>
+    <!-- <mat-icon class="mat-icon-button" [matMenuTriggerFor]="menu">
+      <img class="burgerMenuIcon" src="../../../assets/icons/bars-solid.svg" alt="icono">
+    </mat-icon>
+    <mat-menu #menu="matMenu">
+      <a routerLink="../menu">Cupones</a>
+      <a routerLink="../login">Login</a>
+    </mat-menu> -->
+
+    <img class="logo" src="../../assets/images/logo.jpg" alt="logo">
+
+    <mat-icon class="mat-icon-button" [matMenuTriggerFor]="menu">
+      <img class="burgerMenuIcon" src="../../../assets/icons/bars-solid.svg" alt="icono">
+    </mat-icon>
+    <mat-menu #menu="matMenu">
+      <ul>
+        <li>
+      <button>
+        <a routerLink="../menu">Cupones</a>
+      </button>
+        </li>
+        <li>
+      <button>
+        <a routerLink="../login">Login</a>
+      </button>
+        </li>
+      </ul>
+
+
+      
+    </mat-menu>
+
+  </mat-toolbar>
 
 </header>
