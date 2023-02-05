@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/model/category';
+import { Product } from 'src/app/model/product';
 
 @Component({
   selector: 'app-menu',
@@ -16,6 +17,7 @@ export class MenuComponent implements OnInit {
       products: [
         {
           name: 'Napolitana',
+          description: 'Una grande de muza',
           price: 2000,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -30,6 +32,7 @@ export class MenuComponent implements OnInit {
         },
         {
           name: 'Calabresa',
+          description: 'Una grande de muza',
           price: 2200,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -44,6 +47,7 @@ export class MenuComponent implements OnInit {
         },
         {
           name: 'Fugazzeta',
+          description: 'Una grande de muza',
           price: 1800,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -64,6 +68,7 @@ export class MenuComponent implements OnInit {
       products: [
         {
           name: 'Pollo',
+          description: 'Super deliciosas',
           price: 200,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -78,6 +83,7 @@ export class MenuComponent implements OnInit {
         },
         {
           name: 'Carne',
+          description: 'Super deliciosas',
           price: 220,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -92,6 +98,7 @@ export class MenuComponent implements OnInit {
         },
         {
           name: 'Humita',
+          description: 'Super deliciosas',
           price: 180,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -112,6 +119,7 @@ export class MenuComponent implements OnInit {
       products: [
         {
           name: 'Coca-cola',
+          description: 'fria y refrescante',
           price: 1000,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -126,6 +134,7 @@ export class MenuComponent implements OnInit {
         },
         {
           name: 'Pepsi',
+          description: 'fria y refrescante',
           price: 900,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -140,6 +149,7 @@ export class MenuComponent implements OnInit {
         },
         {
           name: 'Fanta',
+          description: 'fria y refrescante',
           price: 900,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -160,6 +170,7 @@ export class MenuComponent implements OnInit {
       products: [
         {
           name: 'Helado',
+          description: 'Con doble chocolate',
           price: 1500,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -170,10 +181,11 @@ export class MenuComponent implements OnInit {
               name: 'Glaseado de frutilla'
             },
           ],
-          discount: 0
+          discount: 20
         },
         {
           name: 'Torta',
+          description: 'Con doble chocolate',
           price: 1900,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -188,6 +200,7 @@ export class MenuComponent implements OnInit {
         },
         {
           name: 'Cheesecake',
+          description: 'Con doble chocolate',
           price: 1200,
           image: 'https://source.unsplash.com/random',
           details: [
@@ -202,55 +215,8 @@ export class MenuComponent implements OnInit {
         },
       ]
     },
-    {
-      name: 'Descuentos',
-      image: '../../../assets/icons/category/percent-solid.svg',
-      products: [
-        {
-          name: 'Helado',
-          price: 1500,
-          image: 'https://source.unsplash.com/random',
-          details: [
-            {
-              name: 'Glaseado de chocolate'
-            },
-            {
-              name: 'Glaseado de frutilla'
-            },
-          ],
-          discount: 20
-        },
-        {
-          name: 'Fanta',
-          price: 900,
-          image: 'https://source.unsplash.com/random',
-          details: [
-            {
-              name: '500ml'
-            },
-            {
-              name: '1000ml'
-            },
-          ],
-          discount: 15
-        },
-        {
-          name: 'Humita',
-          price: 180,
-          image: 'https://source.unsplash.com/random',
-          details: [
-            {
-              name: 'Picante'
-            },
-            {
-              name: 'Extra picante'
-            },
-          ],
-          discount: 10
-        },
-      ]
-    },
   ];
+
   selectedCategory: number = 0;
   queryParamCategory: string | null = null;
 
@@ -261,6 +227,28 @@ export class MenuComponent implements OnInit {
       this.queryParamCategory = params.get('category');
       this.determineUrlCategory();
     })
+    this.lookForOffers();
+  }
+
+  private lookForOffers() {
+    let offers: Product[] = [];
+    this.categories?.forEach(category => {
+      category.products.forEach(product => {
+        if (product.discount != 0) {
+          offers.push(product);
+        }
+      })
+    });
+    this.categories?.push(this.buildOffersCategory(offers));
+  }
+
+  private buildOffersCategory(offers: Product[]): Category {
+    let newCategory: Category = {
+      name: 'Descuentos',
+      image: '../../../assets/icons/category/percent-solid.svg',
+      products: offers
+    };
+    return newCategory;
   }
 
   private determineUrlCategory() {
@@ -272,7 +260,6 @@ export class MenuComponent implements OnInit {
         }
       }
     }
-    console.log(`Categoría seleccionada: ${this.selectedCategory}`);
   }
 
   private equalsIgnoreCase(str1: string, str2: string): boolean {

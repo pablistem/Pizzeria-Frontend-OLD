@@ -13,33 +13,44 @@ export class ProductComponent implements OnInit {
   @Input() products: Product[] = [];
   panelOpenState: boolean = false
   urlProductId: number | null = null;
+  selectedDetails: boolean[] = [];
+  productIdToOpen: number = 0;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.urlProductId = params['id'];
-      console.log(`Se debería abrir el producto "${this.urlProductId}" de la categoría "${params['category']}"`);
     });
   }
 
-  onOpenProduct(productId: number) {
+  onOpenProduct() {
     this.panelOpenState = true;
-    this.changeUrlProductId(productId);
   }
 
-  onCloseProduct(productId: number) {
+  onCloseProduct() {
     this.panelOpenState = false;
-    console.log(`El productId de onCloseProduct es ${productId}`);
-    this.changeUrlProductId(null);
+    this.selectedDetails = [];
   }
 
-  private changeUrlProductId(newId : number | null){
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: { id: newId },
-      queryParamsHandling: 'merge'
-    });
+  // Desarrollo cancelado. Antes al abrir ver un panel se actualizaba el parametro de la url
+  // private changeUrlProductId(newId: number) {
+  //   this.router.navigate([], {
+  //     relativeTo: this.route,
+  //     queryParams: { id: newId },
+  //     queryParamsHandling: 'merge'
+  //   });
+  // }
+
+  // Funcionalidad de compartir url cancelada por Jere. ¡GRACIAS JERE!
+  // shareProduct(productId: number) {
+  //   let url = this.router.url;
+  //   let params: string = JSON.stringify(this.router.routerState.snapshot.root.queryParams);
+  // }
+
+  selectProduct(productId: number) {
+    this.urlProductId = productId
+    console.log(this.urlProductId);
   }
 
 }
