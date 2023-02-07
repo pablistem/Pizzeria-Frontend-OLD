@@ -3,23 +3,42 @@
     <button (click)="toggleLeftBurguer()">
       <img class="left-icon" src="../../../assets/icons/bars-solid.svg" alt="icono menu izquierdo">
     </button>
-    <div class="left-dropdown-menu" [class.active]="showLeftBurguer">
-      <a routerLink="#" class="mi-perfil" href="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg" alt="icono sol">Mi perfil</a>
-      <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg" alt="icono sol">Mis pedidos</a>
-      <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg" alt="icono sol">Descuentos</a>
-      <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg" alt="icono sol">Cupones</a>
+    <div class="left-dropdown-menu" [class.active-left]="showLeftBurguer">
+      <a routerLink="#" class="mi-perfil" href="#" (click)="toggleLeftBurguer()"><img
+          src="../../../assets/icons/sun-regular.svg" alt="icono sol">Mi perfil</a>
+      <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg"
+          alt="icono sol">Mis pedidos</a>
+      <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg"
+          alt="icono sol">Descuentos</a>
+      <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg"
+          alt="icono sol">Cupones</a>
 
-        <button routerLink="login" class="button-menu-login" (click)="toggleLeftBurguer()">Iniciar sesión</button>
-        <button routerLink="register" class="button-menu-register" (click)="toggleLeftBurguer()">Registrarme</button>
+      <button routerLink="login" class="button-menu-login" (click)="toggleLeftBurguer()">Iniciar sesión</button>
+      <button routerLink="register" class="button-menu-register" (click)="toggleLeftBurguer()">Registrarme</button>
     </div>
   </div>
+
   <img class="logo" src="../../assets/images/logo.jpg" alt="logo">
+
   <div class="right-burger-menu">
-    <button>
+    <button (click)="toggleRightBurguer()">
       <img class="right-icon" src="../../../assets/icons/cart-shopping-solid.svg" alt="icono menu derecho">
     </button>
-    <div class="right-dropdown-menu">
+    <div class="right-dropdown-menu" [class.active-right]="showRightBurguer">
+      <div class="products-shopping-cart">
+        <h1 class="title">Titulo</h1>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas corporis odio.</p>
+        <h1 class="price">$4000</h1>
+        <div class="add-or-remove-products">
+          <img class="minus-plus-icon" src="../../../assets/icons/minus-solid.svg" alt="icono de menos">
+          <h1 class="count">0</h1>
+          <img class="minus-plus-icon" src="../../../assets/icons/plus-solid.svg" alt="icono de más">
+        </div>
 
+      </div>
+
+      <button routerLink="login" class="button-menu-login" (click)="toggleRightBurguer()">Ir a pagar</button>
+      <button routerLink="register" class="button-menu-register" (click)="toggleRightBurguer()">Vaciar carrito</button>
     </div>
   </div>
 </header>
