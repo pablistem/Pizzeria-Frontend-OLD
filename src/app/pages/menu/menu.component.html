@@ -1,11 +1,13 @@
-<div style="margin: 20px;">
+<div class="container">
 
   <div class="menuContainer">
-    <button *ngFor="let menuPage of menuPages; index as i" (click)="switchMenuPage(i)" type="button" class="menuOption">
-      <img [src]="menuPage.image" [alt]="menuPage.name">
-    </button>
+    <a *ngFor="let category of categories; index as i" routerLink="."
+      [queryParams]="{category: category.name.toLowerCase()}" (click)="selectCategory(i)" class="menuOption">
+      <img [src]="category.image" [alt]="category.name">
+    </a>
   </div>
 
-  <app-product></app-product>
+  <app-product *ngIf="categories != null" [products]="categories[selectedCategory].products"></app-product>
 
 </div>
+
