@@ -2,10 +2,135 @@
 //   border: 1px solid red;
 // }
 
-.movileVersion {
+.mobile-version {
+
   display: none;
-  // margin: 20px;
+
+  :first-child {
+    border-top-right-radius: 10px;
+  }
+
+  :last-child {
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  .mobile-container {
+    padding: 20px;
+    border: 1px solid #999;
+
+    .mobile-information-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &.show-detail {
+        flex-direction: column-reverse;
+      }
+
+      .mobile-button-show-details {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+
+        img {
+          height: 100px;
+          width: 200px;
+          object-fit: cover;
+          border-radius: 10px;
+
+          &.show-detail {
+            height: 130px;
+            width: 100%;
+            border-radius: 20px;
+          }
+        }
+
+        .mobile-stupid-symbol {
+          position: absolute;
+          right: 5px;
+          top: 5px;
+          width: 15px;
+          height: 15px;
+          border-radius: 20px;
+          background-color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          span {
+            display: block;
+          }
+
+        }
+      }
+    }
+
+    .mobile-price-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        display: inline;
+
+        &.show-detail {
+          display: none;
+        }
+      }
+
+      button {
+        border-radius: 20px;
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: #ccc;
+
+        &.show-detail {
+          display: block;
+          margin: auto;
+          width: auto;
+          height: auto;
+          padding: 10px;
+          border-radius: 20px;
+          border: none;
+          background-color: #999;
+        }
+      }
+    }
+
+    form {
+      display: none;
+
+      &.show-detail {
+        display: block;
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .desktopVersion {
   display: grid;
@@ -84,7 +209,7 @@
 // Acá van los estilos específicos para celulares
 @media only screen and (max-width: 767px) {
 
-  .movileVersion {
+  .mobile-version {
     display: block;
   }
 

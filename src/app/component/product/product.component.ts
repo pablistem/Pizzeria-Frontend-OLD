@@ -16,6 +16,8 @@ export class ProductComponent implements OnInit {
   selectedDetails: boolean[] = [];
   productIdToOpen: number = 0;
 
+  showProductDetail: boolean = false;
+
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -51,6 +53,11 @@ export class ProductComponent implements OnInit {
   selectProduct(productId: number) {
     this.urlProductId = productId
     console.log(this.urlProductId);
+  }
+
+  toggleProductDetail(){
+    this.showProductDetail = !this.showProductDetail;
+    console.log(this.showProductDetail)
   }
 
 }

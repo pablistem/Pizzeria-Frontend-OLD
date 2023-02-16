@@ -1,5 +1,49 @@
+
 <!-- MODO CELULAR -->
 
+<div class="mobile-version">
+  <div class="mobile-container" *ngFor="let product of products; index as productId">
+
+    <div class="mobile-information-block" [class.show-detail]="showProductDetail">
+      <div>
+        <p class="h3">{{product.name}}</p>
+        <p>{{product.description}}</p>
+      </div>
+      <button class="mobile-button-show-details" (click)="toggleProductDetail()">
+        <img [src]="product.image" [alt]="product.name" [class.show-detail]="showProductDetail">
+        <div class="mobile-stupid-symbol">
+          <span>v</span>
+        </div>
+      </button>
+    </div>
+
+    <form [class.show-detail]="showProductDetail">
+      <div *ngFor="let detail of product.details; index as detailId" >
+        <span>{{detail.name}}</span>
+        <input type="checkbox" [(ngModel)]="selectedDetails[detailId]" [ngModelOptions]="{standalone: true}">
+      </div>
+    </form>
+
+    <div class="mobile-price-block">
+      <p [class.show-detail]="showProductDetail">${{product.price}}</p>
+      <button [class.show-detail]="showProductDetail">
+        <ng-container *ngIf="showProductDetail; else removeText">
+          <span>Agregar al carrito ${{product.price}}</span>
+        </ng-container>
+        <ng-template #removeText>
+          <span>+</span>
+        </ng-template>
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+<!--
 <div class="movileVersion">
   <mat-accordion class="accordion-item" *ngFor="let product of products; index as productId">
     <mat-expansion-panel [expanded]="(productId == urlProductId)" (opened)="onOpenProduct()"
@@ -9,7 +53,9 @@
           {{product.name}}
         </mat-panel-title>
         <mat-panel-description>
-          <!-- Descripción -->
+
+          <p>Descripcion</p>
+
         </mat-panel-description>
       </mat-expansion-panel-header>
 
@@ -37,7 +83,7 @@
 
     </mat-expansion-panel>
   </mat-accordion>
-</div>
+</div> -->
 
 
 
