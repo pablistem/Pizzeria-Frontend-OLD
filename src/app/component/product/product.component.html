@@ -4,20 +4,20 @@
 <div class="mobile-version">
   <div class="mobile-container" *ngFor="let product of products; index as productId">
 
-    <div class="mobile-information-block" [class.show-detail]="showProductDetail">
+    <div class="mobile-information-block" [class.show-detail]="selectedDetails[productId]">
       <div>
         <p class="h3">{{product.name}}</p>
         <p>{{product.description}}</p>
       </div>
-      <button class="mobile-button-show-details" (click)="toggleProductDetail()">
-        <img [src]="product.image" [alt]="product.name" [class.show-detail]="showProductDetail">
+      <button class="mobile-button-show-details" (click)="toggleProductDetail(productId)">
+        <img [src]="product.image" [alt]="product.name" [class.show-detail]="selectedDetails[productId]">
         <div class="mobile-stupid-symbol">
           <span>v</span>
         </div>
       </button>
     </div>
 
-    <form [class.show-detail]="showProductDetail">
+    <form [class.show-detail]="selectedDetails[productId]">
       <div *ngFor="let detail of product.details; index as detailId" >
         <span>{{detail.name}}</span>
         <input type="checkbox" [(ngModel)]="selectedDetails[detailId]" [ngModelOptions]="{standalone: true}">
@@ -25,9 +25,9 @@
     </form>
 
     <div class="mobile-price-block">
-      <p [class.show-detail]="showProductDetail">${{product.price}}</p>
-      <button [class.show-detail]="showProductDetail">
-        <ng-container *ngIf="showProductDetail; else removeText">
+      <p [class.show-detail]="selectedDetails[productId]">${{product.price}}</p>
+      <button [class.show-detail]="selectedDetails[productId]">
+        <ng-container *ngIf="selectedDetails[productId]; else removeText">
           <span>Agregar al carrito ${{product.price}}</span>
         </ng-container>
         <ng-template #removeText>
@@ -39,52 +39,6 @@
   </div>
 
 </div>
-
-
-
-
-<!--
-<div class="movileVersion">
-  <mat-accordion class="accordion-item" *ngFor="let product of products; index as productId">
-    <mat-expansion-panel [expanded]="(productId == urlProductId)" (opened)="onOpenProduct()"
-      (closed)="onCloseProduct()">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          {{product.name}}
-        </mat-panel-title>
-        <mat-panel-description>
-
-          <p>Descripcion</p>
-
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-
-      <img [src]="product.image" width="200" height="200">
-      <p class="h2">{{product.name}}</p>
-      <p class="h6">{{product.description}}</p>
-
-      <form>
-        <p *ngFor="let detail of product.details; index as detailId">
-          <input type="checkbox" [(ngModel)]="selectedDetails[detailId]" [ngModelOptions]="{standalone: true}">
-          <span>{{detail.name}}</span>
-        </p>
-      </form>
-
-      <ng-container *ngIf="product.discount == 0; else offer">
-        <p class="h3">${{product.price}}</p>
-      </ng-container>
-
-      <ng-template #offer>
-        <p>
-          <span class="h3">${{product.price - (product.price * product.discount / 100)}}</span>
-          <del class="h6">${{product.price}}</del>
-        </p>
-      </ng-template>
-
-    </mat-expansion-panel>
-  </mat-accordion>
-</div> -->
-
 
 
 <!-- MODO ESCRITORIO -->
@@ -116,6 +70,7 @@
 
         <button (click)="selectProduct(productId)">+</button>
       </div>
+      <hr>
     </div>
   </div>
   <div class="product"> <!-- Probablemente este deba ser un nuevo componente -->
@@ -126,10 +81,10 @@
       <p class="h6">{{products[urlProductId].description}}</p>
 
       <form>
-        <p *ngFor="let detail of products[urlProductId].details; index as detailId">
+        <div *ngFor="let detail of products[urlProductId].details; index as detailId">
           <span>{{detail.name}}</span>
           <input type="checkbox" [(ngModel)]="selectedDetails[detailId]" [ngModelOptions]="{standalone: true}">
-        </p>
+        </div>
       </form>
 
       <ng-container *ngIf="products[urlProductId].discount == 0; else offer">
