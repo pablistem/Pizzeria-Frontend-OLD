@@ -1,21 +1,21 @@
 <div class="register-container">
 
   <!-- Formulario de registro -->
-  <form [formGroup]="registroForm">
+  <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
 
-    <!-- Input Nombre -->
+    <!-- Input "Nombre" -->
     <div class="input-container">
       <label for="input-name">Nombre</label>
       <input id="input-name" type="text" required formControlName="nombre">
     </div>
 
-    <!-- Input Apellido -->
+    <!-- Input "Apellido" -->
     <div class="input-container">
       <label for="input-lastname">Apellido</label>
       <input id="input-lastname" type="text" required formControlName="apellido">
     </div>
 
-    <!-- Input Mail -->
+    <!-- Input "Mail" -->
     <div class="input-container">
       <label for="input-mail">Mail</label>
       <input id="input-mail" type="email" required formControlName="email">

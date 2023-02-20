@@ -18,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
+import { HttpClientModule } from '@angular/common/http'; // Necesario para habilitar las solicitudes HTTP
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { RegisterComponent } from './pages/register/register.component';
     MatMenuModule,
     MatIconModule,
     MatExpansionModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
