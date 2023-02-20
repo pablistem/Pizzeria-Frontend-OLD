@@ -1,6 +1,7 @@
 .menuContainer {
   display: flex;
   flex-direction: row;
+  margin-top: 40px;
 
   :first-child {
     border-top-left-radius: 20px;
@@ -17,7 +18,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    border: 1px solid black;
+    border: 1px solid #aaa;
 
     img {
       width: 30px;

@@ -1,4 +1,6 @@
 <header>
+
+  <!-- Hambuguesa -->
   <div class="left-burger-menu">
     <button (click)="toggleLeftBurguer()">
       <img class="left-icon" src="../../../assets/icons/bars-solid.svg" alt="icono menu izquierdo">
@@ -20,25 +22,44 @@
 
   <img class="logo" src="../../assets/images/logo.jpg" alt="logo">
 
+  <!-- Carrito -->
   <div class="right-burger-menu">
-    <button (click)="toggleRightBurguer()">
+
+    <!-- Boton del icono del carrito -->
+    <button class="button-right-burger" (click)="toggleRightBurguer()">
       <img class="right-icon" src="../../../assets/icons/cart-shopping-solid.svg" alt="icono menu derecho">
     </button>
+
     <div class="right-dropdown-menu" [class.active-right]="showRightBurguer">
+
+      <!-- Producto del carrito (futuro nuevo componente) -->
       <div class="products-shopping-cart">
-        <h1 class="title">Titulo</h1>
-        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas corporis odio.</p>
-        <h1 class="price">$4000</h1>
-        <div class="add-or-remove-products">
-          <img class="minus-plus-icon" src="../../../assets/icons/minus-solid.svg" alt="icono de menos">
-          <h1 class="count">0</h1>
-          <img class="minus-plus-icon" src="../../../assets/icons/plus-solid.svg" alt="icono de más">
+
+        <!-- Titulo y descripcion -->
+        <div class="container-title-description">
+          <span class="title h1">Titulo</span>
+          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas corporis odio.</p>
         </div>
 
+        <!-- Precio y cantidad -->
+        <div class="container-price-quantity">
+          <span class="price h1">$4000</span>
+          <div class="container-quantity">
+            <button class="buttons-minus-plus">-</button>
+            <span class="count h1">0</span>
+            <button class="buttons-minus-plus">+</button>
+          </div>
+        </div>
       </div>
 
-      <button routerLink="login" class="button-menu-login" (click)="toggleRightBurguer()">Ir a pagar</button>
-      <button routerLink="register" class="button-menu-register" (click)="toggleRightBurguer()">Vaciar carrito</button>
+      <!-- Botones -->
+      <div class="buttons-right-container">
+        <!-- Boton ir a pagar -->
+        <button routerLink="login" class="button-menu-login" (click)="toggleRightBurguer()">Ir a pagar</button>
+        <!-- Boton vaciar carrito -->
+        <button routerLink="register" class="button-menu-register" (click)="toggleRightBurguer()">Vaciar carrito</button>
+      </div>
+
     </div>
   </div>
 </header>
