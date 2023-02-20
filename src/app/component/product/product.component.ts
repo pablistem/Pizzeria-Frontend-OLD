@@ -53,4 +53,8 @@ export class ProductComponent implements OnInit {
     console.log(this.urlProductId);
   }
 
+  toggleProductDetail(index: number){
+    this.selectedDetails[index] = !this.selectedDetails[index];
+  }
+
 }
