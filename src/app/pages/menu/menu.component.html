@@ -1,0 +1,13 @@
+<div class="container">
+
+  <div class="menuContainer">
+    <a *ngFor="let category of categories; index as i" routerLink="."
+      [queryParams]="{category: category.name.toLowerCase()}" (click)="selectCategory(i)" class="menuOption">
+      <img [src]="category.image" [alt]="category.name">
+    </a>
+  </div>
+
+  <app-product *ngIf="categories != null" [products]="categories[selectedCategory].products"></app-product>
+
+</div>
+

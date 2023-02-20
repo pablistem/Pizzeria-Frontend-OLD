@@ -1,0 +1,94 @@
+// * {
+//   border: 1px solid red;
+// }
+
+.movileVersion {
+  display: none;
+  // margin: 20px;
+}
+
+.desktopVersion {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // establece que el grid tendrá 2 columnas
+  gap: 25px; //establece un espacio entre las filas y columnas.
+
+  .menu {
+
+    .titleImage {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        "descrip descrip descrip img";
+      gap: 10px;
+
+      .descriptionBlock {
+        grid-area: descrip;
+      }
+
+      .imageBlock {
+        grid-area: img;
+
+        img {
+          width: 200px;
+          height: 100px;
+          display: block;
+        }
+      }
+    }
+
+    .priceSeeMore {
+      display: flex;
+      margin: 10px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      button {
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .product {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 200px;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    form {
+      p {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+    }
+
+    button {
+      display: block;
+      position: relative;
+      margin: auto;
+      background-color: #999;
+      border-radius: 20px;
+    }
+  }
+}
+
+// Acá van los estilos específicos para celulares
+@media only screen and (max-width: 767px) {
+
+  .movileVersion {
+    display: block;
+  }
+
+  .desktopVersion {
+    display: none;
+  }
+}
