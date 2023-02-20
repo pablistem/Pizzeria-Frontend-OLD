@@ -1,23 +1,41 @@
 <div class="register-container">
+
+  <!-- Formulario de registro -->
+  <form [formGroup]="registroForm">
+
+    <!-- Input Nombre -->
     <div class="input-container">
-        <label for="input-name">Nombre</label>
-        <input id="input-name" type="text" required>
-      </div>
-      <div class="input-container">
-        <label for="input-lastname">Apellido</label>
-        <input id="input-lastname" type="text" required>
-      </div>
+      <label for="input-name">Nombre</label>
+      <input id="input-name" type="text" required formControlName="nombre">
+    </div>
+
+    <!-- Input Apellido -->
+    <div class="input-container">
+      <label for="input-lastname">Apellido</label>
+      <input id="input-lastname" type="text" required formControlName="apellido">
+    </div>
+
+    <!-- Input Mail -->
     <div class="input-container">
       <label for="input-mail">Mail</label>
-      <input id="input-mail" type="email" required>
+      <input id="input-mail" type="email" required formControlName="email">
     </div>
+
+    <!-- Input "Contraseña" -->
     <div class="input-container">
       <label for="input-password">Contraseña</label>
-      <input id="input-password" type="password" required>
+      <input id="input-password" type="password" required formControlName="password">
     </div>
+
+    <!-- Input "Repetir contraseña" -->
     <div class="input-container">
-        <label for="input-repeat-password">Repetir contraseña</label>
-        <input id="input-repeat-password" type="password" required>
-      </div>
-    <button type="submit">Registrarme</button>
-  </div>
+      <label for="input-repeat-password">Repetir contraseña</label>
+      <input id="input-repeat-password" type="password" required formControlName="confirmPassword">
+    </div>
+
+    <!-- Botón "Registrarme" -->
+    <button type="submit" [disabled]="!registroForm.valid">Registrarme</button>
+
+  </form>
+
+</div>
