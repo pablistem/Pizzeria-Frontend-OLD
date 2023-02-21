@@ -10,7 +10,8 @@
     </div>
     <ng-container *ngIf="formGroup.get('nombre')?.dirty && formGroup.get('nombre')?.touched">
       <div *ngIf="formGroup.controls['nombre'].errors?.['required']">El nombre es obligatorio.</div>
-      <div *ngIf="formGroup.controls['nombre'].errors?.['minlength']">El nombre debe tener un minimo de {{minNameLength}} caracteres.</div>
+      <div *ngIf="formGroup.controls['nombre'].errors?.['minlength']">El nombre debe tener un minimo de
+        {{minNameLength}} caracteres.</div>
     </ng-container>
 
     <!-- Input "Apellido" -->
@@ -20,7 +21,8 @@
     </div>
     <ng-container *ngIf="formGroup.get('apellido')?.dirty && formGroup.get('apellido')?.touched">
       <div *ngIf="formGroup.controls['apellido'].errors?.['required']">El apellido es obligatorio.</div>
-      <div *ngIf="formGroup.controls['apellido'].errors?.['minlength']">El apellido debe tener un minimo de {{minLastNameLength}} caracteres.</div>
+      <div *ngIf="formGroup.controls['apellido'].errors?.['minlength']">El apellido debe tener un minimo de
+        {{minLastNameLength}} caracteres.</div>
     </ng-container>
 
     <!-- Input "Mail" -->
@@ -40,7 +42,8 @@
     </div>
     <ng-container *ngIf="formGroup.get('password')?.dirty && formGroup.get('password')?.touched">
       <div *ngIf="formGroup.controls['password'].errors?.['required']">La contraseña es obligatoria.</div>
-      <div *ngIf="formGroup.controls['password'].errors?.['minlength']">La contraseña debe tener al menos {{minPasswordLength}} caracteres.</div>
+      <div *ngIf="formGroup.controls['password'].errors?.['minlength']">La contraseña debe tener al menos
+        {{minPasswordLength}} caracteres.</div>
     </ng-container>
 
     <!-- Input "Repetir contraseña" -->
@@ -54,6 +57,11 @@
 
     <!-- Botón "Registrarme" -->
     <button type="submit" [disabled]="!formGroup.valid">Registrarme</button>
+
+    <!-- Errores en el registro -->
+    <ng-container *ngIf="serverError">
+      <p>Ocurrió un error inesperado.<br>Por favor, intentelo de nuevo mas tarde.</p>
+    </ng-container>
 
   </form>
 

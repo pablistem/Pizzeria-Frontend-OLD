@@ -3,6 +3,8 @@
  */
 export interface User {
   id: string;
+  name: string;
+  lastName: string;
   email: string;
   password: string;
 }
@@ -11,3 +13,8 @@ export interface User {
  * Esta interfaz define un tipo de objeto llamado RegisterRequest, que extiende la interfaz User pero omite la propiedad id.
  */
 export interface RegisterRequest extends Omit<User, "id"> { }
+
+/**
+ * Esta interfaz define un tipo de objeto llamado LoginRequest, que extiende la interfaz User pero omite las propiedades id, name y lastName.
+ */
+export interface LoginRequest extends Omit<User, "id" | "name" | "lastName"> { }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { RegisterRequest, User } from '../model/user';
+import { LoginRequest, RegisterRequest, User } from '../model/user';
 
 // Decorado con @Injectable para permitir que se inyecte como una dependencia
 @Injectable({
@@ -21,6 +21,15 @@ export class AuthService {
    */
   register(request: RegisterRequest) {
     return this.http.post<User>(`${this.backendUrl}/auth/signup`, request);
+  }
+
+  /**
+   * Envía una solicitud POST al servidor para loguear al usuario.
+   * @param request Objeto de tipo RegisterRequest
+   * @returns Observable de tipo Usuario
+   */
+  login(request: LoginRequest) {
+    return this.http.post<User>(`${this.backendUrl}/auth/login`, request);
   }
 
 }

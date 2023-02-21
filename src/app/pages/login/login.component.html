@@ -1,15 +1,51 @@
 <div class="login-container">
-  <div class="input-container">
-    <label for="input-mail">Mail</label>
-    <input id="input-mail" type="email" required>
-  </div>
-  <div class="input-container">
-    <label for="input-password">Contraseña</label>
-    <input id="input-password" type="password" required>
-  </div>
-  <button type="submit">Iniciar sesión</button>
+
+  <!-- Formulario de inicio de sesión -->
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+
+    <!-- Input "Mail" -->
+    <div class="input-container">
+      <label for="input-mail">Mail</label>
+      <input id="input-mail" type="email" formControlName="email">
+    </div>
+    <ng-container *ngIf="formGroup.get('email')?.dirty && formGroup.get('email')?.touched">
+      <div *ngIf="formGroup.controls['email'].errors?.['required']">El email es obligatorio.</div>
+      <div *ngIf="formGroup.controls['email'].errors?.['email']">El email debe tener un formato válido.</div>
+    </ng-container>
+
+    <!-- Input "Contraseña" -->
+    <div class="input-container">
+      <label for="input-password">Contraseña</label>
+      <input id="input-password" type="password" formControlName="password">
+    </div>
+    <ng-container *ngIf="formGroup.get('password')?.dirty && formGroup.get('password')?.touched">
+      <div *ngIf="formGroup.controls['password'].errors?.['required']">La contraseña es obligatoria.</div>
+    </ng-container>
+
+    <!-- Botón "Iniciar sesión" -->
+    <button type="submit" [disabled]="!formGroup.valid">Iniciar sesión</button>
+
+    <!-- Errores en el logeo -->
+    <ng-container *ngIf="invalidCredentials; else serverErrorContent">
+      <p>Email o contraseña no validos.</p>
+    </ng-container>
+    <ng-template #serverErrorContent>
+      <p *ngIf="serverError">Ocurrió un error inesperado.<br>Por favor, intentelo de nuevo mas tarde</p>
+    </ng-template>
+
+  </form>
+
+  <!-- Línea divisoria: un elemento estético -->
   <div class="linea"></div>
-  <a href="#">¿No tenés cuenta?</a>
-  <a routerLink="../register" class="a-registrarme" href="#"><strong>Registrarme</strong></a>
+
+  <!-- Bloque de routing al registro -->
+  <div>
+    <a href="#">¿No tenés cuenta?</a>
+    <a routerLink="../register" class="a-registrarme" href="#">
+      <strong>Registrarme</strong>
+    </a>
+  </div>
+
+  <!-- Routing al reestablecimiento de la clave -->
   <a href="#"><strong>No recuerdo mi clave</strong></a>
 </div>
