@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms'; // Importo módulos de Angular Forms
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -7,31 +7,30 @@ import { AuthService } from 'src/app/service/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
-  registroForm: FormGroup; // Defino una variable para el formulario
+  formGroup: FormGroup;
+  minNameLength: number = 3;
+  minLastNameLength: number = 3;
+  minPasswordLength: number = 8;
 
-  constructor(private formBuilder: FormBuilder, // Inyecto FormBuilder en el constructor
-    private authService: AuthService) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService) {
 
-    // Inicializo la propiedad 'registroForm' en el constructor utilizando el método this.fb.group()
-    this.registroForm = this.formBuilder.group({
-      nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
+    // Creo el FormGroup que contendrá los FormControl.
+    this.formGroup = this.formBuilder.group({
+      nombre: ['', [Validators.required, Validators.minLength(this.minNameLength)]],
+      apellido: ['', [Validators.required, Validators.minLength(this.minLastNameLength)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
-    });
-  }
-
-  ngOnInit() {
-
-    // Utilizo FormBuilder para crear un nuevo FormGroup con los campos que necesitamos.
-    this.registroForm = this.formBuilder.group({
-      nombre: ['', [Validators.required, Validators.minLength(3)]],
-      apellido: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(this.minPasswordLength)]],
+      confirmPassword: ['', []],
+    },
+    // Agrego una validación personalizada para verificar que las contraseñas coincidan.
+    {
+      validators: (control: AbstractControl): ValidationErrors | null => {
+        const password = control.get('password')?.value;
+        const confirmPassword = control.get('confirmPassword')?.value;
+        return password === confirmPassword ? null : { notSame: true };
+      }
     });
   }
 
@@ -39,16 +38,16 @@ export class RegisterComponent implements OnInit {
    * Envia los datos del formulario al servidor
    */
   onSubmit() {
-    console.log(this.registroForm.value);
+    console.log(this.formGroup.value);
 
     // Compruebo si el formulario es válido. Si no lo es, se detiene la ejecución del método.
-    if (this.registroForm.invalid) {
+    if (this.formGroup.invalid) {
       return;
     }
 
     // Obtengo los valores de email y password del formulario
-    const email = this.registroForm.controls['email'].value;
-    const password = this.registroForm.controls['password'].value;
+    const email = this.formGroup.controls['email'].value;
+    const password = this.formGroup.controls['password'].value;
 
     // LLamo a AuthService para registrar al usuario.
     this.authService.register({
