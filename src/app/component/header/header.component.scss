@@ -209,8 +209,8 @@ header {
 
 @media screen and (min-width: 480px) {
   .left-dropdown-menu {
-    right: 1005px;
-    
+    width: 20%;
+    min-width: 250px;
     .button-menu-login {
       display: none;
     }
