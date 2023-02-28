@@ -20,7 +20,7 @@
     <form [class.show-detail]="selectedDetails[productId]">
       <div *ngFor="let detail of product.details; index as detailId" >
         <span>{{detail.name}}</span>
-        <input type="checkbox" [(ngModel)]="selectedDetails[detailId]" [ngModelOptions]="{standalone: true}">
+        <input type="checkbox">
       </div>
     </form>
 
