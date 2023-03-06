@@ -18,6 +18,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
+import { RegisteredProfileComponent } from './pages/profiles/registered-profile/registered-profile.component';
+import { UnregisteredProfileComponent } from './pages/profiles/unregistered-profile/unregistered-profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { RegisterComponent } from './pages/register/register.component';
     MenuComponent,
     LoginComponent,
     ProductComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisteredProfileComponent,
+    UnregisteredProfileComponent
   ],
   imports: [
     BrowserModule,
