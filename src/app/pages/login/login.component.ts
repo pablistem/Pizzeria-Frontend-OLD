@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
-
+import { CookieService } from 'ngx-cookie-service';
+import { LoginRequest, User } from 'src/app/model/user';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,7 @@ export class LoginComponent {
   invalidCredentials: boolean = false;
   serverError: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private cookieService: CookieService) {
 
     // Creo el FormGroup que contendrá los FormControl.
     this.formGroup = this.formBuilder.group({
@@ -28,43 +30,34 @@ export class LoginComponent {
    * Envia los datos del formulario al servidor
    */
   onSubmit() {
-    console.log(this.formGroup.value);
-
-    // Compruebo si el formulario es válido.
     if (this.formGroup.invalid) {
       return;
     }
-
-    // Obtengo los valores de email y password del formulario
-    const email = this.formGroup.controls['email'].value;
-    const password = this.formGroup.controls['password'].value;
-
-    // LLamo a AuthService para loguear al usuario.
-    this.authService.login({
-      email: email,
-      password: password
+    const request : LoginRequest = {
+      email: this.formGroup.controls['email'].value,
+      password: this.formGroup.controls['password'].value
+    }
+    this.authService.login(request).subscribe({
+      next: (response : User) => this.loginWorks(response),
+      error: (error : HttpErrorResponse) => this.loginError(error)
     })
-      // Uso el método .subscribe() para obtener la respuesta de servidor.
-      .subscribe({
-        // El usuario se autenticó correctamente
-        next: (userData) => {
-          console.log(userData);
-          this.invalidCredentials = false;
-          this.serverError = false;
-          // Redirige al usuario al Home
-          this.router.navigateByUrl('/home');
-        },
-        // Las credenciales son inválidas
-        error: (errorMsg) => {
-          console.error(errorMsg);
-          if (errorMsg.status === 403 || errorMsg.status === 404) {
-            this.invalidCredentials = true;
-          } else {
-            this.serverError = true;
-          }
-        }
-      })
+  }
 
+  private loginWorks(response : User) {
+    console.log(response);
+    this.invalidCredentials = false;
+    this.serverError = false;
+    this.cookieService.set('token', response.token);
+    this.router.navigateByUrl('/home');
+  }
+
+  private loginError(error : HttpErrorResponse){
+    console.error(error);
+    if (error.status === 403 || error.status === 404) {
+      this.invalidCredentials = true;
+    } else {
+      this.serverError = true;
+    }
   }
 
 }

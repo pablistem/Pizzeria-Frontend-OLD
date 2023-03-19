@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
-import { RegisterRequest } from 'src/app/model/user';
+import { RegisterRequest, User } from 'src/app/model/user';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -60,15 +60,19 @@ export class RegisterComponent {
     // Si hay que redirigir al usuario a alguna página:
     // this.router.navigateByUrl('/home');
     this.authService.register(request).subscribe({
-      next: (response) => {
-        console.log(response);
-        this.serverError = false;
-      },
-      error: (error: HttpErrorResponse) => {
-        console.error(error.error.msg);
-        this.serverError = true;
-      }
+      next: (response : User) => this.registerWorks(response),
+      error: (error: HttpErrorResponse) => this.registerError(error)
     });
+  }
+
+  private registerWorks(response : User) {
+    console.log(response);
+    this.serverError = false;
+  }
+
+  private registerError(error : HttpErrorResponse){
+    console.error(error.error.msg);
+    this.serverError = true;
   }
 
 }
