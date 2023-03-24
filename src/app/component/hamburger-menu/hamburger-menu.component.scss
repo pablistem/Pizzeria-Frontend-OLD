@@ -1,0 +1,71 @@
+.left-burger-menu {
+
+  button {
+    background-color: red;
+    margin: 90px 0 12.33px 33px;
+    border: none;
+
+    .left-icon {
+      width: 27.24px;
+      height: 26px;
+    }
+  }
+
+  .left-dropdown-menu {
+
+    position: absolute;
+    top: 119px;
+    left: 0;
+    bottom: 0;
+    right: 98px;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all ease-out .5s;
+    transform: translateX(-100%);
+    z-index: 999;
+
+    &.active-left {
+      transform: translateX(0);
+      // display: flex;
+      z-index: 999;
+    }
+
+    .mi-perfil {
+      margin-top: 42px;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 24px;
+      margin-top: 26px;
+
+      img {
+        width: 24px;
+        height: 24px;
+        margin-left: 29px;
+        margin-right: 13px;
+      }
+    }
+
+    .button-menu-login {
+      background-color: white;
+      width: 248px;
+      height: 34px;
+      margin: 349px 22px 26px 25px;
+      border-radius: 7px;
+
+    }
+
+    .button-menu-register {
+      background-color: white;
+      width: 248px;
+      height: 34px;
+      margin: 0 22px 51px 25px;
+      border-radius: 7px;
+    }
+  }
+
+}

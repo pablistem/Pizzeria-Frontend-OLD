@@ -1,26 +1,63 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/service/auth.service';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { LoginRequest, User } from 'src/app/model/user';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor() { }
+  formGroup: FormGroup;
+  invalidCredentials: boolean = false;
+  serverError: boolean = false;
 
-  ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private cookieService: CookieService) {
+
+    // Creo el FormGroup que contendrá los FormControl.
+    this.formGroup = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]]
+    });
   }
 
-  email = new FormControl('', [Validators.required, Validators.email]);
-
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
+  /**
+   * Envia los datos del formulario al servidor
+   */
+  onSubmit() {
+    if (this.formGroup.invalid) {
+      return;
     }
+    const request : LoginRequest = {
+      email: this.formGroup.controls['email'].value,
+      password: this.formGroup.controls['password'].value
+    }
+    this.authService.login(request).subscribe({
+      next: (response : User) => this.loginWorks(response),
+      error: (error : HttpErrorResponse) => this.loginError(error)
+    })
+  }
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+  private loginWorks(response : User) {
+    console.log(response);
+    this.invalidCredentials = false;
+    this.serverError = false;
+    this.cookieService.set('token', response.token);
+    this.router.navigateByUrl('/home');
+  }
+
+  private loginError(error : HttpErrorResponse){
+    console.error(error);
+    if (error.status === 403 || error.status === 404) {
+      this.invalidCredentials = true;
+    } else {
+      this.serverError = true;
+    }
   }
 
 }

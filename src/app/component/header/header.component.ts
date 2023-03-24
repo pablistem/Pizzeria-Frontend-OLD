@@ -12,15 +12,4 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showLeftBurguer: boolean = false;
-  showRightBurguer: boolean = false;
-
-  toggleLeftBurguer() {
-    this.showLeftBurguer = !this.showLeftBurguer;
-  }
-
-  toggleRightBurguer() {
-    this.showRightBurguer = !this.showRightBurguer;
-  }
-
 }
