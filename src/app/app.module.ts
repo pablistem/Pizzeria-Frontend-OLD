@@ -20,7 +20,8 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShoppingCartComponent } from './component/shopping-cart/shopping-cart.component';
-import { HamburgerMenuComponent } from './component/hamburger-menu/hamburger-menu.component'; // Necesario para habilitar las solicitudes HTTP
+import { HamburgerMenuComponent } from './component/hamburger-menu/hamburger-menu.component';
+import { ProductCartComponent } from './component/product-cart/product-cart.component'; // Necesario para habilitar las solicitudes HTTP
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HamburgerMenuComponent } from './component/hamburger-menu/hamburger-men
     ProductComponent,
     RegisterComponent,
     ShoppingCartComponent,
-    HamburgerMenuComponent
+    HamburgerMenuComponent,
+    ProductCartComponent
   ],
   imports: [
     BrowserModule,
