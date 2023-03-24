@@ -18,7 +18,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
-import { HttpClientModule } from '@angular/common/http'; // Necesario para habilitar las solicitudes HTTP
+import { HttpClientModule } from '@angular/common/http';
+import { ShoppingCartComponent } from './component/shopping-cart/shopping-cart.component'; // Necesario para habilitar las solicitudes HTTP
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http'; // Necesario para habil
     MenuComponent,
     LoginComponent,
     ProductComponent,
-    RegisterComponent
+    RegisterComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

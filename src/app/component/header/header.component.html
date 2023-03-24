@@ -23,43 +23,6 @@
   <img class="logo" src="../../assets/images/logo.jpg" alt="logo">
 
   <!-- Carrito -->
-  <div class="right-burger-menu">
+  <app-shopping-cart></app-shopping-cart>
 
-    <!-- Boton del icono del carrito -->
-    <button class="button-right-burger" (click)="toggleRightBurguer()">
-      <img class="right-icon" src="../../../assets/icons/cart-shopping-solid.svg" alt="icono menu derecho">
-    </button>
-
-    <div class="right-dropdown-menu" [class.active-right]="showRightBurguer">
-
-      <!-- Producto del carrito (futuro nuevo componente) -->
-      <div class="products-shopping-cart">
-
-        <!-- Titulo y descripcion -->
-        <div class="container-title-description">
-          <span class="title h1">Titulo</span>
-          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas corporis odio.</p>
-        </div>
-
-        <!-- Precio y cantidad -->
-        <div class="container-price-quantity">
-          <span class="price h1">$4000</span>
-          <div class="container-quantity">
-            <button class="buttons-minus-plus">-</button>
-            <span class="count h1">0</span>
-            <button class="buttons-minus-plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Botones -->
-      <div class="buttons-right-container">
-        <!-- Boton ir a pagar -->
-        <button routerLink="login" class="button-menu-login" (click)="toggleRightBurguer()">Ir a pagar</button>
-        <!-- Boton vaciar carrito -->
-        <button routerLink="register" class="button-menu-register" (click)="toggleRightBurguer()">Vaciar carrito</button>
-      </div>
-
-    </div>
-  </div>
 </header>
