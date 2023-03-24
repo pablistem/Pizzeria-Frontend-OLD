@@ -19,7 +19,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ShoppingCartComponent } from './component/shopping-cart/shopping-cart.component'; // Necesario para habilitar las solicitudes HTTP
+import { ShoppingCartComponent } from './component/shopping-cart/shopping-cart.component';
+import { HamburgerMenuComponent } from './component/hamburger-menu/hamburger-menu.component'; // Necesario para habilitar las solicitudes HTTP
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ShoppingCartComponent } from './component/shopping-cart/shopping-cart.c
     LoginComponent,
     ProductComponent,
     RegisterComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    HamburgerMenuComponent
   ],
   imports: [
     BrowserModule,
