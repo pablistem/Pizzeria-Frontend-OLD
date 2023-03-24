@@ -6,6 +6,8 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { RegisteredProfileComponent } from './pages/profiles/registered-profile/registered-profile.component';
+import { UnregisteredProfileComponent } from './pages/profiles/unregistered-profile/unregistered-profile.component';
 
 const routes: Routes = [
   {
@@ -28,6 +30,14 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'registered-profile',
+    component: RegisteredProfileComponent
+  },
+  {
+    path: 'unregistered-profile',
+    component: UnregisteredProfileComponent
   },
   {
     path: '**',
