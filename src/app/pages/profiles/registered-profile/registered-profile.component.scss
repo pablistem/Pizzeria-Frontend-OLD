@@ -28,11 +28,18 @@
             left: 348px;
             top: 141px;
         }
+        @media screen and (min-width: 480px) {
+        .icon-share {
+            top: 155px;
+            left: 1243px;
+        }
     }
+    }
+
 }
 
 .personal-data {
-    margin: 25px 0 0 25px;
+    margin: 0 25px;
 
     h2 {
         font-weight: 600;
@@ -59,4 +66,19 @@
         font-size: 18px;
         line-height: 22px;
     }
+
+    @media screen and (min-width: 480px) {
+        text-align: center;
+        h2 {
+            margin-top: 50px;
+        }
+        .icon-share {
+            top: 380px;
+            left: 1243px;
+        }
+    }
+}
+
+*{
+    // border: 1px solid red;
 }
