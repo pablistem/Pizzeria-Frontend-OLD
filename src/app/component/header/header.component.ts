@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { EventService } from 'src/app/service/event.service';
+import { Constants } from 'src/app/util/constants';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+  private rightMenuIsActive: boolean = false;
 
-  ngOnInit(): void {
+  constructor(private eventService: EventService) { }
+
+  callShoppingCart() {
+    if (this.rightMenuIsActive) {
+      this.eventService.sendEvent(Constants.CLOSE_RIGHT_MENU);
+      this.rightMenuIsActive = false;
+    } else {
+      this.eventService.sendEvent(Constants.SHOPPING_CART);
+      this.rightMenuIsActive = true;
+    }
   }
 
 }

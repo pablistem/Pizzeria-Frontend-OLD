@@ -1,21 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.scss']
 })
-export class ShoppingCartComponent implements OnInit {
-
-  showRightBurguer: boolean = false;
+export class ShoppingCartComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  toggleRightBurguer() {
-    this.showRightBurguer = !this.showRightBurguer;
-  }
 
 }

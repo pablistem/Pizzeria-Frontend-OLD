@@ -1,0 +1,17 @@
+.menu-container {
+  width: 75vw;
+  height: 100%;
+  position: fixed;
+  top: calc(120px - var(--scrollTop));
+  right: 0px;
+  bottom: 0px;
+  z-index: 10;
+  background-color: #00000050;
+  background-image: url('https://media.giphy.com/media/A9EcBzd6t8DZe/giphy.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &.is-hidden{
+    display: none;
+  }
+}
