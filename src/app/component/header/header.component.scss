@@ -1,6 +1,8 @@
+@import '../../../styles.scss';
+
 header {
   width: auto;
-  height: 120px;
+  height: $header-height;
   position: relative;
   display: flex;
   justify-content: space-between;
