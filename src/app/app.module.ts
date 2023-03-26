@@ -24,6 +24,8 @@ import { HamburgerMenuComponent } from './component/hamburger-menu/hamburger-men
 import { ProductCartComponent } from './component/product-cart/product-cart.component'; // Necesario para habilitar las solicitudes HTTP
 import { RegisteredProfileComponent } from './pages/profiles/registered-profile/registered-profile.component';
 import { UnregisteredProfileComponent } from './pages/profiles/unregistered-profile/unregistered-profile.component';
+import { RightMenuComponent } from './component/right-menu/right-menu.component';
+import { LeftMenuComponent } from './component/left-menu/left-menu.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { UnregisteredProfileComponent } from './pages/profiles/unregistered-prof
     HamburgerMenuComponent,
     ProductCartComponent,
     RegisteredProfileComponent,
-    UnregisteredProfileComponent
+    UnregisteredProfileComponent,
+    RightMenuComponent,
+    LeftMenuComponent
   ],
   imports: [
     BrowserModule,

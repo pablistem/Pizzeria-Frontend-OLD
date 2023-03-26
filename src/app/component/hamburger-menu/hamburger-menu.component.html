@@ -1,18 +1,31 @@
-<div class="left-burger-menu">
-  <button (click)="toggleLeftBurguer()">
-    <img class="left-icon" src="../../../assets/icons/bars-solid.svg" alt="icono menu izquierdo">
-  </button>
-  <div class="left-dropdown-menu" [class.active-left]="showLeftBurguer">
-    <a routerLink="unregistered-profile" class="mi-perfil" href="#" (click)="toggleLeftBurguer()"><img
-        src="../../../assets/icons/sun-regular.svg" alt="icono sol">Mi perfil</a>
-    <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg"
-        alt="icono sol">Mis pedidos</a>
-    <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg"
-        alt="icono sol">Descuentos</a>
-    <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg"
-        alt="icono sol">Cupones</a>
+<div class="dropdown-menu">
 
-    <button routerLink="login" class="button-menu-login" (click)="toggleLeftBurguer()">Iniciar sesión</button>
-    <button routerLink="register" class="button-menu-register" (click)="toggleLeftBurguer()">Registrarme</button>
+  <nav>
+    <a routerLink="unregistered-profile">
+      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      Mi perfil
+    </a>
+    <a routerLink="#">
+      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      Mis pedidos
+    </a>
+    <a routerLink="#">
+      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      Descuentos
+    </a>
+    <a routerLink="#">
+      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      Cupones
+    </a>
+  </nav>
+
+  <div class="count-buttons">
+    <button routerLink="login">
+      Iniciar sesión
+    </button>
+    <button routerLink="register">
+      Registrarme
+    </button>
   </div>
+
 </div>
