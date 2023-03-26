@@ -6,7 +6,6 @@
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
-  background-color: white;
 
   nav {
     margin-top: 42px;
@@ -35,10 +34,12 @@
     align-items: center;
 
     button {
-      background-color: white;
-      width: 250px;
+      width: 200px;
       height: 40px;
+      margin: 5px 0px;
       border-radius: 10px;
+      border: none;
+      background-color: #ccc;
     }
   }
 

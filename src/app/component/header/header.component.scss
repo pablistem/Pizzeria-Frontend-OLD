@@ -6,28 +6,18 @@ header {
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: end;
-  z-index: 20;
+  align-items: flex-end;
+
   background-color: red;
-
-  .hamburger-menu {
-    background-color: red;
-    margin: 90px 0 12.33px 33px;
-    border: none;
-
-    .left-icon {
-      width: 27.24px;
-      height: 26px;
-    }
-  }
+  border-bottom: 3px solid rgba(125, 0, 0, 0.5);
 
   .logo {
-    height: 120px;
+    height: $header-height;
     border-radius: 50%;
   }
 
-  .cart-button {
-
+  button {
+    margin: 5px 20px;
     background-color: transparent;
     border: none;
 
@@ -36,4 +26,5 @@ header {
       height: 30px;
     }
   }
+
 }
