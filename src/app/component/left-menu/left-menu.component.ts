@@ -4,16 +4,16 @@ import { EventService } from 'src/app/service/event.service';
 import { Constants } from 'src/app/util/constants';
 
 @Component({
-  selector: 'app-right-menu',
-  templateUrl: './right-menu.component.html',
-  styleUrls: ['./right-menu.component.scss']
+  selector: 'app-left-menu',
+  templateUrl: './left-menu.component.html',
+  styleUrls: ['./left-menu.component.scss']
 })
-export class RightMenuComponent implements OnDestroy {
+export class LeftMenuComponent implements OnDestroy {
 
-  public readonly shoppingCart: string = Constants.SHOPPING_CART;
+  public readonly hamburgerMenu: string = Constants.MENU_HAMBURGER;
   public readonly eventList: string[] = [
-    Constants.CLOSE_RIGHT_MENU,
-    this.shoppingCart
+    Constants.CLOSE_LEFT_MENU,
+    this.hamburgerMenu
   ];
 
   public isHidden: boolean = true;
@@ -28,13 +28,14 @@ export class RightMenuComponent implements OnDestroy {
   }
 
   private toggleFunctionality(componentName: string) {
-    console.log(`RightMenu recibió evento "${componentName}"`);
+    console.log(`LeftMenu recibió evento "${componentName}"`);
     if (!this.eventList.includes(componentName)) {
-      console.log(`RightMenu ignoró el evento`);
+      console.log(`LeftMenu ignoró el evento`);
       return;
     }
-    this.isHidden = (componentName == Constants.CLOSE_RIGHT_MENU);
+    this.isHidden = (componentName == Constants.CLOSE_LEFT_MENU);
     this.selectedComponent = componentName;
+    console.log(`LeftMenu cargó el componente "${this.selectedComponent}"`);
   }
 
   ngOnDestroy() {

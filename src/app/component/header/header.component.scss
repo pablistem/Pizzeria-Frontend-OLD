@@ -10,6 +10,17 @@ header {
   z-index: 20;
   background-color: red;
 
+  .hamburger-menu {
+    background-color: red;
+    margin: 90px 0 12.33px 33px;
+    border: none;
+
+    .left-icon {
+      width: 27.24px;
+      height: 26px;
+    }
+  }
+
   .logo {
     height: 120px;
     border-radius: 50%;

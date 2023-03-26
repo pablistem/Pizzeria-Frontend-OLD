@@ -25,6 +25,7 @@ import { ProductCartComponent } from './component/product-cart/product-cart.comp
 import { RegisteredProfileComponent } from './pages/profiles/registered-profile/registered-profile.component';
 import { UnregisteredProfileComponent } from './pages/profiles/unregistered-profile/unregistered-profile.component';
 import { RightMenuComponent } from './component/right-menu/right-menu.component';
+import { LeftMenuComponent } from './component/left-menu/left-menu.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { RightMenuComponent } from './component/right-menu/right-menu.component'
     ProductCartComponent,
     RegisteredProfileComponent,
     UnregisteredProfileComponent,
-    RightMenuComponent
+    RightMenuComponent,
+    LeftMenuComponent
   ],
   imports: [
     BrowserModule,
