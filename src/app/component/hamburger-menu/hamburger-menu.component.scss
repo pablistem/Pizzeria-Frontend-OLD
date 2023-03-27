@@ -31,6 +31,10 @@
       // display: flex;
       z-index: 999;
     }
+    .left-dropdown-menu-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
 
     .mi-perfil {
       margin-top: 42px;
@@ -67,5 +71,6 @@
       border-radius: 7px;
     }
   }
+}
 
 }

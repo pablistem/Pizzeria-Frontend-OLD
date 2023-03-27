@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HamburgerMenuComponent implements OnInit {
 
   showLeftBurguer: boolean = false;
+  mostrarContenidoNuevo: boolean = false;
 
   constructor() { }
 
@@ -16,6 +17,11 @@ export class HamburgerMenuComponent implements OnInit {
 
   toggleLeftBurguer() {
     this.showLeftBurguer = !this.showLeftBurguer;
+  }
+
+  showUnregisteredProfile (event: Event) {
+    event.preventDefault
+    this.mostrarContenidoNuevo = true;
   }
 
 }

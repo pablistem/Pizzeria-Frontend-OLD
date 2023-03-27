@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HamburgerMenuComponent } from '../hamburger-menu/hamburger-menu.component';
 
 @Component({
   selector: 'app-unregistered-profile',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnregisteredProfileComponent implements OnInit {
 
-  constructor() { }
-
+  hamburgerMenuComponent: HamburgerMenuComponent;
+  
+  constructor() {
+    this.hamburgerMenuComponent = new HamburgerMenuComponent;
+  }
+  
   ngOnInit(): void {
+    
+  }
+  
+  toggleMenu() {
+    this.hamburgerMenuComponent.toggleLeftBurguer();
   }
 
 }
