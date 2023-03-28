@@ -1,29 +1,29 @@
-<div class="left-burger-menu">
-  <button (click)="toggleLeftBurguer()">
-    <img class="left-icon" src="../../../assets/icons/bars-solid.svg" alt="icono menu izquierdo">
-  </button>
-  <div class="left-dropdown-menu" [class.active-left]="showLeftBurguer">
+<div class="dropdown-menu">
+  <nav>
+    <a (click)="showUnregisteredProfile($event)">
+      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      Mi perfil
+    </a>
+    <a routerLink="#">
+      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      Mis pedidos
+    </a>
+    <a routerLink="#">
+      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      Descuentos
+    </a>
+    <a routerLink="#">
+      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      Cupones
+    </a>
+  </nav>
 
-    <div class="left-dropdown-menu-container" *ngIf="!mostrarContenidoNuevo">
-
-      <a class="mi-perfil" (click)="showUnregisteredProfile($event)"><img
-          src="../../../assets/icons/sun-regular.svg" alt="icono sol">Mi perfil</a>
-      <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg"
-          alt="icono sol">Mis pedidos</a>
-      <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg"
-          alt="icono sol">Descuentos</a>
-      <a routerLink="#" (click)="toggleLeftBurguer()"><img src="../../../assets/icons/sun-regular.svg"
-          alt="icono sol">Cupones</a>
-  
-      <button routerLink="login" class="button-menu-login" (click)="toggleLeftBurguer()">Iniciar sesión</button>
-      <button routerLink="register" class="button-menu-register" (click)="toggleLeftBurguer()">Registrarme</button>
-
-    </div>
-
-    <div *ngIf="mostrarContenidoNuevo">
-      <app-unregistered-profile></app-unregistered-profile>
-    </div>
-
+  <div class="count-buttons">
+    <button routerLink="login">
+      Iniciar sesión
+    </button>
+    <button routerLink="register">
+      Registrarme
+    </button>
   </div>
-
 </div>

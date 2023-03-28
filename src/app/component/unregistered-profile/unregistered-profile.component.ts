@@ -1,25 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { HamburgerMenuComponent } from '../hamburger-menu/hamburger-menu.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-unregistered-profile',
   templateUrl: './unregistered-profile.component.html',
   styleUrls: ['./unregistered-profile.component.scss']
 })
-export class UnregisteredProfileComponent implements OnInit {
+export class UnregisteredProfileComponent {
 
-  hamburgerMenuComponent: HamburgerMenuComponent;
-  
-  constructor() {
-    this.hamburgerMenuComponent = new HamburgerMenuComponent;
-  }
-  
-  ngOnInit(): void {
-    
-  }
-  
-  toggleMenu() {
-    this.hamburgerMenuComponent.toggleLeftBurguer();
-  }
-
+  constructor() { }
 }

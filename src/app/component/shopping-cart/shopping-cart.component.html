@@ -1,24 +1,12 @@
-<div class="cart">
+<div class="dropdown-menu">
 
-  <!-- Boton del icono del carrito -->
-  <button class="cart-button" (click)="toggleRightBurguer()">
-    <img src="../../../assets/icons/cart-shopping-solid.svg" alt="icono menu derecho">
-  </button>
+  <!-- Productos del carrito (futuro ngFor) -->
+  <app-product-cart></app-product-cart>
 
-  <div class="dropdown-menu" [class.active-right]="showRightBurguer">
-
-    <!-- Productos del carrito (futuro ngFor) -->
-    <app-product-cart></app-product-cart>
-    <app-product-cart></app-product-cart>
-    <app-product-cart></app-product-cart>
-
-    <!-- Botones -->
-    <div class="button-container">
-      <!-- Boton ir a pagar -->
-      <button (click)="toggleRightBurguer()">Ir a pagar</button>
-      <!-- Boton vaciar carrito -->
-      <button (click)="toggleRightBurguer()">Vaciar carrito</button>
-    </div>
-
+  <!-- Botones -->
+  <div class="button-container">
+    <button>Ir a pagar</button>
+    <button>Vaciar carrito</button>
   </div>
+
 </div>

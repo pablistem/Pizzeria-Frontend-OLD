@@ -1,16 +1,30 @@
-body {
-  overflow-x: hidden;
-}
+@import '../../../styles.scss';
 
 header {
   width: auto;
-  height: 119px;
+  height: $header-height;
+  position: relative;
   display: flex;
   justify-content: space-between;
-  background-color: red;
-}
+  align-items: flex-end;
 
-.logo {
-  height: 119px;
-  border-radius: 50%;
+  background-color: red;
+  border-bottom: 3px solid rgba(125, 0, 0, 0.5);
+
+  .logo {
+    height: $header-height;
+    border-radius: 50%;
+  }
+
+  button {
+    margin: 5px 20px;
+    background-color: transparent;
+    border: none;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
 }

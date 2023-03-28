@@ -1,0 +1,17 @@
+@import '../../../styles.scss';
+
+.menu-container {
+  width: 75vw;
+  min-height: calc(100vh - $header-height);
+  position: fixed;
+  top: calc($header-height - var(--scrollTop));
+  left: 0px;
+  bottom: 0px;
+  z-index: 10;
+  // background-color: white;
+  // border: 1px solid #ccc;
+
+  &.is-hidden{
+    display: none;
+  }
+}
