@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { EventService } from 'src/app/service/event.service';
+import { Constants } from 'src/app/util/constants';
 
 @Component({
   selector: 'app-hamburger-menu',
@@ -7,13 +9,12 @@ import { Component } from '@angular/core';
 })
 
 export class HamburgerMenuComponent {
-  mostrarContenidoNuevo: boolean = false;
 
-  constructor() { }
+  constructor(private eventService: EventService) { }
 
   showUnregisteredProfile(event: Event) {
     event.preventDefault
-    this.mostrarContenidoNuevo = true;
+    this.eventService.sendEvent(Constants.UNREGISTERED_PROFILE);
   }
 
 }
