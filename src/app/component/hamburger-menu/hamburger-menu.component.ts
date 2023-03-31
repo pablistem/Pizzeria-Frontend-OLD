@@ -14,7 +14,8 @@ export class HamburgerMenuComponent {
 
   showUnregisteredProfile(event: Event) {
     event.preventDefault
-    this.eventService.sendEvent(Constants.UNREGISTERED_PROFILE);
+    // this.eventService.sendEvent(Constants.UNREGISTERED_PROFILE);
+    this.eventService.sendEvent(Constants.REGISTERED_PROFILE);
   }
 
 }

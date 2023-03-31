@@ -4,4 +4,5 @@ export abstract class Constants {
   static readonly SHOPPING_CART: string = 'ShoppingCart';
   static readonly MENU_HAMBURGER: string = 'MenuHamburger';
   static readonly UNREGISTERED_PROFILE: string = 'UnregisteredProfile';
+  static readonly REGISTERED_PROFILE: string = 'RegisteredProfile';
 }
