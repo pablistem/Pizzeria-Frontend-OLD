@@ -18,4 +18,8 @@ export class HamburgerMenuComponent {
     this.eventService.sendEvent(Constants.REGISTERED_PROFILE);
   }
 
+  public showMyOrders(event: Event): void {
+    event.preventDefault;
+    this.eventService.sendEvent(Constants.MY_ORDERS);
+  }
 }
