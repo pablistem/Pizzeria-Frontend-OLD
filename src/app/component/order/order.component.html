@@ -1,0 +1,86 @@
+<button class="card-container" (click)="showMoreInfo($event)">
+
+  <p>
+    <span class="state">Entregado</span>
+    <span class="date">* 01 de oct</span>
+  </p>
+
+  <div class="more-info" *ngIf="moreInfo">
+    <table>
+      <tr>
+        <td>2 pizzas de muzzarella</td>
+        <td>$500</td>
+      </tr>
+      <tr>
+        <td>4 pizzas de tomate</td>
+        <td>$450</td>
+      </tr>
+      <tr>
+        <td>4 pizzas de anchoas</td>
+        <td>$650</td>
+      </tr>
+      <tr>
+        <td>50 empanadas de carne</td>
+        <td>$1500</td>
+      </tr>
+      <tr>
+        <td>18 empanadas de jamon y queso</td>
+        <td>$1000</td>
+      </tr>
+      <tr>
+        <td>4 Coca-colas</td>
+        <td>$1400</td>
+      </tr>
+      <tr>
+        <td>4 kilos de helado de chocolate</td>
+        <td>$4000</td>
+      </tr>
+    </table>
+
+    <table class="subtotal">
+      <tr>
+        <td>Subtotal</td>
+        <td>$9500</td>
+      </tr>
+      <tr>
+        <td>Cupon</td>
+        <td>-$4500</td>
+      </tr>
+    </table>
+
+    <table class="total">
+      <tr>
+        <td>Total</td>
+        <td>$5000</td>
+      </tr>
+    </table>
+
+    <div class="vertical-container">
+      <div class="delivery-data">
+        <p class="title">Forma de Pago</p>
+        <p>Efectivo</p>
+
+        <p class="title">Direccion de entrega</p>
+        <p>Calle Falsa 123</p>
+      </div>
+      <div>
+        <button class="repeat" (click)="repeat()">
+          Repetir<br>O
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="less-info" *ngIf="!moreInfo">
+    <p>10 pizzas, 68 empanadas, 4 Coca-Colas, 4 kilos de helado</p>
+
+    <div class="vertical-container">
+      <button class="repeat" (click)="repeat()">
+        Repetir O
+      </button>
+
+      <p class="price">$5000</p>
+    </div>
+  </div>
+
+</button>

@@ -27,6 +27,7 @@ import { RegisteredProfileComponent } from './component/registered-profile/regis
 import { RightMenuComponent } from './component/right-menu/right-menu.component';
 import { LeftMenuComponent } from './component/left-menu/left-menu.component';
 import { MyOrdersComponent } from './component/my-orders/my-orders.component';
+import { OrderComponent } from './component/order/order.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MyOrdersComponent } from './component/my-orders/my-orders.component';
     LeftMenuComponent,
     UnregisteredProfileComponent,
     RegisteredProfileComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

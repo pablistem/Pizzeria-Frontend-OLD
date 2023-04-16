@@ -9,6 +9,9 @@ export class MyOrdersComponent implements OnInit {
 
   constructor() { }
 
+  public isLogged : boolean = true;
+  public hasOrders : boolean = true;
+
   ngOnInit(): void {
   }
 

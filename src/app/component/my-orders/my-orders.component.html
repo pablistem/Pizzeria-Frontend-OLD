@@ -1,1 +1,45 @@
-<p>my-orders works!</p>
+<div class="master-container">
+
+  <h1>Mis pedidos</h1>
+
+  <!-- Si no está logueado -->
+  <div class="general-container" *ngIf="!isLogged">
+
+    <h2>
+      Inicia sesion para ver tus pedidos
+    </h2>
+
+    <div class="buttons-container">
+      <button class="log-in">
+        Iniciar Sesion
+      </button>
+      <button class="register">
+        Registrarme
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Si está logueado pero no tiene pedidos -->
+  <div class="general-container" *ngIf="isLogged && !hasOrders">
+
+    <h2>
+      Todavía no realizaste un pedido
+    </h2>
+
+    <div class="buttons-container">
+      <button class="log-in">
+        Nuevo pedido
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Si está logueado y tiene pedidos -->
+  <div class="general-container" *ngIf="isLogged && hasOrders">
+
+    <app-order *ngFor="let order of [1, 2, 3]"></app-order>
+
+  </div>
+
+</div>
