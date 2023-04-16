@@ -22,4 +22,9 @@ export class HamburgerMenuComponent {
     event.preventDefault;
     this.eventService.sendEvent(Constants.MY_ORDERS);
   }
+
+  public showCoupons(event: Event): void {
+    event.preventDefault;
+    this.eventService.sendEvent(Constants.COUPONS);
+  }
 }

@@ -1,0 +1,64 @@
+@import '../../../styles.scss';
+
+.master-container {
+  overflow-y: auto;
+  height: 100%;
+  min-height: calc(100vh - $header-height);
+  padding: 20px;
+
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .general-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .log-in {
+        background-color: rgb(167, 167, 167);
+        color: #fff;
+        border-radius: 10px;
+        border-color: transparent;
+        font-size: xx-large;
+      }
+
+      .register {
+        border: transparent;
+        background-color: transparent;
+      }
+    }
+
+    .add-cupon{
+      border: transparent;
+      background-color: #ddd;
+      padding: 5px 25px;
+      border-radius: 10px;
+    }
+
+    .title{
+      margin-top: 20px;
+      font-size: x-large;
+      font-weight: 600;
+    }
+
+    .use-coupon{
+      border: transparent;
+      background-color: transparent;
+    }
+  }
+
+  .help{
+    text-align: center;
+  }
+
+}

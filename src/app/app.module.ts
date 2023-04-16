@@ -28,6 +28,8 @@ import { RightMenuComponent } from './component/right-menu/right-menu.component'
 import { LeftMenuComponent } from './component/left-menu/left-menu.component';
 import { MyOrdersComponent } from './component/my-orders/my-orders.component';
 import { OrderComponent } from './component/order/order.component';
+import { CouponsComponent } from './component/coupons/coupons.component';
+import { CuponComponent } from './component/cupon/cupon.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { OrderComponent } from './component/order/order.component';
     UnregisteredProfileComponent,
     RegisteredProfileComponent,
     MyOrdersComponent,
-    OrderComponent
+    OrderComponent,
+    CouponsComponent,
+    CuponComponent
   ],
   imports: [
     BrowserModule,
