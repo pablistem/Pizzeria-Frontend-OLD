@@ -30,6 +30,7 @@ import { MyOrdersComponent } from './component/my-orders/my-orders.component';
 import { OrderComponent } from './component/order/order.component';
 import { CouponsComponent } from './component/coupons/coupons.component';
 import { CuponComponent } from './component/cupon/cupon.component';
+import { UnregisteredDiscountComponent } from './component/unregistered-discount/unregistered-discount.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { CuponComponent } from './component/cupon/cupon.component';
     MyOrdersComponent,
     OrderComponent,
     CouponsComponent,
-    CuponComponent
+    CuponComponent,
+    UnregisteredDiscountComponent
   ],
   imports: [
     BrowserModule,

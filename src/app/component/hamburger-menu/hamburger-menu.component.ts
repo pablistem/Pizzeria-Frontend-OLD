@@ -18,6 +18,7 @@ export class HamburgerMenuComponent {
     this.eventService.sendEvent(Constants.REGISTERED_PROFILE);
   }
 
+<<<<<<< HEAD
   public showMyOrders(event: Event): void {
     event.preventDefault;
     this.eventService.sendEvent(Constants.MY_ORDERS);
@@ -27,4 +28,11 @@ export class HamburgerMenuComponent {
     event.preventDefault;
     this.eventService.sendEvent(Constants.COUPONS);
   }
+=======
+  showUnregisteredDiscount(event: Event) {
+    event.preventDefault
+    this.eventService.sendEvent(Constants.UNREGISTERED_DISCOUNT);
+  }
+
+>>>>>>> feature/PDR-155
 }
