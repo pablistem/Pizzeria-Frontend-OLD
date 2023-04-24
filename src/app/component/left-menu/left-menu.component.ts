@@ -14,12 +14,15 @@ export class LeftMenuComponent implements OnDestroy {
   public readonly unregisteredProfile: string = Constants.UNREGISTERED_PROFILE;
   public readonly registeredProfile: string = Constants.REGISTERED_PROFILE;
   public readonly unregisteredDiscount: string = Constants.UNREGISTERED_DISCOUNT;
+  public readonly registeredNoDiscount: string = Constants.REGISTERED_NO_DISCOUNT;
+
   public readonly eventList: string[] = [
     Constants.CLOSE_LEFT_MENU,
     this.hamburgerMenu,
     this.unregisteredProfile,
     this.registeredProfile,
-    this.unregisteredDiscount
+    this.unregisteredDiscount,
+    this.registeredNoDiscount
   ];
 
   public isHidden: boolean = true;

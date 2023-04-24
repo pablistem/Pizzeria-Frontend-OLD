@@ -6,4 +6,5 @@ export abstract class Constants {
   static readonly UNREGISTERED_PROFILE: string = 'UnregisteredProfile';
   static readonly REGISTERED_PROFILE: string = 'RegisteredProfile';
   static readonly UNREGISTERED_DISCOUNT: string = 'UnregisteredDiscount';
+  static readonly REGISTERED_NO_DISCOUNT: string = 'RegisteredNoDiscount';
 }
