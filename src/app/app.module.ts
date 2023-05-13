@@ -28,6 +28,7 @@ import { RightMenuComponent } from './component/right-menu/right-menu.component'
 import { LeftMenuComponent } from './component/left-menu/left-menu.component';
 import { UnregisteredDiscountComponent } from './component/unregistered-discount/unregistered-discount.component';
 import { RegisteredNoDiscountComponent } from './component/registered-no-discount/registered-no-discount.component';
+import { RegisteredWithDiscountComponent } from './component/registered-with-discount/registered-with-discount.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { RegisteredNoDiscountComponent } from './component/registered-no-discoun
     UnregisteredProfileComponent,
     RegisteredProfileComponent,
     UnregisteredDiscountComponent,
-    RegisteredNoDiscountComponent
+    RegisteredNoDiscountComponent,
+    RegisteredWithDiscountComponent
 
   ],
   imports: [
