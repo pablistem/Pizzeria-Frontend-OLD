@@ -31,4 +31,14 @@ export class HamburgerMenuComponent {
     event.preventDefault
     this.eventService.sendEvent(Constants.UNREGISTERED_DISCOUNT);
   }
+
+  showRegisteredNoDiscount(event: Event) {
+    event.preventDefault
+    this.eventService.sendEvent(Constants.REGISTERED_NO_DISCOUNT);
+  }
+
+  showRegisteredWithDiscount(event: Event) {
+    event.preventDefault
+    this.eventService.sendEvent(Constants.REGISTERED_WITH_DISCOUNT);
+  }
 }

@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
 .menu-container {
-  width: 75vw;
+  width: 100vw;
   min-height: calc(100vh - $header-height);
   position: fixed;
   top: calc($header-height - var(--scrollTop));

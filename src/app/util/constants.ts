@@ -8,4 +8,6 @@ export abstract class Constants {
   static readonly MY_ORDERS: string = 'MyOrders';
   static readonly COUPONS: string = 'Coupons';
   static readonly UNREGISTERED_DISCOUNT: string = 'UnregisteredDiscount';
+  static readonly REGISTERED_NO_DISCOUNT: string = 'RegisteredNoDiscount';
+  static readonly REGISTERED_WITH_DISCOUNT: string = 'RegisteredWithDiscount';
 }

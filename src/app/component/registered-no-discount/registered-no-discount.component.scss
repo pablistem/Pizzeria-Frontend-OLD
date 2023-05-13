@@ -1,0 +1,36 @@
+.registered-no-discount-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .paragraph-container {
+        width: 279px;
+        height: 78px;
+        margin: 259px auto 330px;
+
+        p {
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 39px;
+            text-align: center;
+        }
+    }
+
+    .btns-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .coupons {
+            text-decoration: none;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            color: #000000;
+        }
+    }
+}

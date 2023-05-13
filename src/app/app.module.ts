@@ -31,6 +31,8 @@ import { OrderComponent } from './component/order/order.component';
 import { CouponsComponent } from './component/coupons/coupons.component';
 import { CuponComponent } from './component/cupon/cupon.component';
 import { UnregisteredDiscountComponent } from './component/unregistered-discount/unregistered-discount.component';
+import { RegisteredNoDiscountComponent } from './component/registered-no-discount/registered-no-discount.component';
+import { RegisteredWithDiscountComponent } from './component/registered-with-discount/registered-with-discount.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,10 @@ import { UnregisteredDiscountComponent } from './component/unregistered-discount
     OrderComponent,
     CouponsComponent,
     CuponComponent,
-    UnregisteredDiscountComponent
+    UnregisteredDiscountComponent,
+    UnregisteredDiscountComponent,
+    RegisteredNoDiscountComponent,
+    RegisteredWithDiscountComponent
   ],
   imports: [
     BrowserModule,
