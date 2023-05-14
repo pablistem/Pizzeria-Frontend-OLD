@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EventService } from 'src/app/service/event.service';
+import { LeftEventService } from 'src/app/service/left-event.service';
 import { Constants } from 'src/app/util/constants';
 
 @Component({
@@ -10,35 +10,35 @@ import { Constants } from 'src/app/util/constants';
 
 export class HamburgerMenuComponent {
 
-  constructor(private eventService: EventService) { }
+  constructor(private leftEventService: LeftEventService) { }
 
   showUnregisteredProfile(event: Event) {
     event.preventDefault
     // this.eventService.sendEvent(Constants.UNREGISTERED_PROFILE);
-    this.eventService.sendEvent(Constants.REGISTERED_PROFILE);
+    this.leftEventService.sendEvent(Constants.REGISTERED_PROFILE);
   }
 
   public showMyOrders(event: Event): void {
     event.preventDefault;
-    this.eventService.sendEvent(Constants.MY_ORDERS);
+    this.leftEventService.sendEvent(Constants.MY_ORDERS);
   }
 
   public showCoupons(event: Event): void {
     event.preventDefault;
-    this.eventService.sendEvent(Constants.COUPONS);
+    this.leftEventService.sendEvent(Constants.COUPONS);
   }
   showUnregisteredDiscount(event: Event) {
     event.preventDefault
-    this.eventService.sendEvent(Constants.UNREGISTERED_DISCOUNT);
+    this.leftEventService.sendEvent(Constants.UNREGISTERED_DISCOUNT);
   }
 
   showRegisteredNoDiscount(event: Event) {
     event.preventDefault
-    this.eventService.sendEvent(Constants.REGISTERED_NO_DISCOUNT);
+    this.leftEventService.sendEvent(Constants.REGISTERED_NO_DISCOUNT);
   }
 
   showRegisteredWithDiscount(event: Event) {
     event.preventDefault
-    this.eventService.sendEvent(Constants.REGISTERED_WITH_DISCOUNT);
+    this.leftEventService.sendEvent(Constants.REGISTERED_WITH_DISCOUNT);
   }
 }

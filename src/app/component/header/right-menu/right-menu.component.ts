@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { EventService } from 'src/app/service/event.service';
+import { RightEventService } from 'src/app/service/right-event.service';
 import { Constants } from 'src/app/util/constants';
 
 @Component({
@@ -11,28 +11,20 @@ import { Constants } from 'src/app/util/constants';
 export class RightMenuComponent implements OnDestroy {
 
   public readonly shoppingCart: string = Constants.SHOPPING_CART;
-  public readonly eventList: string[] = [
-    Constants.CLOSE_RIGHT_MENU,
-    this.shoppingCart
-  ];
+
 
   public isHidden: boolean = true;
   public selectedComponent: string = '';
 
   private subscription: Subscription;
 
-  constructor(private eventService: EventService) {
-    this.subscription = this.eventService.event.subscribe(
+  constructor(private rightEventService: RightEventService) {
+    this.subscription = this.rightEventService.event.subscribe(
       componentName => this.toggleFunctionality(componentName)
     );
   }
 
   private toggleFunctionality(componentName: string) {
-    console.log(`RightMenu recibió evento "${componentName}"`);
-    if (!this.eventList.includes(componentName)) {
-      console.log(`RightMenu ignoró el evento`);
-      return;
-    }
     this.isHidden = (componentName == Constants.CLOSE_RIGHT_MENU);
     this.selectedComponent = componentName;
   }

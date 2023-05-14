@@ -4,7 +4,7 @@ import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class EventService {
+export class RightEventService {
 
   private eventSubject = new Subject<string>();
   public event: Observable<string> = this.eventSubject.asObservable();
@@ -12,8 +12,6 @@ export class EventService {
   constructor() { }
 
   public sendEvent(event: string) {
-    console.log(`EventService envió evento "${event}"`);
     this.eventSubject.next(event);
   }
-
 }

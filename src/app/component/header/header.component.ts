@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { EventService } from 'src/app/service/event.service';
+import { LeftEventService } from 'src/app/service/left-event.service';
+import { RightEventService } from 'src/app/service/right-event.service';
 import { Constants } from 'src/app/util/constants';
 
 @Component({
@@ -12,16 +13,19 @@ export class HeaderComponent {
   private rightMenuIsActive: boolean = false;
   private leftMenuIsActive: boolean = false;
 
-  constructor(private eventService: EventService) { }
+  constructor(
+    private rightEventService: RightEventService,
+    private leftEventService: LeftEventService,
+  ) { }
 
-  callHamburgerMenu(){
+  callHamburgerMenu() {
     if (this.rightMenuIsActive) {
       this.closeRightMenu();
     }
     if (this.leftMenuIsActive) {
       this.closeLeftMenu();
     } else {
-      this.eventService.sendEvent(Constants.MENU_HAMBURGER);
+      this.leftEventService.sendEvent(Constants.MENU_HAMBURGER);
       this.leftMenuIsActive = true;
     }
   }
@@ -33,21 +37,19 @@ export class HeaderComponent {
     if (this.rightMenuIsActive) {
       this.closeRightMenu();
     } else {
-      this.eventService.sendEvent(Constants.SHOPPING_CART);
+      this.rightEventService.sendEvent(Constants.SHOPPING_CART);
       this.rightMenuIsActive = true;
     }
   }
 
-  private closeRightMenu(){
-    this.eventService.sendEvent(Constants.CLOSE_RIGHT_MENU);
+  private closeRightMenu() {
+    this.rightEventService.sendEvent(Constants.CLOSE_RIGHT_MENU);
     this.rightMenuIsActive = false;
   }
 
-  private closeLeftMenu(){
-    this.eventService.sendEvent(Constants.CLOSE_LEFT_MENU);
+  private closeLeftMenu() {
+    this.leftEventService.sendEvent(Constants.CLOSE_LEFT_MENU);
     this.leftMenuIsActive = false;
   }
-
-
 
 }

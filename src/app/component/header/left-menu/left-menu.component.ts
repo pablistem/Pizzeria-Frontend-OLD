@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { EventService } from 'src/app/service/event.service';
+import { LeftEventService } from 'src/app/service/left-event.service';
 import { Constants } from 'src/app/util/constants';
 
 @Component({
@@ -18,39 +18,21 @@ export class LeftMenuComponent implements OnDestroy {
   public readonly unregisteredDiscount: string = Constants.UNREGISTERED_DISCOUNT;
   public readonly registeredNoDiscount: string = Constants.REGISTERED_NO_DISCOUNT;
   public readonly registeredWithDiscount: string = Constants.REGISTERED_WITH_DISCOUNT;
-  public readonly eventList: string[] = [
-    Constants.CLOSE_LEFT_MENU,
-    this.hamburgerMenu,
-    this.unregisteredProfile,
-    this.registeredProfile,
-    this.myOrders,
-    this.coupons,
-    this.unregisteredDiscount,
-    this.unregisteredDiscount,
-    this.registeredNoDiscount,
-    this.registeredWithDiscount
-  ];
 
   public isHidden: boolean = true;
   public selectedComponent: string = '';
 
   private subscription: Subscription;
 
-  constructor(private eventService: EventService) {
-    this.subscription = this.eventService.event.subscribe(
+  constructor(private leftEventService: LeftEventService) {
+    this.subscription = this.leftEventService.event.subscribe(
       componentName => this.toggleFunctionality(componentName)
     );
   }
 
   private toggleFunctionality(componentName: string) {
-    console.log(`LeftMenu recibió evento "${componentName}"`);
-    if (!this.eventList.includes(componentName)) {
-      console.log(`LeftMenu ignoró el evento`);
-      return;
-    }
     this.isHidden = (componentName == Constants.CLOSE_LEFT_MENU);
     this.selectedComponent = componentName;
-    console.log(`LeftMenu cargó el componente "${this.selectedComponent}"`);
   }
 
   ngOnDestroy() {
