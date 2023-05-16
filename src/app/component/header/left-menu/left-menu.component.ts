@@ -11,13 +11,10 @@ import { Constants } from 'src/app/util/constants';
 export class LeftMenuComponent implements OnDestroy {
 
   public readonly hamburgerMenu: string = Constants.MENU_HAMBURGER;
-  public readonly unregisteredProfile: string = Constants.UNREGISTERED_PROFILE;
-  public readonly registeredProfile: string = Constants.REGISTERED_PROFILE;
   public readonly myOrders: string = Constants.MY_ORDERS;
   public readonly coupons: string = Constants.COUPONS;
-  public readonly unregisteredDiscount: string = Constants.UNREGISTERED_DISCOUNT;
-  public readonly registeredNoDiscount: string = Constants.REGISTERED_NO_DISCOUNT;
-  public readonly registeredWithDiscount: string = Constants.REGISTERED_WITH_DISCOUNT;
+  public readonly profile: string = Constants.PROFILE;
+  public readonly discount: string = Constants.DISCOUNT;
 
   public isHidden: boolean = true;
   public selectedComponent: string = '';

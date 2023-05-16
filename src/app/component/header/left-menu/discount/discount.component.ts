@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-registered-with-discount',
-  templateUrl: './registered-with-discount.component.html',
-  styleUrls: ['./registered-with-discount.component.scss']
+  selector: 'app-discount',
+  templateUrl: './discount.component.html',
+  styleUrls: ['./discount.component.scss']
 })
-export class RegisteredWithDiscountComponent {
+export class DiscountComponent implements OnInit {
 
   constructor() { }
 
@@ -13,12 +13,17 @@ export class RegisteredWithDiscountComponent {
   isActive1 = false;
   isActive2 = false;
   isDisabled = true;
-  
+  public isRegistered: boolean = true;
+  public hasDiscounts: boolean = true;
+
+  ngOnInit(): void {
+  }
+
   toggleActive() {
     this.isActive = !this.isActive;
     this.isActive1 = false;
     this.isActive2 = false;
-    if (this.isActive==true) {
+    if (this.isActive == true) {
       this.isDisabled = false;
     } else {
       this.isDisabled = true;
@@ -29,7 +34,7 @@ export class RegisteredWithDiscountComponent {
     this.isActive1 = !this.isActive1;
     this.isActive = false;
     this.isActive2 = false;
-    if (this.isActive1==true) {
+    if (this.isActive1 == true) {
       this.isDisabled = false;
     } else {
       this.isDisabled = true;
@@ -40,10 +45,11 @@ export class RegisteredWithDiscountComponent {
     this.isActive2 = !this.isActive2;
     this.isActive = false;
     this.isActive1 = false;
-    if (this.isActive2==true) {
+    if (this.isActive2 == true) {
       this.isDisabled = false;
     } else {
       this.isDisabled = true;
     }
   }
+
 }

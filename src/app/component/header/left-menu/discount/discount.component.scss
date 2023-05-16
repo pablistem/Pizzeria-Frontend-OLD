@@ -1,0 +1,176 @@
+.unregistered-discount-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .paragraph-container {
+      width: 279px;
+      height: 78px;
+      margin: 137px auto 191px;
+
+      p {
+          font-weight: 500;
+          font-size: 32px;
+          line-height: 39px;
+          text-align: center;
+      }
+  }
+
+  .btns-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .login-btn {
+          width: 181.59px;
+          height: 49px;
+          border-color: red;
+          border-radius: 10.0882px;
+          font-weight: 500;
+          font-size: 25.9412px;
+          line-height: 31px;
+          background-color: red;
+          margin-bottom: 13px;
+
+          a {
+              text-decoration: none;
+              color: #FFFFFF;
+          }
+      }
+
+      .register-btn {
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          color: black;
+      }
+
+      .coupons {
+          text-decoration: none;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          color: #000000;
+          margin-top: 169px;
+      }
+  }
+}
+
+
+
+.registered-no-discount-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .paragraph-container {
+      width: 279px;
+      height: 78px;
+      margin: 259px auto 330px;
+
+      p {
+          font-weight: 500;
+          font-size: 32px;
+          line-height: 39px;
+          text-align: center;
+      }
+  }
+
+  .btns-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .coupons {
+          text-decoration: none;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          color: #000000;
+      }
+  }
+}
+
+
+h1 {
+  font-size: 32px;
+  margin: 21px 0 9px 25px;
+}
+
+.btns-discount-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .discount-container {
+      margin-bottom: 20px;
+      background: #EFEFEF;
+      border-radius: 12.4684px;
+      box-shadow: 2.49367px 3.3249px 4.98734px rgba(0, 0, 0, 0.25);
+      width: 290px;
+      height: 129px;
+
+      h2 {
+          display: flex;
+          justify-content: center;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 39.8987px;
+          line-height: 48px;
+      }
+
+      p {
+          margin: 0px 25px 16px;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 13.2996px;
+          line-height: 16px;
+          width: 237px;
+          height: 48px;
+      }
+  }
+
+  .active {
+      background-color: gray;
+      box-shadow: none;
+  }
+}
+
+.btns-footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+      width: 137px;
+      margin-top: 125px;
+      margin-bottom: 18px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      border-style: none;
+  }
+
+  a {
+      text-decoration: none;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      color: black;
+  }
+}

@@ -22,17 +22,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShoppingCartComponent } from './component/header/right-menu/shopping-cart/shopping-cart.component';
 import { HamburgerMenuComponent } from './component/header/left-menu/hamburger-menu/hamburger-menu.component';
 import { ProductCartComponent } from './component/header/right-menu/shopping-cart/product-cart/product-cart.component';
-import { UnregisteredProfileComponent } from './component/header/left-menu/unregistered-profile/unregistered-profile.component';
-import { RegisteredProfileComponent } from './component/header/left-menu/registered-profile/registered-profile.component';
 import { RightMenuComponent } from './component/header/right-menu/right-menu.component';
 import { LeftMenuComponent } from './component/header/left-menu/left-menu.component';
 import { MyOrdersComponent } from './component/header/left-menu/my-orders/my-orders.component';
 import { OrderComponent } from './component/header/left-menu/my-orders/order/order.component';
 import { CouponsComponent } from './component/header/left-menu/coupons/coupons.component';
 import { CuponComponent } from './component/header/left-menu/coupons/cupon/cupon.component';
-import { UnregisteredDiscountComponent } from './component/header/left-menu/unregistered-discount/unregistered-discount.component';
-import { RegisteredNoDiscountComponent } from './component/header/left-menu/registered-no-discount/registered-no-discount.component';
-import { RegisteredWithDiscountComponent } from './component/header/left-menu/registered-with-discount/registered-with-discount.component';
+import { ProfileComponent } from './component/header/left-menu/profile/profile.component';
+import { DiscountComponent } from './component/header/left-menu/discount/discount.component';
 
 @NgModule({
   declarations: [
@@ -49,16 +46,12 @@ import { RegisteredWithDiscountComponent } from './component/header/left-menu/re
     ProductCartComponent,
     RightMenuComponent,
     LeftMenuComponent,
-    UnregisteredProfileComponent,
-    RegisteredProfileComponent,
     MyOrdersComponent,
     OrderComponent,
     CouponsComponent,
     CuponComponent,
-    UnregisteredDiscountComponent,
-    UnregisteredDiscountComponent,
-    RegisteredNoDiscountComponent,
-    RegisteredWithDiscountComponent
+    ProfileComponent,
+    DiscountComponent
   ],
   imports: [
     BrowserModule,

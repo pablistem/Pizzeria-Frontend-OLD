@@ -7,15 +7,13 @@ import { Constants } from 'src/app/util/constants';
   templateUrl: './hamburger-menu.component.html',
   styleUrls: ['./hamburger-menu.component.scss']
 })
-
 export class HamburgerMenuComponent {
 
   constructor(private leftEventService: LeftEventService) { }
 
-  showUnregisteredProfile(event: Event) {
+  public showProfile(event: Event): void {
     event.preventDefault
-    // this.eventService.sendEvent(Constants.UNREGISTERED_PROFILE);
-    this.leftEventService.sendEvent(Constants.REGISTERED_PROFILE);
+    this.leftEventService.sendEvent(Constants.PROFILE);
   }
 
   public showMyOrders(event: Event): void {
@@ -27,18 +25,10 @@ export class HamburgerMenuComponent {
     event.preventDefault;
     this.leftEventService.sendEvent(Constants.COUPONS);
   }
-  showUnregisteredDiscount(event: Event) {
+
+  public showDiscount(event: Event): void {
     event.preventDefault
-    this.leftEventService.sendEvent(Constants.UNREGISTERED_DISCOUNT);
+    this.leftEventService.sendEvent(Constants.DISCOUNT);
   }
 
-  showRegisteredNoDiscount(event: Event) {
-    event.preventDefault
-    this.leftEventService.sendEvent(Constants.REGISTERED_NO_DISCOUNT);
-  }
-
-  showRegisteredWithDiscount(event: Event) {
-    event.preventDefault
-    this.leftEventService.sendEvent(Constants.REGISTERED_WITH_DISCOUNT);
-  }
 }
