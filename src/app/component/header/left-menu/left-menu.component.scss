@@ -1,7 +1,6 @@
 @import '../../../../styles.scss';
 
 .menu-container {
-  width: 100vw;
   min-height: calc(100vh - $header-height);
   position: fixed;
   top: calc($header-height - var(--scrollTop));
@@ -9,9 +8,32 @@
   bottom: 0px;
   z-index: 10;
   background-color: white;
-  border: 1px solid #ccc;
+  border-right: 3px solid rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  transition-timing-function: ease;
 
   &.is-hidden{
-    display: none;
+    width: 0;
+  }
+}
+
+// Estilos para pantalla de celular
+@media (max-width: 767px) {
+  .menu-container {
+    width: 100vw;
+  }
+}
+
+// Estilos para pantalla de tablet
+@media (min-width: 768px) and (max-width: 991px) {
+  .menu-container {
+    width: 75vw;
+  }
+}
+
+// Estilos para pantalla de computadora de escritorio
+@media (min-width: 992px) {
+  .menu-container {
+    width: 50vw;
   }
 }
