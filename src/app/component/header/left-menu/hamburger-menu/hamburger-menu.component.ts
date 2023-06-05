@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { HeaderService } from 'src/app/service/header-service';
 import { LeftEventService } from 'src/app/service/left-event.service';
 import { Constants } from 'src/app/util/constants';
 
@@ -9,26 +10,30 @@ import { Constants } from 'src/app/util/constants';
 })
 export class HamburgerMenuComponent {
 
-  constructor(private leftEventService: LeftEventService) { }
+  constructor(
+    private leftEventService: LeftEventService,
+    private headerService: HeaderService) { }
+
+  isClosed : boolean = false;
 
   public showProfile(event: Event): void {
-    event.preventDefault
     this.leftEventService.sendEvent(Constants.PROFILE);
   }
 
-  public showMyOrders(event: Event): void {
-    event.preventDefault;
+  public showMyOrders(event: Event): void {;
     this.leftEventService.sendEvent(Constants.MY_ORDERS);
   }
 
-  public showCoupons(event: Event): void {
-    event.preventDefault;
+  public showCoupons(event: Event): void {;
     this.leftEventService.sendEvent(Constants.COUPONS);
   }
 
   public showDiscount(event: Event): void {
-    event.preventDefault
     this.leftEventService.sendEvent(Constants.DISCOUNT);
+  }
+
+  public closeMenu(event: Event): void {
+    this.headerService.sendEvent(Constants.CLOSE_LEFT_MENU);
   }
 
 }

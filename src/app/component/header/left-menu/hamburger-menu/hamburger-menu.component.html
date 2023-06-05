@@ -1,28 +1,28 @@
 <div class="dropdown-menu">
   <nav>
-    <a (click)="showProfile($event)">
+    <button (click)="showProfile($event)">
       <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
       Mi perfil
-    </a>
-    <a (click)="showMyOrders($event)">
+    </button>
+    <button (click)="showMyOrders($event)">
       <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
       Mis pedidos
-    </a>
-    <a (click)="showDiscount($event)">
+    </button>
+    <button (click)="showDiscount($event)">
       <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
       Descuentos
-    </a>
-    <a (click)="showCoupons($event)">
+    </button>
+    <button (click)="showCoupons($event)">
       <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
       Cupones
-    </a>
+    </button>
   </nav>
 
-  <div class="count-buttons">
+  <div class="container-buttons" (click)="closeMenu($event)">
     <button routerLink="login">
       Iniciar sesión
     </button>
-    <button routerLink="register">
+    <button routerLink="register" (click)="closeMenu($event)">
       Registrarme
     </button>
   </div>
