@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthService } from 'src/app/service/auth.service';
 import { HeaderService } from 'src/app/service/header-service';
 import { LeftEventService } from 'src/app/service/left-event.service';
 import { Constants } from 'src/app/util/constants';
@@ -8,23 +9,30 @@ import { Constants } from 'src/app/util/constants';
   templateUrl: './hamburger-menu.component.html',
   styleUrls: ['./hamburger-menu.component.scss']
 })
-export class HamburgerMenuComponent {
+export class HamburgerMenuComponent implements OnInit {
 
   constructor(
     private leftEventService: LeftEventService,
-    private headerService: HeaderService) { }
+    private headerService: HeaderService,
+    private authService: AuthService
+  ) { }
 
-  isClosed : boolean = false;
+  isClosed: boolean = false;
+  isLoggedIn: boolean | undefined;
+
+  ngOnInit(): void {
+    this.isLoggedIn = this.authService.userIsLoggedIn();
+  }
 
   public showProfile(event: Event): void {
     this.leftEventService.sendEvent(Constants.PROFILE);
   }
 
-  public showMyOrders(event: Event): void {;
+  public showMyOrders(event: Event): void {
     this.leftEventService.sendEvent(Constants.MY_ORDERS);
   }
 
-  public showCoupons(event: Event): void {;
+  public showCoupons(event: Event): void {
     this.leftEventService.sendEvent(Constants.COUPONS);
   }
 

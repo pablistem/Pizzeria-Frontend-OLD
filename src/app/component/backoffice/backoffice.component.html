@@ -1,0 +1,28 @@
+<h1>Back Office</h1>
+
+<section class="list">
+  <h2>Entidades</h2>
+  <ul>
+    <li (click)="selectedEntity = 'category'">Categorías</li>
+    <li (click)="selectedEntity = 'product'">Productos</li>
+  </ul>
+</section>
+
+<section class="tables">
+  <h2 *ngIf="selectedEntity">Entidad: {{selectedEntity}}</h2>
+  <div [ngSwitch]="selectedEntity">
+    <div *ngSwitchCase="'category'">
+      <app-category-bo></app-category-bo>
+    </div>
+    <div *ngSwitchCase="'product'">
+      <app-producto-bo></app-producto-bo>
+    </div>
+    <div *ngSwitchCase="'coupons'">
+
+    </div>
+    <div *ngSwitchDefault>
+      <p class="text-center">Por favor, seleccione la entidad a modificar.</p>
+    </div>
+  </div>
+</section>
+

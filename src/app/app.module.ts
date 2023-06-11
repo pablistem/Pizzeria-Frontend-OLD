@@ -6,7 +6,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { HomeComponent } from './component/home/home.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { MenuComponent } from './component/menu/menu.component';
-import { LoginComponent } from './component/login/login.component';
+import { LoginComponent } from './component/auth/login/login.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -17,7 +17,7 @@ import { ProductComponent } from './component/menu/product/product.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
-import { RegisterComponent } from './component/register/register.component';
+import { RegisterComponent } from './component/auth/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShoppingCartComponent } from './component/header/right-menu/shopping-cart/shopping-cart.component';
 import { HamburgerMenuComponent } from './component/header/left-menu/hamburger-menu/hamburger-menu.component';
@@ -30,6 +30,9 @@ import { CouponsComponent } from './component/header/left-menu/coupons/coupons.c
 import { CuponComponent } from './component/header/left-menu/coupons/cupon/cupon.component';
 import { ProfileComponent } from './component/header/left-menu/profile/profile.component';
 import { DiscountComponent } from './component/header/left-menu/discount/discount.component';
+import { BackofficeComponent } from './component/backoffice/backoffice.component';
+import { CategoryBOComponent } from './component/backoffice/category-bo/category-bo.component';
+import { ProductoBOComponent } from './component/backoffice/producto-bo/producto-bo.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,10 @@ import { DiscountComponent } from './component/header/left-menu/discount/discoun
     CouponsComponent,
     CuponComponent,
     ProfileComponent,
-    DiscountComponent
+    DiscountComponent,
+    BackofficeComponent,
+    CategoryBOComponent,
+    ProductoBOComponent
   ],
   imports: [
     BrowserModule,

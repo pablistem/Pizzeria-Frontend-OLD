@@ -18,12 +18,26 @@
     </button>
   </nav>
 
-  <div class="container-buttons" (click)="closeMenu($event)">
-    <button routerLink="login">
-      Iniciar sesión
-    </button>
-    <button routerLink="register" (click)="closeMenu($event)">
-      Registrarme
-    </button>
-  </div>
+  <ng-container *ngIf="isLoggedIn; else notLoggedIn">
+    <div class="container-buttons" (click)="closeMenu($event)">
+      <button>
+        Cerrar Sesion
+      </button>
+      <button routerLink="backoffice">
+        Back Office
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-template #notLoggedIn>
+    <div class="container-buttons" (click)="closeMenu($event)">
+      <button routerLink="login">
+        Iniciar sesión
+      </button>
+      <button routerLink="register">
+        Registrarme
+      </button>
+    </div>
+  </ng-template>
+
 </div>

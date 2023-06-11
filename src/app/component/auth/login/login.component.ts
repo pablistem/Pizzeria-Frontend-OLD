@@ -17,33 +17,33 @@ export class LoginComponent {
   invalidCredentials: boolean = false;
   serverError: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private cookieService: CookieService) {
-
-    // Creo el FormGroup que contendrá los FormControl.
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+    private cookieService: CookieService
+  ) {
     this.formGroup = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     });
   }
 
-  /**
-   * Envia los datos del formulario al servidor
-   */
   onSubmit() {
     if (this.formGroup.invalid) {
       return;
     }
-    const request : LoginRequest = {
+    const request: LoginRequest = {
       email: this.formGroup.controls['email'].value,
       password: this.formGroup.controls['password'].value
     }
     this.authService.login(request).subscribe({
-      next: (response : User) => this.loginWorks(response),
-      error: (error : HttpErrorResponse) => this.loginError(error)
+      next: (response: User) => this.loginWorks(response),
+      error: (error: HttpErrorResponse) => this.loginError(error)
     })
   }
 
-  private loginWorks(response : User) {
+  private loginWorks(response: User) {
     console.log(response);
     this.invalidCredentials = false;
     this.serverError = false;
@@ -51,7 +51,7 @@ export class LoginComponent {
     this.router.navigateByUrl('/home');
   }
 
-  private loginError(error : HttpErrorResponse){
+  private loginError(error: HttpErrorResponse) {
     console.error(error);
     if (error.status === 403 || error.status === 404) {
       this.invalidCredentials = true;
