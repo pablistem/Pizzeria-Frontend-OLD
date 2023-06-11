@@ -17,8 +17,14 @@ export class HeaderComponent implements OnInit, OnDestroy  {
     private leftEventService: LeftEventService,
     private headerService: HeaderService
   ) {
-    this.subscription = this.headerService.event.subscribe(
+    this.headerSubscription = this.headerService.event.subscribe(
       componentName => this.menuClosed(componentName)
+    );
+    this.leftEventSubscription = this.leftEventService.event.subscribe(
+      componentName => this.saveLeftWindow(componentName)
+    );
+    this.rightEventSubscription = this.rightEventService.event.subscribe(
+      componentName => this.saveRightWindow(componentName)
     );
   }
 
@@ -26,13 +32,25 @@ export class HeaderComponent implements OnInit, OnDestroy  {
 
   private rightMenuIsActive: boolean = false;
   private leftMenuIsActive: boolean = false;
-  private subscription: Subscription;
+  private headerSubscription: Subscription;
+  private leftEventSubscription: Subscription;
+  private leftActiveWindow: String = '';
+  private rightEventSubscription: Subscription;
+  private rightActiveWindow: String = '';
+
+  saveLeftWindow(name: string){
+    this.leftActiveWindow = name;
+  }
+
+  saveRightWindow(name: string){
+    this.leftActiveWindow = name;
+  }
 
   callHamburgerMenu() {
     if (this.rightMenuIsActive) {
       this.closeRightMenu();
     }
-    if (this.leftMenuIsActive) {
+    if (this.leftMenuIsActive && this.leftActiveWindow == Constants.MENU_HAMBURGER) {
       this.closeLeftMenu();
     } else {
       this.leftEventService.sendEvent(Constants.MENU_HAMBURGER);
@@ -44,7 +62,7 @@ export class HeaderComponent implements OnInit, OnDestroy  {
     if (this.leftMenuIsActive) {
       this.closeLeftMenu();
     }
-    if (this.rightMenuIsActive) {
+    if (this.rightMenuIsActive && this.rightActiveWindow == Constants.SHOPPING_CART) {
       this.closeRightMenu();
     } else {
       this.rightEventService.sendEvent(Constants.SHOPPING_CART);
@@ -71,7 +89,9 @@ export class HeaderComponent implements OnInit, OnDestroy  {
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.headerSubscription.unsubscribe();
+    this.leftEventSubscription.unsubscribe();
+    this.rightEventSubscription.unsubscribe();
   }
 
 }
