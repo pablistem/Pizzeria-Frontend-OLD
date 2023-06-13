@@ -1,6 +1,8 @@
+@import '../../../../../styles.scss';
+
 .dropdown-menu {
   width: 100%;
-  height: 100%;
+  height: calc(100% - $header-height);
   padding: 30px 15px;
   display: flex;
   flex-direction: column;
