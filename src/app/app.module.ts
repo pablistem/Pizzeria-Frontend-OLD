@@ -7,15 +7,9 @@ import { HomeComponent } from './component/home/home.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { LoginComponent } from './component/auth/login/login.component';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
-import { MatExpansionModule } from '@angular/material/expansion';
 import { ProductComponent } from './component/menu/product/product.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './component/auth/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -33,6 +27,7 @@ import { DiscountComponent } from './component/header/left-menu/discount/discoun
 import { BackofficeComponent } from './component/backoffice/backoffice.component';
 import { CategoryBOComponent } from './component/backoffice/category-bo/category-bo.component';
 import { ProductoBOComponent } from './component/backoffice/producto-bo/producto-bo.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -62,16 +57,11 @@ import { ProductoBOComponent } from './component/backoffice/producto-bo/producto
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatSlideToggleModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
     ReactiveFormsModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatIconModule,
-    MatExpansionModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

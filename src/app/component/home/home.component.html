@@ -3,7 +3,7 @@
   <div class="options">
   <div class="options" *ngFor="let cat of categoryList" >
     <div class="category">
-      <a routerLink="../menu" [queryParams]="{category: cat}">{{cat | titlecase }}</a>
+      <a routerLink="../menu" [queryParams]="{category: cat}">{{cat}}</a>
     </div>
   </div>
 </div>
