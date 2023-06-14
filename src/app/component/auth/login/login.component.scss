@@ -6,6 +6,14 @@
   margin-top: 45px;
   text-align: center;
 
+  .logo {
+    width: 165px;
+    height: 165px;
+    border-radius: 15px;
+    margin-top: 59px;
+    margin-bottom: 70px;
+  }
+
   .input-container {
     width: max-content;
     margin: auto;
@@ -15,37 +23,90 @@
     }
 
     input {
-      border-radius: 10px;
+      width: 315px;
+      height: 56px;
+
+      border-radius: 15px;
+      margin-bottom: 15px;
+      padding-left: 16px;
     }
 
     #input-mail {
-      margin-bottom: 25px;
     }
   }
-  button {
-    width: 248px;
-    height: 34px;
-    margin-top: 73px;
-    margin-bottom: 62px;
-    background-color: red;
+  .btn-login {
+    width: 134px;
+    height: 40px;
+    // margin-top: 30px;
+    margin-bottom: 70px;
+    background-color: #E9573A;
+    border-radius: 100px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
   }
 
-  .linea {
-    width: 271px;
-    height: 0;
-    margin: auto;
-    margin-bottom: 60px;
-    border-top: 2px solid;
-  }
+  // .linea {
+  //   width: 271px;
+  //   height: 0;
+  //   margin: auto;
+  //   margin-bottom: 60px;
+  //   border-top: 2px solid;
+  // }
 
   a {
+    height: 40px;
     display: block;
     text-decoration: none;
-    color: black;
-    margin-bottom: 18px;
+    color: #E9573A;
+    margin-bottom: 15px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+
   }
 
-  .a-registrarme {
-    margin-bottom: 82px;
+  .btn-continue {
+    all: unset;
+    margin-bottom: 92px;
+    width: 205px;
+    height: 40px;
+    background: #F4AB9D;
+    border-radius: 100px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2C0B05;
+
+    img {
+      width: 11.69px;
+      height: 11.38px;
+      color: #2C0B05;
+      margin-right: 8px;
+    }
+  }
+
+  p {
+    width: 361px;
+    height: 32px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;    
+    color: #555555;
+    margin-left: 16px;
   }
 }
