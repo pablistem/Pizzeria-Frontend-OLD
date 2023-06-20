@@ -1,0 +1,7 @@
+<div class="menu-container" [class.is-hidden]="isHidden">
+  <app-hamburger-menu *ngIf="selectedComponent == hamburgerMenu"></app-hamburger-menu>
+  <app-my-orders *ngIf="selectedComponent == myOrders"></app-my-orders>
+  <app-coupons *ngIf="selectedComponent == coupons"></app-coupons>
+  <app-profile *ngIf="selectedComponent == profile"></app-profile>
+  <app-discount *ngIf="selectedComponent == discount"></app-discount>
+</div>

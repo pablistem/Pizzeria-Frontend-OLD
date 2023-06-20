@@ -1,0 +1,93 @@
+.card-container {
+  position: relative;
+  display: block;
+  width: 65vw;
+  max-width: 700px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: start;
+
+  .state {
+    font-size: large;
+  }
+
+  .date {
+    font-size: small;
+    color: #aaa;
+  }
+
+  .more-info {
+
+    table {
+
+      width: 100%;
+
+      td {
+        text-align: start;
+      }
+
+      td:last-child {
+        text-align: end;
+      }
+    }
+
+    table.subtotal {
+      font-weight: 600;
+    }
+
+    table.total {
+      font-size: x-large;
+      font-weight: 700;
+    }
+
+    .vertical-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      .delivery-data {
+        text-align: start;
+
+        .title {
+          font-weight: 600;
+        }
+      }
+
+      .repeat{
+        border: transparent;
+        background-color: #ddd;
+        font-size: xx-large;
+        border-radius: 10px;
+        z-index: 10;
+      }
+    }
+  }
+
+  .less-info {
+    .vertical-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      .repeat {
+        border: transparent;
+        background-color: #ddd;
+        font-size: xx-large;
+        border-radius: 10px;
+      }
+
+      .price {
+        font-size: xx-large;
+        font-weight: 600;
+      }
+    }
+  }
+
+
+}

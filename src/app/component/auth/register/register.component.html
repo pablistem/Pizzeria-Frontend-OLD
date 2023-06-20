@@ -1,0 +1,81 @@
+<div class="register-container">
+
+  <img src="../../../../assets/images/logo.jpg" alt="logo">
+
+  <!-- Formulario de registro -->
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+
+    <!-- Input "Nombre" -->
+    <div class="input-container">
+      <!-- <label for="input-name">Nombre</label> -->
+      <input id="input-name" type="text" formControlName="nombre" placeholder="Nombre">
+    </div>
+    <ng-container *ngIf="formGroup.get('nombre')?.dirty && formGroup.get('nombre')?.touched">
+      <div *ngIf="formGroup.controls['nombre'].errors?.['required']">El nombre es obligatorio.</div>
+      <div *ngIf="formGroup.controls['nombre'].errors?.['minlength']">El nombre debe tener un minimo de
+        {{minNameLength}} caracteres.</div>
+    </ng-container>
+
+    <!-- Input "Apellido" -->
+    <div class="input-container">
+      <!-- <label for="input-lastname">Apellido</label> -->
+      <input id="input-lastname" type="text" formControlName="apellido" placeholder="Apellido">
+    </div>
+    <ng-container *ngIf="formGroup.get('apellido')?.dirty && formGroup.get('apellido')?.touched">
+      <div *ngIf="formGroup.controls['apellido'].errors?.['required']">El apellido es obligatorio.</div>
+      <div *ngIf="formGroup.controls['apellido'].errors?.['minlength']">El apellido debe tener un minimo de
+        {{minLastNameLength}} caracteres.</div>
+    </ng-container>
+
+    <!-- Input "Mail" -->
+    <div class="input-container">
+      <!-- <label for="input-mail">Mail</label> -->
+      <input id="input-mail" type="email" formControlName="email" placeholder="Correo electrónico">
+    </div>
+    <ng-container *ngIf="formGroup.get('email')?.dirty && formGroup.get('email')?.touched">
+      <div *ngIf="formGroup.controls['email'].errors?.['required']">El email es obligatorio.</div>
+      <div *ngIf="formGroup.controls['email'].errors?.['email']">El email debe tener un formato válido.</div>
+    </ng-container>
+
+    <!-- Input "Contraseña" -->
+    <div class="input-container">
+      <!-- <label for="input-password">Contraseña</label> -->
+      <input id="input-password" type="password" formControlName="password" placeholder="Contraseña">
+    </div>
+    <ng-container *ngIf="formGroup.get('password')?.dirty && formGroup.get('password')?.touched">
+      <div *ngIf="formGroup.controls['password'].errors?.['required']">La contraseña es obligatoria.</div>
+      <div *ngIf="formGroup.controls['password'].errors?.['minlength']">La contraseña debe tener al menos
+        {{minPasswordLength}} caracteres.</div>
+    </ng-container>
+
+    <!-- Input "Repetir contraseña" -->
+    <div class="input-container">
+      <!-- <label for="input-repeat-password">Repetir contraseña</label> -->
+      <input id="input-repeat-password" type="password" formControlName="confirmPassword" placeholder="Repetir contraseña">
+    </div>
+    <ng-container *ngIf="formGroup.get('confirmPassword')?.dirty && formGroup.get('confirmPassword')?.touched">
+      <p *ngIf="formGroup.hasError('notSame')">Las contraseñas no coinciden</p>
+    </ng-container>
+
+    <!-- Botón "Registrarme" -->
+    <button type="submit" [disabled]="!formGroup.valid">Registrarme</button>
+
+    <!-- Errores en el registro -->
+    <ng-container *ngIf="serverError">
+      <p>Ocurrió un error inesperado.<br>Por favor, intentelo de nuevo mas tarde.</p>
+    </ng-container>
+
+  </form>
+
+  <div>
+    <!-- <a href="#">¿No tenés cuenta?</a> -->
+    <a routerLink="../login" class="a-login" href="#">
+      ¿Ya tienes cuenta? Inicia sesión
+    </a>
+  </div>
+
+  <!-- Routing al reestablecimiento de la clave -->
+  <button class="btn-continue" type="submit"><img src="../../../../assets/icons/flechita.png" alt="flechita">Continuar sin cuenta*</button>
+  <p>*Esta opción solo le permitirá finalizar el pedido mediante Whatsapp</p>
+
+</div>

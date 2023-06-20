@@ -1,9 +1,0 @@
-<h1 class="title">¿Qué vas a comer hoy?</h1>
-<div class="container">
-  <div class="options">
-  <div class="options" *ngFor="let cat of categoryList" >
-    <div class="category">
-      <a routerLink="../menu" [queryParams]="{category: cat}">{{cat | titlecase }}</a>
-    </div>
-  </div>
-</div>

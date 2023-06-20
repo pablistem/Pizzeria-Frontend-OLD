@@ -1,0 +1,59 @@
+<div>
+  <!-- Cuando no está registrado -->
+  <div *ngIf="!isRegistered" class="unregistered-discount-container">
+    <h1>Descuentos</h1>
+    <div class="paragraph-container">
+      <p>Debes tener una sesión iniciada para acceder a los descuentos.</p>
+    </div>
+
+    <img class="img-no-login" src="../../../../../assets/images/No login.png" alt="no login">
+
+    <div class="btns-container">
+      <button routerLink="login" class="login-btn">Iniciar sesión</button>
+      <a routerLink="register" class="register-btn">Registrarme</a>
+      <a class="discounts">¿Cómo obtengo descuentos?</a>
+    </div>
+  </div>
+
+  <!-- Cuando estás registrado pero no tenés descuento -->
+  <div *ngIf="isRegistered && !hasDiscounts" class="registered-no-discount-container">
+    <h1>Descuentos</h1>
+    <!-- <div class="paragraph-container">
+    </div> -->
+
+    <img class="img-no-discount" src="../../../../../assets/images/No cupons.png" alt="no login">
+
+    <div class="btns-container">
+      <a class="discounts">¿Cómo obtengo descuentos?</a>
+    </div>
+  </div>
+
+  <!-- Registrado con descuentos -->
+
+  <div *ngIf="isRegistered && hasDiscounts">
+    <h1>Descuentos</h1>
+
+    <div class="btns-discount-container">
+      <button class="discount-container" [ngClass]="{'active': isActive}" (click)="toggleActive()">
+        <h2>-50%</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam odio ullam deleniti.</p>
+      </button>
+
+      <button class="discount-container" [ngClass]="{'active': isActive1}" (click)="toggleActive1()">
+        <h2>-25%</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam odio ullam deleniti.</p>
+      </button>
+
+      <button class="discount-container" [ngClass]="{'active': isActive2}" (click)="toggleActive2()">
+        <h2>-15%</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam odio ullam deleniti.</p>
+      </button>
+    </div>
+
+    <div class="btns-footer-container">
+      <button [disabled]="isDisabled" disabled="true">Usar descuento</button>
+      <a href="#">¿Cómo obtengo descuentos?</a>
+    </div>
+  </div>
+
+</div>

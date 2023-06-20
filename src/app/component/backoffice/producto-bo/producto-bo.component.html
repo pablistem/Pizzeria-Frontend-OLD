@@ -1,0 +1,60 @@
+
+
+<ng-container *ngIf="products.length != 0; else elseBlock">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Imagen</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.image}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.stock}}</td>
+        <td>
+          <ul>
+            <li (click)="accion('actualizar')">Actualizar</li>
+            <li (click)="accion('eliminar')">Eliminar</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<ng-template #elseBlock>
+  <p>No hay productos</p>
+</ng-template>
+
+<button (click)="accion('crear')">Crear</button>
+
+<button (click)="openModal(modalContent)">Abrir Modal</button>
+
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Título del Modal</h5>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Contenido del cuerpo del modal</p>
+    <input type="text" class="form-control" placeholder="Input 1">
+    <input type="text" class="form-control" placeholder="Input 2">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancelar</button>
+    <button type="button" class="btn btn-primary">Continuar</button>
+  </div>
+</ng-template>
+

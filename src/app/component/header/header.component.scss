@@ -7,7 +7,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
+  z-index: 20;
   background-color: red;
   border-bottom: 3px solid rgba(125, 0, 0, 0.5);
 

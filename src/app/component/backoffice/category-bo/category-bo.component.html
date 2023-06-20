@@ -1,0 +1,22 @@
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Celda 1</td>
+      <td>Celda 2</td>
+      <td>
+        <ul>
+          <li (click)="accion('actualizar')">Actualizar</li>
+          <li (click)="accion('eliminar')">Eliminar</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="accion('crear')">Crear</button>

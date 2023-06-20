@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './pages/home/home.component';
-import { MenuComponent } from './pages/menu/menu.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { RegisteredProfileComponent } from './pages/profiles/registered-profile/registered-profile.component';
-import { UnregisteredProfileComponent } from './pages/profiles/unregistered-profile/unregistered-profile.component';
+import { HomeComponent } from './component/home/home.component';
+import { MenuComponent } from './component/menu/menu.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
+import { LoginComponent } from './component/auth/login/login.component';
+import { RegisterComponent } from './component/auth/register/register.component';
+import { BackofficeComponent } from './component/backoffice/backoffice.component';
 
 const routes: Routes = [
   {
@@ -32,12 +31,8 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'registered-profile',
-    component: RegisteredProfileComponent
-  },
-  {
-    path: 'unregistered-profile',
-    component: UnregisteredProfileComponent
+    path: 'backoffice',
+    component: BackofficeComponent
   },
   {
     path: '**',
