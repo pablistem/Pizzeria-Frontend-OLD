@@ -1,26 +1,30 @@
 <div>
-
   <!-- Cuando no está registrado -->
   <div *ngIf="!isRegistered" class="unregistered-discount-container">
+    <h1>Descuentos</h1>
     <div class="paragraph-container">
-      <p>Inicia sesión para ver tus descuentos</p>
+      <p>Debes tener una sesión iniciada para acceder a los descuentos.</p>
     </div>
+
+    <img class="img-no-login" src="../../../../../assets/images/No login.png" alt="no login">
 
     <div class="btns-container">
       <button routerLink="login" class="login-btn">Iniciar sesión</button>
       <a routerLink="register" class="register-btn">Registrarme</a>
-      <a class="coupons">¿Cómo obtengo cupones?</a>
+      <a class="discounts">¿Cómo obtengo descuentos?</a>
     </div>
   </div>
 
   <!-- Cuando estás registrado pero no tenés descuento -->
   <div *ngIf="isRegistered && !hasDiscounts" class="registered-no-discount-container">
-    <div class="paragraph-container">
-      <p>Todavía no tenés descuentos</p>
-    </div>
+    <h1>Descuentos</h1>
+    <!-- <div class="paragraph-container">
+    </div> -->
+
+    <img class="img-no-discount" src="../../../../../assets/images/No cupons.png" alt="no login">
 
     <div class="btns-container">
-      <a class="coupons">¿Cómo obtengo cupones?</a>
+      <a class="discounts">¿Cómo obtengo descuentos?</a>
     </div>
   </div>
 
