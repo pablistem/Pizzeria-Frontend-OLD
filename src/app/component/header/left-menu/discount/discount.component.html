@@ -30,28 +30,54 @@
 
   <!-- Registrado con descuentos -->
 
-  <div *ngIf="isRegistered && hasDiscounts">
+  <div *ngIf="isRegistered && hasDiscounts" class="registered-with-discount-container">
     <h1>Descuentos</h1>
 
     <div class="btns-discount-container">
-      <button class="discount-container" [ngClass]="{'active': isActive}" (click)="toggleActive()">
+      <button class="discount-container-main" [ngClass]="{'active': isActive}" (click)="toggleActive()">
         <h2>-50%</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam odio ullam deleniti.</p>
+
+        <div class="detalle-btn-container">
+          <p>Valido del 25/03 hasta el 25/05 de 2023</p>
+          <button>¡Usar!</button>
+        </div>
+
       </button>
 
-      <button class="discount-container" [ngClass]="{'active': isActive1}" (click)="toggleActive1()">
-        <h2>-25%</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam odio ullam deleniti.</p>
-      </button>
+      <div class="discount-container-grid">
+        <button class="discount-card" [ngClass]="{'active': isActive1}" (click)="toggleActive1()">
+          <h2>-50%</h2>
+          <p>Valido del 25/03 hasta el 25/05 de 2023</p>
+          <button>¡Usar!</button>
+  
+        </button>
+  
+        <button class="discount-card" [ngClass]="{'active': isActive2}" (click)="toggleActive2()">
+          <h2>-50%</h2>
+          <p>Valido del 25/03 hasta el 25/05 de 2023</p>
+          <button [disabled]="isDisabled" disabled="true">¡Usar!</button>
+  
+        </button>
+  
+        <button class="discount-card" [ngClass]="{'active': isActive3}" (click)="toggleActive3()">
+          <h2>-50%</h2>
+          <p>Valido del 25/03 hasta el 25/05 de 2023</p>
+          <button [disabled]="isDisabled" disabled="true">¡Usar!</button>
+  
+        </button>
+  
+        <button class="discount-card" [ngClass]="{'active': isActive4}" (click)="toggleActive4()">
+          <h2>-50%</h2>
+          <p>Valido del 25/03 hasta el 25/05 de 2023</p>
+          <button [disabled]="isDisabled" disabled="true">¡Usar!</button>
+  
+        </button>
+      </div>
 
-      <button class="discount-container" [ngClass]="{'active': isActive2}" (click)="toggleActive2()">
-        <h2>-15%</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam odio ullam deleniti.</p>
-      </button>
+
     </div>
 
     <div class="btns-footer-container">
-      <button [disabled]="isDisabled" disabled="true">Usar descuento</button>
       <a href="#">¿Cómo obtengo descuentos?</a>
     </div>
   </div>
