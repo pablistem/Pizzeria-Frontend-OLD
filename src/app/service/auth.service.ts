@@ -27,4 +27,8 @@ export class AuthService {
     return this.cookieService.check('token');
   }
 
+  cerrarSesion() {
+    this.cookieService.delete("token");
+  }
+
 }

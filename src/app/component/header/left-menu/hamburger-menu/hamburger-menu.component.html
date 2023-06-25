@@ -1,29 +1,29 @@
 <div class="dropdown-menu">
   <nav>
     <button (click)="showProfile($event)">
-      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      <img src="../../../assets/icons/User.svg" alt="icono sol">
       Mi perfil
     </button>
     <button (click)="showMyOrders($event)">
-      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      <img src="../../../assets/icons/Receipt.svg" alt="icono sol">
       Mis pedidos
     </button>
     <button (click)="showDiscount($event)">
-      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      <img src="../../../assets/icons/Discount.svg" alt="icono sol">
       Descuentos
     </button>
     <button (click)="showCoupons($event)">
-      <img src="../../../assets/icons/sun-regular.svg" alt="icono sol">
+      <img src="../../../assets/icons/Coupon.svg" alt="icono sol">
       Cupones
     </button>
   </nav>
 
   <ng-container *ngIf="isLoggedIn; else notLoggedIn">
     <div class="container-buttons" (click)="closeMenu($event)">
-      <button>
+      <button (click)="cerrarSesion()"  class="session">
         Cerrar Sesion
       </button>
-      <button routerLink="backoffice">
+      <button class="register" routerLink="backoffice">
         Back Office
       </button>
     </div>
@@ -31,10 +31,10 @@
 
   <ng-template #notLoggedIn>
     <div class="container-buttons" (click)="closeMenu($event)">
-      <button routerLink="login">
+      <button class="session" routerLink="login">
         Iniciar sesión
       </button>
-      <button routerLink="register">
+      <button class="register" routerLink="register">
         Registrarme
       </button>
     </div>

@@ -44,4 +44,8 @@ export class HamburgerMenuComponent implements OnInit {
     this.headerService.sendEvent(Constants.CLOSE_LEFT_MENU);
   }
 
+  public cerrarSesion() {
+    this.authService.cerrarSesion();
+  }
+
 }
