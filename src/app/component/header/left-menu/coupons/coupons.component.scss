@@ -8,7 +8,7 @@
 
   h1 {
     text-align: left;
-    margin: 0.94rem 0 4.08rem 1.06rem;
+    margin: 0.94rem 0 0 1.06rem;
     color: #000;
     font-size: 2rem;
     font-family: Roboto;
@@ -24,6 +24,7 @@
     justify-content: flex-start;
 
     h2 {
+      margin-top: 4.08rem;
       color: #000;
       text-align: center;
       font-size: 1.375rem;
@@ -33,10 +34,17 @@
       line-height: 1.75rem;
     }
 
-    img {
+    .img-login {
       width: 18.75rem;
       height: 11.20988rem;
       margin: 3.12rem auto;
+    }
+
+    .img-sin-cupon {
+      margin-top: 11.75rem;
+      margin-bottom: 13.36rem;
+      width: 18.75rem;
+      height: 10.88794rem;
     }
 
     .buttons-container {
@@ -104,6 +112,8 @@
   }
 
   .help{
+    height: 2.5rem;
+    margin-top: 0.62rem;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;

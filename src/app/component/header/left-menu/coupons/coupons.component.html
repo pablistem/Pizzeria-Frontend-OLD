@@ -9,7 +9,7 @@
       Debes tener una sesión iniciada para acceder a los cupones.
     </h2>
 
-    <img src="../../../../../assets/images/No login.png" alt="no login">
+    <img class="img-login" src="../../../../../assets/images/No login.png" alt="no login">
 
     <div class="buttons-container">
       <button class="log-in">
@@ -25,13 +25,11 @@
   <!-- Si está logueado pero no tiene pedidos -->
   <div class="general-container" *ngIf="isLogged && !hasOrders">
 
-    <h2>
-      Todavía no tenes cupones
-    </h2>
+    <img class="img-sin-cupon" src="../../../../../assets/images/No cupons.png" alt="sin cupones">
 
     <div class="buttons-container">
       <button class="log-in">
-        Agregar
+        Agregar cupón
       </button>
     </div>
 
