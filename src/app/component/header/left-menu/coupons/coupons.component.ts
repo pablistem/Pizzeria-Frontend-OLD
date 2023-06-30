@@ -9,7 +9,7 @@ export class CouponsComponent implements OnInit {
 
   constructor() { }
 
-  public isLogged : boolean = true;
+  public isLogged : boolean = false;
   public hasOrders : boolean = true;
 
   ngOnInit(): void {

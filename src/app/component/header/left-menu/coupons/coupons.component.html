@@ -1,15 +1,19 @@
 <div class="master-container">
 
+  <h1>Cupones</h1>
+
   <!-- Si no está logueado -->
   <div class="general-container" *ngIf="!isLogged">
 
     <h2>
-      Inicia sesion para ver tus cupones
+      Debes tener una sesión iniciada para acceder a los cupones.
     </h2>
+
+    <img src="../../../../../assets/images/No login.png" alt="no login">
 
     <div class="buttons-container">
       <button class="log-in">
-        Iniciar Sesion
+        Iniciar sesion
       </button>
       <button class="register">
         Registrarme

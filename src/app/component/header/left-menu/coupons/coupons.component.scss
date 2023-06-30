@@ -4,12 +4,17 @@
   overflow-y: auto;
   height: 100%;
   min-height: calc(100vh - $header-height);
-  padding: 20px;
+  // padding: 20px;
 
   h1 {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    text-align: left;
+    margin: 0.94rem 0 4.08rem 1.06rem;
+    color: #000;
+    font-size: 2rem;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.5rem;
   }
 
   .general-container {
@@ -18,23 +23,64 @@
     align-items: center;
     justify-content: flex-start;
 
+    h2 {
+      color: #000;
+      text-align: center;
+      font-size: 1.375rem;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.75rem;
+    }
+
+    img {
+      width: 18.75rem;
+      height: 11.20988rem;
+      margin: 3.12rem auto;
+    }
+
     .buttons-container {
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 0 1rem;
 
       .log-in {
-        background-color: rgb(167, 167, 167);
-        color: #fff;
-        border-radius: 10px;
-        border-color: transparent;
-        font-size: xx-large;
+        all: unset;
+        height: 2.5rem;
+        align-self: stretch;
+        border-radius: 6.25rem;
+        background: #E9573A;
+
+        color: #FFF;
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.25rem;
+        letter-spacing: 0.00625rem;
       }
 
       .register {
-        border: transparent;
-        background-color: transparent;
+        all: unset;
+        height: 2.5rem;
+        margin-bottom: 8.77rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        align-self: stretch;
+
+        color: #E9573A;
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.25rem;
+        letter-spacing: 0.00625rem;
       }
     }
 
@@ -58,7 +104,19 @@
   }
 
   .help{
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: stretch;
+
+    color: var(--sys-text, #111);
     text-align: center;
+    font-size: 0.875rem;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.25rem;
+    letter-spacing: 0.00625rem;
   }
 
 }
