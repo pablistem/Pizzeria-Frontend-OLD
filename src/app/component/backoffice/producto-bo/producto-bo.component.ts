@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from 'src/app/model/product';
 import { ProductBOService } from 'src/app/service/product-bo.service';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { CrearProductoComponent } from './crear-producto/crear-producto.component';
 
 @Component({
   selector: 'app-producto-bo',
@@ -12,7 +13,7 @@ export class ProductoBOComponent implements OnInit {
 
   constructor(
     private productService : ProductBOService,
-    private modalService: NgbModal
+    private ngbModal: NgbModal
   ) { }
 
   public products: Product[] = [];
@@ -28,14 +29,10 @@ export class ProductoBOComponent implements OnInit {
     })
   }
 
-  openModal(content: any): NgbModalRef {
-    return this.modalService.open(content, { centered: true });
-  }
-
   accion(accion: string) {
     switch (accion) {
       case 'crear':
-
+        this.ngbModal.open(CrearProductoComponent);
         break;
       case 'actualizar':
 
@@ -48,6 +45,4 @@ export class ProductoBOComponent implements OnInit {
         break;
     }
   }
-
-
 }
