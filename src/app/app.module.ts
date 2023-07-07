@@ -28,6 +28,7 @@ import { BackofficeComponent } from './component/backoffice/backoffice.component
 import { CategoryBOComponent } from './component/backoffice/category-bo/category-bo.component';
 import { ProductoBOComponent } from './component/backoffice/producto-bo/producto-bo.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CrearProductoComponent } from './component/backoffice/producto-bo/crear-producto/crear-producto.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DiscountComponent,
     BackofficeComponent,
     CategoryBOComponent,
-    ProductoBOComponent
+    ProductoBOComponent,
+    CrearProductoComponent
   ],
   imports: [
     BrowserModule,
