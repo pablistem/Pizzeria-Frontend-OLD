@@ -1,14 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LoginRequest, RegisterRequest, User } from '../model/user';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from 'src/environments/environment';
+import { LoginRequest, RegisterRequest, User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  backendUrl: string = "http://localhost:8080"
+  private tokenKey = 'accessToken';
+  private url = environment.API_URL
 
   constructor(
     private http: HttpClient,
@@ -16,15 +18,27 @@ export class AuthService {
   ) { }
 
   register(request: RegisterRequest) {
-    return this.http.post<User>(`${this.backendUrl}/auth/signup`, request);
+    return this.http.post<User>(`${this.url}/auth/signup`, request);
   }
 
   login(request: LoginRequest) {
-    return this.http.post<User>(`${this.backendUrl}/auth/login`, request);
+    return this.http.post<User>(`${this.url}/auth/login`, request);
   }
 
-  userIsLoggedIn(): boolean {
-    return this.cookieService.check('token');
+  guardarToken(token: string): void {
+    this.cookieService.set(this.tokenKey, token);
+  }
+
+  obtenerToken(): string | null {
+    return this.cookieService.get(this.tokenKey);
+  }
+
+  limpiarToken(): void {
+    this.cookieService.delete(this.tokenKey);
+  }
+
+  estaLogueado(): boolean {
+    return this.cookieService.check(this.tokenKey);
   }
 
 }

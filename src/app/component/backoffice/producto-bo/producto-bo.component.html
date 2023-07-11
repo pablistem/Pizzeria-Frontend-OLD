@@ -1,31 +1,31 @@
 
 
 <ng-container *ngIf="products.length != 0; else elseBlock">
-  <table class="styled-table">
+  <table class="table">
     <thead>
       <tr>
-        <th>Id</th>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Imagen</th>
-        <th>Precio</th>
-        <th>Stock</th>
-        <th>Acciones</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">
-        <td>{{product.id}}</td>
+      <tr *ngFor="let product of products; index as i">
         <td>{{product.name}}</td>
         <td>{{product.description}}</td>
         <td>{{product.image}}</td>
         <td>{{product.price}}</td>
         <td>{{product.stock}}</td>
-        <td>
-          <ul>
-            <li (click)="accion('actualizar')">Actualizar</li>
-            <li (click)="accion('eliminar')">Eliminar</li>
-          </ul>
+        <td class="d-flex gap-2">
+          <button class="btn btn-warning btn-sm" (click)="btnActualizar(i)">
+            <span class="material-icons">edit</span>
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="btnEliminar(i)">
+            <span class="material-icons">delete</span>
+          </button>
         </td>
       </tr>
     </tbody>
@@ -36,4 +36,4 @@
   <p>No hay productos</p>
 </ng-template>
 
-<button (click)="accion('crear')">Crear</button>
+<button class="btn btn-primary" (click)="btnCrear()">Crear</button>

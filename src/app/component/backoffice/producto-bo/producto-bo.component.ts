@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from 'src/app/model/product';
-import { ProductBOService } from 'src/app/service/product-bo.service';
+import { ProductService } from 'src/app/service/product.service';
 import { CrearProductoComponent } from './crear-producto/crear-producto.component';
+import { EliminarProductoComponent } from './eliminar-producto/eliminar-producto.component';
+import { ActualizarProductoComponent } from './actualizar-producto/actualizar-producto.component';
 
 @Component({
   selector: 'app-producto-bo',
@@ -12,13 +14,17 @@ import { CrearProductoComponent } from './crear-producto/crear-producto.componen
 export class ProductoBOComponent implements OnInit {
 
   constructor(
-    private productService : ProductBOService,
+    private productService : ProductService,
     private ngbModal: NgbModal
   ) { }
 
-  public products: Product[] = [];
+  products: Product[] = [];
 
   ngOnInit(): void {
+    this.obtenerProductos();
+  }
+
+  private obtenerProductos() {
     this.productService.getAll().subscribe({
       next: (value) => {
         this.products = value.products
@@ -29,20 +35,19 @@ export class ProductoBOComponent implements OnInit {
     })
   }
 
-  accion(accion: string) {
-    switch (accion) {
-      case 'crear':
-        this.ngbModal.open(CrearProductoComponent);
-        break;
-      case 'actualizar':
-
-        break;
-      case 'eliminar':
-
-        break;
-      default:
-        alert('Soy un pelotudo');
-        break;
-    }
+  btnCrear() {
+    this.ngbModal.open(CrearProductoComponent);
   }
+
+  btnActualizar(id: number) {
+    const modal = this.ngbModal.open(ActualizarProductoComponent);
+    modal.componentInstance.producto = this.products[id];
+    console.log(`Fue enviado el producto: ${this.products[id]}`)
+  }
+
+  btnEliminar(id: number) {
+    const modal = this.ngbModal.open(EliminarProductoComponent);
+    modal.componentInstance.producto = this.products[id];
+  }
+
 }
