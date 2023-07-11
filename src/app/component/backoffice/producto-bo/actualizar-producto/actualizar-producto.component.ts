@@ -30,7 +30,6 @@ export class ActualizarProductoComponent implements OnInit {
   @Input() producto: Product | undefined;
 
   ngOnInit(): void {
-    debugger
     this.formulario.patchValue({
       name: this.producto?.name,
       description: this.producto?.description,
