@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProductComponent } from './component/menu/product/product.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './component/auth/register/register.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ShoppingCartComponent } from './component/header/right-menu/shopping-cart/shopping-cart.component';
 import { HamburgerMenuComponent } from './component/header/left-menu/hamburger-menu/hamburger-menu.component';
 import { ProductCartComponent } from './component/header/right-menu/shopping-cart/product-cart/product-cart.component';
@@ -30,6 +30,9 @@ import { ProductoBOComponent } from './component/backoffice/producto-bo/producto
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CrearProductoComponent } from './component/backoffice/producto-bo/crear-producto/crear-producto.component';
 import { ModalCuponComponent } from './component/header/left-menu/coupons/cupon/modal-cupon/modal-cupon.component';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { EliminarProductoComponent } from './component/backoffice/producto-bo/eliminar-producto/eliminar-producto.component';
+import { ActualizarProductoComponent } from './component/backoffice/producto-bo/actualizar-producto/actualizar-producto.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,9 @@ import { ModalCuponComponent } from './component/header/left-menu/coupons/cupon/
     CategoryBOComponent,
     ProductoBOComponent,
     CrearProductoComponent,
-    ModalCuponComponent
+    ModalCuponComponent,
+    EliminarProductoComponent,
+    ActualizarProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,13 @@ import { ModalCuponComponent } from './component/header/left-menu/coupons/cupon/
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

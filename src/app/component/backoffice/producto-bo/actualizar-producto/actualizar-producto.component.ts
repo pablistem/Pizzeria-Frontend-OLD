@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { firstValueFrom } from 'rxjs';
+import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 import { longitudMaxima } from 'src/app/validators/utils.validator';
 
 @Component({
-  selector: 'app-crear-producto',
-  templateUrl: './crear-producto.component.html',
-  styleUrls: ['./crear-producto.component.scss']
+  selector: 'app-actualizar-producto',
+  templateUrl: './actualizar-producto.component.html',
+  styleUrls: ['./actualizar-producto.component.scss']
 })
-export class CrearProductoComponent implements OnInit {
+export class ActualizarProductoComponent implements OnInit {
 
   constructor(
     private ngbActiveModal: NgbActiveModal,
@@ -26,8 +27,18 @@ export class CrearProductoComponent implements OnInit {
     stock: new FormControl('', [Validators.required, Validators.min(0)]),
   });
   errorBackend = ''
+  @Input() producto: Product | undefined;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.formulario.patchValue({
+      name: this.producto?.name,
+      description: this.producto?.description,
+      image: this.producto?.image,
+      category: this.producto?.category?.name,
+      price: this.producto?.price.toString(),
+      stock: this.producto?.stock.toString()
+    });
+  }
 
   isInvalid(formControl: string) {
     let control = this.formulario.get(formControl);
@@ -56,7 +67,7 @@ export class CrearProductoComponent implements OnInit {
   }
 
   async btnContinuar() {
-    const response = await firstValueFrom(this.productService.create(this.obtenerBody()))
+    const response = await firstValueFrom(this.productService.update(this.obtenerBody(), this.producto?.id!))
       .catch(err => {
         console.error(err)
         this.errorBackend = err

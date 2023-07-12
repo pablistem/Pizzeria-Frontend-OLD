@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryBOService } from 'src/app/service/category-bo.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Category } from 'src/app/model/category';
+import { CategoryService } from 'src/app/service/category.service';
 
 @Component({
   selector: 'app-category-bo',
@@ -9,35 +11,37 @@ import { CategoryBOService } from 'src/app/service/category-bo.service';
 export class CategoryBOComponent implements OnInit {
 
   constructor(
-    private categoryService : CategoryBOService
+    private categoryService: CategoryService,
+    private ngbModal: NgbModal
   ) { }
 
+  categorias: Category[] = [];
+
   ngOnInit(): void {
+    this.obtenerCategorias();
+  }
+
+  private obtenerCategorias() {
     this.categoryService.getAll().subscribe({
-      next(value) {
-        console.log(value);
+      next: (value) => {
+        this.categorias = value.categories
       },
-      error(err) {
+      error: (err) => {
         console.error(err);
       },
     })
   }
 
-  accion(accion: string) {
-    switch (accion) {
-      case 'crear':
+  btnCrear() {
 
-        break;
-      case 'actualizar':
+  }
 
-        break;
-      case 'eliminar':
+  btnActualizar() {
 
-        break;
-      default:
-        alert('Soy un pelotudo');
-        break;
-    }
+  }
+
+  btnEliminar() {
+
   }
 
 }
