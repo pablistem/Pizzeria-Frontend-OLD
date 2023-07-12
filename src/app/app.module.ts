@@ -29,6 +29,7 @@ import { CategoryBOComponent } from './component/backoffice/category-bo/category
 import { ProductoBOComponent } from './component/backoffice/producto-bo/producto-bo.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CrearProductoComponent } from './component/backoffice/producto-bo/crear-producto/crear-producto.component';
+import { ModalCuponComponent } from './component/header/left-menu/coupons/cupon/modal-cupon/modal-cupon.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { CrearProductoComponent } from './component/backoffice/producto-bo/crear
     BackofficeComponent,
     CategoryBOComponent,
     ProductoBOComponent,
-    CrearProductoComponent
+    CrearProductoComponent,
+    ModalCuponComponent
   ],
   imports: [
     BrowserModule,

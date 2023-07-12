@@ -5,7 +5,7 @@
   <!-- Si no está logueado -->
   <div class="general-container" *ngIf="!isLogged">
 
-    <h2>
+    <h2 class="h2-login">
       Debes tener una sesión iniciada para acceder a los cupones.
     </h2>
 
@@ -38,14 +38,58 @@
   <!-- Si está logueado y tiene pedidos -->
   <div class="general-container" *ngIf="isLogged && hasOrders">
 
-    <p>¿Quieres agregar otro cupón?</p>
-    <button class="add-cupon" >Agregar</button>
+    <h2 class="h2-con-pedidos">Recomendaciones</h2>
 
-    <p class="title">Cupones</p>
+    <div class="btns-coupons-container">
 
-    <app-cupon *ngFor="let order of [1, 2, 3]"></app-cupon>
 
-    <button class="use-coupon">Usar cupón</button>
+      <button class="coupon-container-main" [ngClass]="{'active': isActive}" (click)="toggleActive()">
+        <h2>-50%</h2>
+
+        <div class="detalle-btn-container">
+          <p>Valido del 25/03 hasta el 25/05 de 2023</p>
+          <button>¡Usar!</button>
+        </div>
+
+      </button>
+
+      <div class="coupon-container-grid">
+        <button class="coupon-card" [ngClass]="{'active': isActive1}" (click)="toggleActive1()">
+          <h2>-50%</h2>
+          <p>Valido del 25/03 hasta el 25/05 de 2023</p>
+          <button>¡Usar!</button>
+  
+        </button>
+  
+        <button class="coupon-card" [ngClass]="{'active': isActive2}" (click)="toggleActive2()">
+          <h2>-50%</h2>
+          <p>Valido del 25/03 hasta el 25/05 de 2023</p>
+          <button [disabled]="isDisabled" disabled="true">¡Usar!</button>
+  
+        </button>
+  
+        <button class="coupon-card" [ngClass]="{'active': isActive3}" (click)="toggleActive3()">
+          <h2>-50%</h2>
+          <p>Valido del 25/03 hasta el 25/05 de 2023</p>
+          <button [disabled]="isDisabled" disabled="true">¡Usar!</button>
+  
+        </button>
+  
+        <button class="coupon-card" [ngClass]="{'active': isActive4}" (click)="toggleActive4()">
+          <h2>-50%</h2>
+          <p>Valido del 25/03 hasta el 25/05 de 2023</p>
+          <button [disabled]="isDisabled" disabled="true">¡Usar!</button>
+  
+        </button>
+      </div>
+
+    </div>
+
+    <div class="buttons-container">
+      <button class="log-in" (click)="abrirModal()" >
+        Agregar cupón
+      </button>
+    </div>
 
   </div>
 
