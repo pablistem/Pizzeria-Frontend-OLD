@@ -33,6 +33,7 @@ import { ModalCuponComponent } from './component/header/left-menu/coupons/cupon/
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { EliminarProductoComponent } from './component/backoffice/producto-bo/eliminar-producto/eliminar-producto.component';
 import { ActualizarProductoComponent } from './component/backoffice/producto-bo/actualizar-producto/actualizar-producto.component';
+import { CrearCategoriaComponent } from './component/backoffice/category-bo/crear-categoria/crear-categoria.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ActualizarProductoComponent } from './component/backoffice/producto-bo/
     CrearProductoComponent,
     ModalCuponComponent,
     EliminarProductoComponent,
-    ActualizarProductoComponent
+    ActualizarProductoComponent,
+    CrearCategoriaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,22 @@
-<table class="styled-table">
+<ng-container *ngIf="categorias.length != 0; else elseBlock">
+<table class="table">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Nombre</th>
-      <th>Acciones</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Productos</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Celda 1</td>
-      <td>Celda 2</td>
+    <tr *ngFor="let category of categorias; index as i">
+      <td>{{category.name}}</td>
+      <td>{{category.image}}</td>
+      <td>
+        <ul>
+          <li>{{category.products[i]}}</li>
+        </ul>
+      </td>
       <td>
         <ul>
           <li (click)="btnActualizar()">Actualizar</li>
@@ -19,4 +26,10 @@
     </tr>
   </tbody>
 </table>
+</ng-container>
+
+<ng-template #elseBlock>
+  <p>No hay categorias</p>
+</ng-template>
+
 <button class="btn btn-primary" (click)="btnCrear()">Crear</button>
