@@ -18,8 +18,8 @@ export class CrearCategoriaComponent implements OnInit {
 
   formulario = new FormGroup({
     name: new FormControl('', [Validators.required, longitudMaxima(64)]),
-    image: new FormControl('', [Validators.required, longitudMaxima(256)]),
-    product: new FormControl('', [Validators.required, longitudMaxima(46)]),
+    // image: new FormControl('', [Validators.required, longitudMaxima(256)]),
+    // product: new FormControl('', [Validators.required, longitudMaxima(46)]),
   });
   errorBackend = ''
 
@@ -65,8 +65,8 @@ export class CrearCategoriaComponent implements OnInit {
   private obtenerBody() {
     const request = {
       name: this.formulario.get('name')?.value!,
-      image: this.formulario.get('image')?.value!,
-      product: this.formulario.get('product')?.value!,
+      // image: this.formulario.get('image')?.value!,
+      // product: this.formulario.get('product')?.value!,
     }
     return request;
   }
