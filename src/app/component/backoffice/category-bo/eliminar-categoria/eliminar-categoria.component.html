@@ -1,1 +1,17 @@
-<p>eliminar-categoria works!</p>
+<div class="modal-header">
+    <h5 class="modal-title">Eliminar categoria</h5>
+    <button type="button" class="btn close" aria-label="Close" (click)="btnCancelar()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+  
+    <p>¿Está seguro que desea eliminar la categoria: "<strong>{{categoria?.name}}</strong>"?</p>
+  
+    <p *ngIf="errorBackend" class="errorBackend">{{errorBackend}}</p>
+  
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="btnCancelar()">Cancelar</button>
+    <button type="button" class="btn btn-danger" (click)="btnContinuar()">Continuar</button>
+  </div>

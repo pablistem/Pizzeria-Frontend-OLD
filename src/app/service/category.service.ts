@@ -25,4 +25,8 @@ export class CategoryService {
     return this.http.put<any>(`${this.url}/category/${id}`, request);
   }
 
+  delete(id: number) {
+    return this.http.delete<void>(`${this.url}/category/${id}`);
+  }
+
 }
