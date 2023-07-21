@@ -1,0 +1,74 @@
+<div class="modal-header">
+    <h5 class="modal-title">Crear categoria</h5>
+    <button type="button" class="btn close" aria-label="Close" (click)="btnCancelar()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+  
+    <form class="form-wrapper" [formGroup]="formulario">
+  
+      <div class="form-group pb-2">
+        <label for="name" class="h6">Nombre</label>
+        <input type="text" class="form-control" id="name" formControlName="name"
+          [class.is-invalid]="isInvalid('name')">
+        <div *ngIf="isInvalid('name')" class="invalid-feedback">
+          {{obtenerMensajeError('name')}}
+        </div>
+      </div>
+  
+      <!-- <div class="form-group">
+        <label for="description" class="h6">Descripción</label>
+        <input type="text" class="form-control" id="description" formControlName="description"
+          [class.is-invalid]="isInvalid('description')">
+        <div *ngIf="isInvalid('description')" class="invalid-feedback">
+          {{obtenerMensajeError('description')}}
+        </div>
+      </div> -->
+  
+      <div class="form-group">
+        <label for="image" class="h6">Imagen</label>
+        <input type="text" class="form-control" id="image" formControlName="image"
+          [class.is-invalid]="isInvalid('image')">
+        <div *ngIf="isInvalid('image')" class="invalid-feedback">
+          {{obtenerMensajeError('image')}}
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="category" class="h6">Producto</label>
+        <input type="text" class="form-control" id="category" formControlName="product"
+          [class.is-invalid]="isInvalid('product')">
+        <div *ngIf="isInvalid('product')" class="invalid-feedback">
+          {{obtenerMensajeError('product')}}
+        </div>
+      </div>
+  
+      <!-- <div class="form-group">
+        <label for="price" class="h6">Precio</label>
+        <input type="number" class="form-control" id="price" formControlName="price"
+          [class.is-invalid]="isInvalid('price')">
+        <div *ngIf="isInvalid('price')" class="invalid-feedback">
+          {{obtenerMensajeError('price')}}
+        </div>
+      </div> -->
+  
+      <!-- <div class="form-group">
+        <label for="stock" class="h6">Stock</label>
+        <input type="number" class="form-control" id="stock" formControlName="stock"
+          [class.is-invalid]="isInvalid('stock')">
+        <div *ngIf="isInvalid('stock')" class="invalid-feedback">
+          {{obtenerMensajeError('stock')}}
+        </div>
+      </div> -->
+  
+    </form>
+  
+    <p *ngIf="errorBackend" class="errorBackend">{{errorBackend}}</p>
+  
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="btnCancelar()">Cancelar</button>
+    <button type="button" class="btn btn-primary" (click)="btnContinuar()" [disabled]="!formulario.valid">Continuar</button>
+  </div>
+  

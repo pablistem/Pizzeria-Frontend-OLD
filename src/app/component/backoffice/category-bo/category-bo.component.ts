@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Category } from 'src/app/model/category';
 import { CategoryService } from 'src/app/service/category.service';
+import { CrearCategoriaComponent } from "./crear-categoria/crear-categoria.component";
 
 @Component({
   selector: 'app-category-bo',
@@ -33,7 +34,7 @@ export class CategoryBOComponent implements OnInit {
   }
 
   btnCrear() {
-
+    this.ngbModal.open(CrearCategoriaComponent);
   }
 
   btnActualizar() {

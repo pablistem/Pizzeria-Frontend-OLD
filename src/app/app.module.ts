@@ -34,6 +34,7 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { EliminarProductoComponent } from './component/backoffice/producto-bo/eliminar-producto/eliminar-producto.component';
 import { ActualizarProductoComponent } from './component/backoffice/producto-bo/actualizar-producto/actualizar-producto.component';
 import { CategoriasComponent } from './component/home/categorias/categorias.component';
+import { CrearCategoriaComponent } from './component/backoffice/category-bo/crear-categoria/crear-categoria.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { CategoriasComponent } from './component/home/categorias/categorias.comp
     ModalCuponComponent,
     EliminarProductoComponent,
     ActualizarProductoComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    CrearCategoriaComponent,
   ],
   imports: [
     BrowserModule,
