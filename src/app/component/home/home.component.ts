@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,17 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  categoryList: string[] = [
-    'postres',
-    'bebidas',
-    'empanadas',
-    'pizza',
-    'descuentos'
-  ];
-
   constructor() { }
 
+  repeticiones: number[] = [1, 2, 3, 4, 5, 6];
+  esCelular: boolean = false;
+
   ngOnInit(): void {
+  }
+
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: any): void {
+    this.esCelular = window.innerWidth < 1000;
   }
 
 }

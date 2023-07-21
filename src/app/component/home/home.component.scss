@@ -1,45 +1,118 @@
-.title {
-  text-align: center;
-  font-size: Huge;
-  font-weight: 800;
-  margin: 4vh 2vw 2vh;
-}
+.fondo {
 
-.container {
-  min-height: 75vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #FEF7F5;
 
-  .options {
-    max-width: 720px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
+  .panel-izquierdo {
 
-    .category {
-      margin: 20px;
-      width: 267px;
-      height: 165px;
-      // width: 178px;
-      // height: 110px;
-      // width: 89px;
-      // height: 55px;
-      border-radius: 20px;
-      background-color: red;
+    .tarjeta-1 {
+      grid-area: t1;
+    }
 
-      a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        text-decoration: none;
+    .tarjeta-2 {
+      grid-area: t2;
+    }
+
+    .tarjeta-3 {
+      grid-area: t3;
+    }
+
+    .tarjeta-4 {
+      grid-area: t4;
+    }
+
+    .cabecera {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: #E9573A;
+      grid-area: ca;
+
+      span {
+        font-family: Luckiest Guy;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 40px;
+        letter-spacing: 0em;
         color: white;
-        font-size: xx-large;
-        font-weight: 600;
+      }
+    }
+
+    position: relative;
+    height: 80vh;
+    max-height: 55rem;
+    min-height: 20rem;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: "ca ca ca ca ca ca"
+    "t1 t1 t1 t1 t2 t2"
+    "t1 t1 t1 t1 t2 t2"
+    "t1 t1 t1 t1 t2 t2"
+    "t1 t1 t1 t1 t4 t4"
+    "t3 t3 t3 t3 t4 t4"
+    "t3 t3 t3 t3 t4 t4";
+
+    .tarjeta {
+      border-radius: 10px;
+      background-color: #EFEFEB;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
     }
   }
+
+  .recomendaciones {
+
+    columns: 12rem auto;
+    column-gap: 1rem;
+
+    .card {
+      min-width: 12em;
+      margin-bottom: 1rem;
+      border: none;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+    }
+
+  }
+
 }
+
+@media (width < 1000px) {
+
+  .panel-izquierdo {
+    margin-bottom: 2rem;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .recomendaciones {
+      width: 100%;
+      white-space: nowrap;
+      overflow-x: auto;
+      display: flex;
+    }
+  }
+
+}
+
+// * {
+//   border: 1px solid red;
+// }
