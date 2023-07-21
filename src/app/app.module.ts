@@ -35,6 +35,8 @@ import { EliminarProductoComponent } from './component/backoffice/producto-bo/el
 import { ActualizarProductoComponent } from './component/backoffice/producto-bo/actualizar-producto/actualizar-producto.component';
 import { CategoriasComponent } from './component/home/categorias/categorias.component';
 import { CrearCategoriaComponent } from './component/backoffice/category-bo/crear-categoria/crear-categoria.component';
+import { ActualizarCategoriaComponent } from './component/backoffice/category-bo/actualizar-categoria/actualizar-categoria.component';
+import { EliminarCategoriaComponent } from './component/backoffice/category-bo/eliminar-categoria/eliminar-categoria.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { CrearCategoriaComponent } from './component/backoffice/category-bo/crea
     ActualizarProductoComponent,
     CategoriasComponent,
     CrearCategoriaComponent,
+    ActualizarCategoriaComponent,
+    EliminarCategoriaComponent,
   ],
   imports: [
     BrowserModule,

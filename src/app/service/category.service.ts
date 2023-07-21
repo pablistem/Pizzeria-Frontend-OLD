@@ -21,4 +21,8 @@ export class CategoryService {
     return this.http.post<any>(`${this.url}/category`, request);
   }
 
+  update(request: any, id: number) {
+    return this.http.put<any>(`${this.url}/category/${id}`, request);
+  }
+
 }
