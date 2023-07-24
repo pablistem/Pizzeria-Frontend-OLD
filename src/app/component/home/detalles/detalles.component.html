@@ -1,0 +1,69 @@
+<ng-container *ngIf="producto; else sinProducto">
+
+  <div class="card p-2">
+    <img class="card-img-top" [src]="producto.image" [alt]="producto.name">
+    <div class="card-body">
+      <h5 class="card-title">{{producto.name}}</h5>
+      <p><small class="card-text">{{producto.description}}</small></p>
+
+      <form>
+
+        <p class="h3">Size</p>
+
+        <div class="form-check d-flex">
+          <label class="flex-grow-1 text-start" for="exampleRadios1">
+            <p class="h5">List item</p>
+            <p>Supporting text</p>
+          </label>
+          <input class="form-check-input flex-grow-0 text-end" type="radio" name="exampleRadios" id="exampleRadios1"
+            value="option1">
+        </div>
+        <div class="form-check d-flex">
+          <label class="flex-grow-1 text-start" for="exampleRadios2">
+            <p class="h5">List item</p>
+            <p>Supporting text</p>
+          </label>
+          <input class="form-check-input flex-grow-0 text-end" type="radio" name="exampleRadios" id="exampleRadios2"
+            value="option">
+        </div>
+
+
+        <p class="h3">Tritle add</p>
+
+        <div class="form-check d-flex">
+          <label class="flex-grow-1 text-start" for="exampleCheckbo1">
+            <p class="h5">List item</p>
+            <p>Supporting text</p>
+          </label>
+          <input class="form-check-input flex-grow-0 text-end" type="checkbox" value="" id="exampleCheckbo1">
+        </div>
+        <div class="form-check d-flex">
+          <label class="flex-grow-1 text-start" for="exampleCheckbo2">
+            <p class="h5">List item</p>
+            <p>Supporting text</p>
+          </label>
+          <input class="form-check-input flex-grow-0 text-end" type="checkbox" value="" id="exampleCheckbo2">
+        </div>
+        <div class="form-check d-flex">
+          <label class="flex-grow-1 text-start" for="exampleCheckbo3">
+            <p class="h5">List item</p>
+            <p>Supporting text</p>
+          </label>
+          <input class="form-check-input flex-grow-0 text-end" type="checkbox" value="" id="exampleCheckbo3">
+        </div>
+
+      </form>
+
+
+
+      <a href="#" class="btn btn-primary">Agregar ${{producto.price}}</a>
+    </div>
+  </div>
+
+</ng-container>
+<ng-template #sinProducto>
+  <div class="sin-producto">
+    <span class="h2">¡Elegí lo que mas te tiente!</span>
+    <img src="../../../../assets/images/detalle-sin-producto-seleccionado.svg" alt="detalle sin producto seleccionado">
+  </div>
+</ng-template>

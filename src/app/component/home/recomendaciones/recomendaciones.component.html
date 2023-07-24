@@ -1,0 +1,36 @@
+<div class="row">
+  <div [ngClass]="esCelular ? 'col-sm-12' : 'col-md-6'">
+    <div class="panel-izquierdo">
+      <div class="cabecera">
+        <img src="../../../assets/images/altavoz.svg" alt="altavoz">
+        <span>PROMOS</span>
+        <img src="../../../assets/images/altavoz-invertido.svg" alt="altavoz-invertido">
+      </div>
+      <div class="tarjeta tarjeta-1">
+        <img src="../../../assets/images/pizzero.svg" alt="foto-comida">
+      </div>
+      <div class="tarjeta tarjeta-2">
+        <img src="../../../assets/images/pizzero.svg" alt="foto-comida">
+      </div>
+      <div class="tarjeta tarjeta-3">
+        <img src="../../../assets/images/pizzero.svg" alt="foto-comida">
+      </div>
+      <div class="tarjeta tarjeta-4">
+        <img src="../../../assets/images/pizzero.svg" alt="foto-comida">
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="esCelular ? 'col-sm-12' : 'col-md-6'">
+    <p class="h5 mb-4">Recomendaciones</p>
+    <div class="recomendaciones">
+      <div class="card p-2" *ngFor="let repeticion of repeticiones">
+        <img class="card-img-top" src="../../../assets/images/pizzero.svg" alt="producto">
+        <div class="card-body">
+          <h5 class="card-title">Titulo</h5>
+          <p class="card-text">Información</p>
+          <p class="h3">$555</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

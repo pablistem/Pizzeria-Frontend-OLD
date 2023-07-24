@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Category } from 'src/app/model/category';
 import { CategoryService } from 'src/app/service/category.service';
 
@@ -15,24 +15,12 @@ export class CategoriasComponent {
 
   }
 
-  categoriaSeleccionada: string | undefined
+  @Output() categoriaEmitter: EventEmitter<string> = new EventEmitter<string>();
+  categoria: string | undefined;
 
   cambioCategoria(categoria: string) {
-    this.categoriaSeleccionada = categoria
-    switch(categoria) {
-      case 'ofertas':
-        break;
-      case 'pizzas':
-        break;
-      case 'empanadas':
-        break;
-      case 'helados':
-        break;
-      case 'bebidas':
-        break;
-      default:
-        break;
-    }
+    this.categoria = categoria
+    this.categoriaEmitter.emit(categoria);
   }
 
 }

@@ -34,7 +34,7 @@ export class ActualizarProductoComponent implements OnInit {
       name: this.producto?.name,
       description: this.producto?.description,
       image: this.producto?.image,
-      category: this.producto?.category?.name,
+      category: this.producto?.category,
       price: this.producto?.price.toString(),
       stock: this.producto?.stock.toString()
     });
