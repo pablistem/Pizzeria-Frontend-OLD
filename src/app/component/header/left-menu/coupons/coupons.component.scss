@@ -36,7 +36,7 @@
     }
 
     .h2-con-pedidos {
-      margin: 1rem 0 0 1.06rem;
+      margin: 1rem 0 1rem 1.06rem;
       width: 100%;
       color: #000;
       font-size: 1rem;
@@ -48,14 +48,15 @@
     }
 
     .btns-coupons-container {
-
+      width: min-content;
+      margin: 0 auto;
       align-items: center;
 
       .coupon-container-main {
         border: none;
         width: 22.5625rem;
-        padding: 0.625rem;
-        margin: 1rem;
+        // padding: 0.625rem;
+        margin-bottom: 1rem;
         background-color: #FFFFFF;
         border-radius: 10px;
 
@@ -93,7 +94,7 @@
             border-radius: 100px;
             color: #AAAAAA;
             background-color: #AAAAAA1F;
-            padding: 0.625rem 1.5rem;
+            // padding: 0.625rem 1.5rem;
 
           }
         }
@@ -116,8 +117,9 @@
       grid-template-columns: 1fr 2fr;
       /* Dos columnas en proporción 1:2 */
       gap: 1rem;
-      margin-left: 1rem;
-      margin-bottom: 5.56rem;
+      margin: 0 auto 3.56rem;
+      // margin-left: 1rem;
+      // margin-bottom: 3.56rem;
 
       .coupon-card {
         width: 10.75rem;
@@ -170,8 +172,8 @@
     }
 
     .img-sin-cupon {
-      margin-top: 11.75rem;
-      margin-bottom: 13.36rem;
+      margin-top: 9.75rem;
+      margin-bottom: 11.36rem;
       width: 18.75rem;
       height: 10.88794rem;
     }
@@ -199,12 +201,13 @@
         font-weight: 700;
         line-height: 1.25rem;
         letter-spacing: 0.00625rem;
+        margin-bottom: 1rem;
       }
 
       .register {
         all: unset;
         height: 2.5rem;
-        margin-bottom: 8.77rem;
+        margin-bottom: 6rem;
         justify-content: center;
         align-items: center;
         gap: 0.5rem;
@@ -225,7 +228,6 @@
 
   .help {
     height: 2.5rem;
-    margin-top: 0.62rem;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
