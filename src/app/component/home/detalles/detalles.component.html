@@ -8,46 +8,46 @@
 
       <form>
 
-        <p class="h3">Size</p>
+        <p class="h3 subtitulo">Size</p>
 
         <div class="form-check d-flex">
           <label class="flex-grow-1 text-start" for="exampleRadios1">
-            <p class="h5">List item</p>
-            <p>Supporting text</p>
+            <p class="h5 subtitulo">List item</p>
+            <p class="descripcion">Supporting text</p>
           </label>
           <input class="form-check-input flex-grow-0 text-end" type="radio" name="exampleRadios" id="exampleRadios1"
             value="option1">
         </div>
         <div class="form-check d-flex">
           <label class="flex-grow-1 text-start" for="exampleRadios2">
-            <p class="h5">List item</p>
-            <p>Supporting text</p>
+            <p class="h5 subtitulo">List item</p>
+            <p class="descripcion">Supporting text</p>
           </label>
           <input class="form-check-input flex-grow-0 text-end" type="radio" name="exampleRadios" id="exampleRadios2"
             value="option">
         </div>
 
 
-        <p class="h3">Tritle add</p>
+        <p class="h3 subtitulo">Tritle add</p>
 
         <div class="form-check d-flex">
           <label class="flex-grow-1 text-start" for="exampleCheckbo1">
-            <p class="h5">List item</p>
-            <p>Supporting text</p>
+            <p class="h5 subtitulo">List item</p>
+            <p class="descripcion">Supporting text</p>
           </label>
           <input class="form-check-input flex-grow-0 text-end" type="checkbox" value="" id="exampleCheckbo1">
         </div>
         <div class="form-check d-flex">
           <label class="flex-grow-1 text-start" for="exampleCheckbo2">
-            <p class="h5">List item</p>
-            <p>Supporting text</p>
+            <p class="h5 subtitulo">List item</p>
+            <p class="descripcion">Supporting text</p>
           </label>
           <input class="form-check-input flex-grow-0 text-end" type="checkbox" value="" id="exampleCheckbo2">
         </div>
         <div class="form-check d-flex">
           <label class="flex-grow-1 text-start" for="exampleCheckbo3">
-            <p class="h5">List item</p>
-            <p>Supporting text</p>
+            <p class="h5 subtitulo">List item</p>
+            <p class="descripcion">Supporting text</p>
           </label>
           <input class="form-check-input flex-grow-0 text-end" type="checkbox" value="" id="exampleCheckbo3">
         </div>
@@ -55,8 +55,22 @@
       </form>
 
 
-
-      <a href="#" class="btn btn-primary">Agregar ${{producto.price}}</a>
+      <div class="contenedor-padre">
+        <div class="contenedor-cantidad-producto">
+          <div class="btn btn-cantidad-producto">
+            <button class="btn btn-light">
+              <span class="material-icons">remove</span>
+            </button>
+            <span>1</span>
+            <button class="btn btn-light">
+              <span class="material-icons">add</span>
+            </button>
+          </div>
+        </div>
+        <div class="contenedor-agregar-producto">
+          <button class="btn btn-danger btn-agregar-producto">Agregar ${{producto.price}}</button>
+        </div>
+      </div>
     </div>
   </div>
 
