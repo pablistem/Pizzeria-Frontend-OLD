@@ -1,21 +1,21 @@
 <div class="row">
   <div [ngClass]="esCelular ? 'col-sm-12' : 'col-md-6'">
     <div class="panel-izquierdo">
-      <div class="cabecera">
+      <div class="cabecera" (click)="categoriaSeleccionada('ofertas')">
         <img src="../../../assets/images/altavoz.svg" alt="altavoz">
         <span>PROMOS</span>
         <img src="../../../assets/images/altavoz-invertido.svg" alt="altavoz-invertido">
       </div>
-      <div class="tarjeta tarjeta-1">
+      <div class="tarjeta tarjeta-1" (click)="categoriaSeleccionada('pizzas')">
         <img src="../../../assets/images/pizzero.svg" alt="foto-comida">
       </div>
-      <div class="tarjeta tarjeta-2">
+      <div class="tarjeta tarjeta-2" (click)="categoriaSeleccionada('empanadas')">
         <img src="../../../assets/images/pizzero.svg" alt="foto-comida">
       </div>
-      <div class="tarjeta tarjeta-3">
+      <div class="tarjeta tarjeta-3" (click)="categoriaSeleccionada('helados')">
         <img src="../../../assets/images/pizzero.svg" alt="foto-comida">
       </div>
-      <div class="tarjeta tarjeta-4">
+      <div class="tarjeta tarjeta-4" (click)="categoriaSeleccionada('bebidas')">
         <img src="../../../assets/images/pizzero.svg" alt="foto-comida">
       </div>
     </div>

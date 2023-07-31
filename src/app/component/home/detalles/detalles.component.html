@@ -58,11 +58,11 @@
       <div class="contenedor-padre">
         <div class="contenedor-cantidad-producto">
           <div class="btn btn-cantidad-producto">
-            <button class="btn btn-light">
+            <button class="btn btn-light" (click)="menos()">
               <span class="material-icons">remove</span>
             </button>
-            <span>1</span>
-            <button class="btn btn-light">
+            <span>{{cantidad}}</span>
+            <button class="btn btn-light" (click)="mas()">
               <span class="material-icons">add</span>
             </button>
           </div>

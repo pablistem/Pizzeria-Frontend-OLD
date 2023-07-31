@@ -9,5 +9,16 @@ import { Product } from 'src/app/model/product';
 export class DetallesComponent {
 
   @Input() producto: Product | undefined;
+  cantidad: number = 1;
+
+  menos() {
+    if (this.cantidad != 1) {
+      this.cantidad--;
+    }
+  }
+
+  mas() {
+    this.cantidad++;
+  }
 
 }

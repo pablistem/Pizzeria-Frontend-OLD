@@ -3,18 +3,22 @@
 
   .tarjeta-1 {
     grid-area: t1;
+    cursor: pointer;
   }
 
   .tarjeta-2 {
     grid-area: t2;
+    cursor: pointer;
   }
 
   .tarjeta-3 {
     grid-area: t3;
+    cursor: pointer;
   }
 
   .tarjeta-4 {
     grid-area: t4;
+    cursor: pointer;
   }
 
   .cabecera {
@@ -27,6 +31,7 @@
     border-radius: 10px;
     background-color: #E9573A;
     grid-area: ca;
+    cursor: pointer;
 
     span {
       font-family: Luckiest Guy;

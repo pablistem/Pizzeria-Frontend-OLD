@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Category } from 'src/app/model/category';
 import { CategoryService } from 'src/app/service/category.service';
 
@@ -7,7 +7,7 @@ import { CategoryService } from 'src/app/service/category.service';
   templateUrl: './categorias.component.html',
   styleUrls: ['./categorias.component.scss']
 })
-export class CategoriasComponent {
+export class CategoriasComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService
@@ -15,8 +15,13 @@ export class CategoriasComponent {
 
   }
 
+
   @Output() categoriaEmitter: EventEmitter<string> = new EventEmitter<string>();
-  categoria: string | undefined;
+  @Input() categoria: string | undefined;
+
+  ngOnInit(): void {
+
+  }
 
   cambioCategoria(categoria: string) {
     this.categoria = categoria

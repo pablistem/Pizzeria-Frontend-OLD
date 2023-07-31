@@ -1,34 +1,5 @@
 @import '../../../styles.scss';
 
-// ANTIGUO HEADER
-// header {
-//   width: auto;
-//   height: $header-height;
-//   position: relative;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-//   z-index: 20;
-//   background-color: red;
-//   border-bottom: 3px solid rgba(125, 0, 0, 0.5);
-
-//   .logo {
-//     height: $header-height;
-//     border-radius: 50%;
-//   }
-
-//   button {
-//     margin: 5px 20px;
-//     background-color: transparent;
-//     border: none;
-
-//     img {
-//       width: 30px;
-//       height: 30px;
-//     }
-//   }
-// }
-
 header {
   width: auto;
   height: $header-height;
@@ -55,5 +26,7 @@ header {
     line-height: 1.5rem;
     letter-spacing: 0.03125rem;
     margin: 0 auto;
+    cursor: pointer;
+    user-select: none;
   }
 }

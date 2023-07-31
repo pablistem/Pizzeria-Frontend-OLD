@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HeaderService } from 'src/app/service/header-service';
 import { LeftEventService } from 'src/app/service/left-event.service';
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit, OnDestroy  {
   constructor(
     private rightEventService: RightEventService,
     private leftEventService: LeftEventService,
-    private headerService: HeaderService
+    private headerService: HeaderService,
+    private router: Router
   ) {
     this.headerSubscription = this.headerService.event.subscribe(
       componentName => this.menuClosed(componentName)
@@ -92,6 +94,11 @@ export class HeaderComponent implements OnInit, OnDestroy  {
     this.headerSubscription.unsubscribe();
     this.leftEventSubscription.unsubscribe();
     this.rightEventSubscription.unsubscribe();
+  }
+
+  redirigirAHome() {
+    this.router.navigateByUrl('/home');
+    window.location.reload();
   }
 
 }
