@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
-import { RegisterRequest, User } from 'src/app/model/user';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -47,29 +45,25 @@ export class RegisterComponent {
       return;
     }
 
-    const request: RegisterRequest = {
+    const request = {
       name: this.formGroup.controls['nombre'].value,
       lastName: this.formGroup.controls['apellido'].value,
       email: this.formGroup.controls['email'].value,
       password: this.formGroup.controls['password'].value
     };
 
-    // Si hay que redirigir al usuario a alguna página:
-    // this.router.navigateByUrl('/home');
     this.authService.register(request).subscribe({
-      next: (response: User) => this.registerWorks(response),
-      error: (error: HttpErrorResponse) => this.registerError(error)
+      next: respuesta => {
+        console.log(respuesta);
+        this.serverError = false;
+        // Si hay que redirigir al usuario a alguna página:
+        // this.router.navigateByUrl('/home');
+      },
+      error: err => {
+        console.error(err.error.msg);
+        this.serverError = true;
+      }
     });
-  }
-
-  private registerWorks(response: User) {
-    console.log(response);
-    this.serverError = false;
-  }
-
-  private registerError(error: HttpErrorResponse) {
-    console.error(error.error.msg);
-    this.serverError = true;
   }
 
 }

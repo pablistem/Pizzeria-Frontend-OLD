@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
 import { environment } from 'src/environments/environment';
-import { LoginRequest, RegisterRequest, User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -10,39 +8,34 @@ import { LoginRequest, RegisterRequest, User } from '../model/user';
 export class AuthService {
 
   private tokenKey = 'accessToken';
-  private url = environment.API_URL
+  private url = `${environment.API_URL}/auth`
 
   constructor(
-    private http: HttpClient,
-    private cookieService: CookieService
+    private http: HttpClient
   ) { }
 
-  register(request: RegisterRequest) {
-    return this.http.post<User>(`${this.url}/auth/signup`, request);
+  guardarToken(token: string) {
+    localStorage.setItem(this.tokenKey, token);
   }
 
-  login(request: LoginRequest) {
-    return this.http.post<User>(`${this.url}/auth/login`, request);
+  obtenerToken() {
+    return localStorage.getItem(this.tokenKey);
   }
 
-  guardarToken(token: string): void {
-    this.cookieService.set(this.tokenKey, token);
+  limpiarToken() {
+    localStorage.removeItem(this.tokenKey);
   }
 
-  obtenerToken(): string | null {
-    return this.cookieService.get(this.tokenKey);
+  estaLogueado() {
+    return !!localStorage.getItem(this.tokenKey);
   }
 
-  limpiarToken(): void {
-    this.cookieService.delete(this.tokenKey);
+  login(credenciales: any) {
+    return this.http.post<any>(this.url + '/login', credenciales)
   }
 
-  estaLogueado(): boolean {
-    return this.cookieService.check(this.tokenKey);
-  }
-
-  cerrarSesion() {
-    this.cookieService.delete("token");
+  register(credenciales: any) {
+    return this.http.post<any>(this.url + '/signup', credenciales)
   }
 
 }

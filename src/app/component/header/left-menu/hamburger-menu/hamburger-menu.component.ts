@@ -22,8 +22,6 @@ export class HamburgerMenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoggedIn = this.authService.estaLogueado();
-    this.isLoggedIn = true;
-    console.warn("Está logueado de forma hardcodeada")
   }
 
   public showProfile(event: Event): void {
@@ -47,7 +45,7 @@ export class HamburgerMenuComponent implements OnInit {
   }
 
   public cerrarSesion() {
-    this.authService.cerrarSesion();
+    this.authService.limpiarToken()
   }
 
 }
