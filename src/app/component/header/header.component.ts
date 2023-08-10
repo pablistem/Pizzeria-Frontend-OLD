@@ -96,9 +96,11 @@ export class HeaderComponent implements OnInit, OnDestroy  {
     this.rightEventSubscription.unsubscribe();
   }
 
-  redirigirAHome() {
-    this.router.navigateByUrl('/home');
-    window.location.reload();
+  async redirigirAHome() {
+    const respuesta = await this.router.navigateByUrl('/home');
+    if (respuesta) {
+      window.location.reload();
+    }
   }
 
 }

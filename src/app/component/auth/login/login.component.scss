@@ -17,6 +17,7 @@
   .input-container {
     width: max-content;
     margin: auto;
+
     label {
       display: block;
       text-align: left;
@@ -31,9 +32,8 @@
       padding-left: 16px;
     }
 
-    #input-mail {
-    }
   }
+
   .btn-login {
     width: 134px;
     height: 40px;
@@ -50,14 +50,6 @@
     letter-spacing: 0.1px;
     color: #FFFFFF;
   }
-
-  // .linea {
-  //   width: 271px;
-  //   height: 0;
-  //   margin: auto;
-  //   margin-bottom: 60px;
-  //   border-top: 2px solid;
-  // }
 
   a {
     height: 40px;
@@ -98,14 +90,14 @@
   }
 
   p {
-    width: 361px;
+    text-align: center;
     height: 32px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    letter-spacing: 0.4px;    
+    letter-spacing: 0.4px;
     color: #555555;
     margin-left: 16px;
   }

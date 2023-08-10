@@ -1,13 +1,12 @@
-<div class="fondo">
-  <div class="container">
-    <div class="pb-4 pt-4">
-      <app-categorias *ngIf="categoria" [categoria]="categoria!" (categoriaEmitter)="categoriaListener($event)"></app-categorias>
-    </div>
-    <ng-container *ngIf="!categoria; else categoriaSeleccionada">
-      <app-recomendaciones (categoriaEmitter)="categoriaListener($event)"></app-recomendaciones>
-    </ng-container>
-    <ng-template #categoriaSeleccionada>
-      <app-menu [categoria]="categoria!"></app-menu>
-    </ng-template>
+<div class="container">
+  <div class="pb-4 pt-4">
+    <app-categorias *ngIf="categoria" [categoria]="categoria!"
+      (categoriaEmitter)="categoriaListener($event)"></app-categorias>
   </div>
+  <ng-container *ngIf="!categoria; else categoriaSeleccionada">
+    <app-recomendaciones (categoriaEmitter)="categoriaListener($event)"></app-recomendaciones>
+  </ng-container>
+  <ng-template #categoriaSeleccionada>
+    <app-menu [categoria]="categoria!"></app-menu>
+  </ng-template>
 </div>

@@ -29,10 +29,10 @@
 
     <!-- Errores en el logeo -->
     <ng-container *ngIf="invalidCredentials; else serverErrorContent">
-      <p>Email o contraseña no validos.</p>
+      <p class="error">Email o contraseña no validos.</p>
     </ng-container>
     <ng-template #serverErrorContent>
-      <p *ngIf="serverError">Ocurrió un error inesperado.<br>Por favor, intentelo de nuevo mas tarde</p>
+      <p class="error" *ngIf="serverError">Ocurrió un error inesperado.<br>Por favor, intentelo de nuevo mas tarde</p>
     </ng-template>
 
   </form>
