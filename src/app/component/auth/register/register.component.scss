@@ -1,18 +1,18 @@
 .register-container {
 
-  margin-top: 23px;
   text-align: center;
+
+  min-height: calc(100vh - 3rem);
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
   img {
     width: 165px;
     height: 165px;
     border-radius: 15px;
-    margin-top: 23px;
-    margin-bottom: 25px;
   }
 
   .input-container {
@@ -23,8 +23,8 @@
       width: 315px;
       height: 48px;
       border-radius: 15px;
-      margin-bottom: 20px;
       padding-left: 16px;
+      border: 1px solid #444444;
     }
   }
 
@@ -34,7 +34,6 @@
     height: 40px;
     background-color: #E9573A;
     border-radius: 100px;
-    margin-bottom: 35px;
 
     color: #FFFFFF;
     font-family: 'Roboto';
@@ -62,7 +61,6 @@
 
   .btn-continue {
     all: unset;
-    margin-bottom: 28px;
     width: 205px;
     height: 40px;
     background: #F4AB9D;
@@ -74,14 +72,9 @@
     line-height: 20px;
     color: #2C0B05;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     img {
-      width: 11.69px;
-      height: 11.38px;
-      color: #2C0B05;
+      width: 12px;
+      height: 12px;
       margin-right: 8px;
     }
   }

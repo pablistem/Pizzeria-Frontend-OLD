@@ -1,17 +1,18 @@
-.example-container mat-form-field+mat-form-field {
-  margin-left: 8px;
-}
 
 .login-container {
-  margin-top: 45px;
+  padding-top: 45px;
   text-align: center;
+  min-height: calc(100vh - 3rem);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 
   .logo {
     width: 165px;
     height: 165px;
     border-radius: 15px;
-    margin-top: 59px;
-    margin-bottom: 70px;
   }
 
   .input-container {
@@ -25,11 +26,10 @@
 
     input {
       width: 315px;
-      height: 56px;
-
+      height: 48px;
       border-radius: 15px;
-      margin-bottom: 15px;
       padding-left: 16px;
+      border: 1px solid #444444;
     }
 
   }
@@ -37,8 +37,6 @@
   .btn-login {
     width: 134px;
     height: 40px;
-    // margin-top: 30px;
-    margin-bottom: 70px;
     background-color: #E9573A;
     border-radius: 100px;
 
@@ -49,6 +47,7 @@
     line-height: 20px;
     letter-spacing: 0.1px;
     color: #FFFFFF;
+    border: none;
   }
 
   a {
@@ -56,7 +55,6 @@
     display: block;
     text-decoration: none;
     color: #E9573A;
-    margin-bottom: 15px;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -68,8 +66,6 @@
   }
 
   .btn-continue {
-    all: unset;
-    margin-bottom: 92px;
     width: 205px;
     height: 40px;
     background: #F4AB9D;
@@ -80,18 +76,15 @@
     font-size: 14px;
     line-height: 20px;
     color: #2C0B05;
+    border: none;
 
     img {
-      width: 11.69px;
-      height: 11.38px;
-      color: #2C0B05;
       margin-right: 8px;
     }
   }
 
   p {
     text-align: center;
-    height: 32px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -99,6 +92,5 @@
     line-height: 16px;
     letter-spacing: 0.4px;
     color: #555555;
-    margin-left: 16px;
   }
 }
