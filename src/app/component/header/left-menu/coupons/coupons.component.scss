@@ -58,16 +58,16 @@
         // padding: 0.625rem;
         margin-bottom: 1rem;
         background-color: #FFFFFF;
-        border-radius: 10px;
+        border-radius: 0.625rem;
 
         h2 {
-          width: 341px;
-          height: 40px;
+          width: 21.25rem;
+          height: 2.5rem;
           font-family: 'Roboto';
           font-style: normal;
           font-weight: 400;
-          font-size: 32px;
-          line-height: 40px;
+          font-size: 2rem;
+          line-height: 2.5rem;
           color: #000000;
         }
 
@@ -76,14 +76,14 @@
           flex-direction: row;
 
           p {
-            width: 245px;
-            height: 40px;
+            width: 15.3125rem;
+            height: 2.5rem;
             font-family: 'Roboto';
             font-style: normal;
             font-weight: 400;
-            font-size: 12px;
-            line-height: 16px;
-            letter-spacing: 0.4px;
+            font-size: 0.75rem;
+            line-height: 1rem;
+            letter-spacing: 0.025rem;
             color: #000000;
             text-align: left;
 
@@ -91,7 +91,7 @@
 
           button {
             all: unset;
-            border-radius: 100px;
+            border-radius: 6.25rem;
             color: #AAAAAA;
             background-color: #AAAAAA1F;
             // padding: 0.625rem 1.5rem;
@@ -126,7 +126,7 @@
         padding: 0.625rem;
         background-color: #FFFFFF;
         border: none;
-        border-radius: 10px;
+        border-radius: 0.625rem;
 
         h2 {
           color: #000;
@@ -147,7 +147,7 @@
 
         button {
           all: unset;
-          border-radius: 100px;
+          border-radius: 6.25rem;
           color: #AAAAAA;
           background-color: #AAAAAA1F;
           padding: 0.625rem 1.5rem;

@@ -1,15 +1,15 @@
 .styled-table {
   border-collapse: collapse;
   width: 100%;
-  max-width: 800px;
+  max-width: 50rem;
   margin-bottom: 1rem;
-  border: 1px solid #ddd;
+  border: 0.0625rem solid #ddd;
 }
 
 .styled-table th, .styled-table td {
-  padding: 8px;
+  padding: 0.5rem;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.0625rem solid #ddd;
 }
 
 .styled-table th {

@@ -1,136 +1,277 @@
-.registered-profile {
+@import '../../../../../styles.scss';
 
-  margin: 1.5rem 1.5rem 0;
+.master-container {
+  overflow-y: auto;
+  height: 100%;
+  min-height: calc(100vh - $header-height);
+  // padding: 20px;
 
-  .container-relative {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  h1 {
+    text-align: left;
+    margin: 1rem 0 0 1.3rem;
+    color: #000;
+    font-size: 2rem;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.5rem;
   }
 
-  .icon-share {
-    width: 1.5rem;
-    height: 1.5rem;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .img-name-share {
-
+  .general-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
+    justify-content: flex-start;
 
-    .img-profile {
-      width: 114px;
-      height: 133px;
-      border-radius: 50%;
-    }
-
-    h1 {
+    .h2-login {
+      margin-top: 4.08rem;
+      margin-left: .6rem;
+      color: #000;
+      text-align: center;
+      font-size: 1.375rem;
+      font-family: Roboto;
+      font-style: normal;
       font-weight: 400;
-      font-size: 24px;
-      line-height: 29px;
-      color: black;
+      line-height: 1.75rem;
     }
 
-    @media screen and (min-width: 480px) { }
-  }
+    // .h2-con-pedidos {
+    //   margin: 1rem 0 1rem 1.06rem;
+    //   width: 100%;
+    //   color: #000;
+    //   font-size: 1rem;
+    //   font-family: Roboto;
+    //   font-style: normal;
+    //   font-weight: 500;
+    //   line-height: 1.5rem;
+    //   letter-spacing: 0.00938rem;
+    // }
 
-}
+  //   .btns-coupons-container {
+  //     width: min-content;
+  //     margin: 0 auto;
+  //     align-items: center;
 
-.personal-data {
+  //     .coupon-container-main {
+  //       border: none;
+  //       width: 22.5625rem;
+  //       // padding: 0.625rem;
+  //       margin-bottom: 1rem;
+  //       background-color: #FFFFFF;
+  //       border-radius: 10px;
 
-  h2 {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    margin-bottom: 1.5rem;
-  }
+  //       h2 {
+  //         width: 341px;
+  //         height: 40px;
+  //         font-family: 'Roboto';
+  //         font-style: normal;
+  //         font-weight: 400;
+  //         font-size: 32px;
+  //         line-height: 40px;
+  //         color: #000000;
+  //       }
 
-  h3 {
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-  }
+  //       .detalle-btn-container {
+  //         display: flex;
+  //         flex-direction: row;
 
-  p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    margin-bottom: 1rem;
-  }
+  //         p {
+  //           width: 245px;
+  //           height: 40px;
+  //           font-family: 'Roboto';
+  //           font-style: normal;
+  //           font-weight: 400;
+  //           font-size: 12px;
+  //           line-height: 16px;
+  //           letter-spacing: 0.4px;
+  //           color: #000000;
+  //           text-align: left;
 
-  @media screen and (min-width: 480px) {
+  //         }
 
-    text-align: center;
+  //         button {
+  //           all: unset;
+  //           border-radius: 100px;
+  //           color: #AAAAAA;
+  //           background-color: #AAAAAA1F;
+  //           // padding: 0.625rem 1.5rem;
 
-  }
-}
+  //         }
+  //       }
+  //     }
+
+  //     .active {
+  //       background: rgba(233, 87, 58, 0.12);
+
+  //       .detalle-btn-container {
+  //         button {
+  //           background: #E9573A;
+  //           color: #FFF;
+  //         }
+  //       }
+
+  //     }
+
+  //   .coupon-container-grid {
+  //     display: grid;
+  //     grid-template-columns: 1fr 2fr;
+  //     /* Dos columnas en proporción 1:2 */
+  //     gap: 1rem;
+  //     margin: 0 auto 3.56rem;
+  //     // margin-left: 1rem;
+  //     // margin-bottom: 3.56rem;
+
+  //     .coupon-card {
+  //       width: 10.75rem;
+  //       padding: 0.625rem;
+  //       background-color: #FFFFFF;
+  //       border: none;
+  //       border-radius: 10px;
+
+  //       h2 {
+  //         color: #000;
+  //         text-align: center;
+  //         font-size: 2rem;
+  //         font-family: Roboto;
+  //         line-height: 2.5rem;
+  //       }
+
+  //       p {
+  //         font-size: 0.75rem;
+  //         font-family: Roboto;
+  //         line-height: 1rem;
+  //         letter-spacing: 0.025rem;
+  //         text-align: left;
+
+  //       }
+
+  //       button {
+  //         all: unset;
+  //         border-radius: 100px;
+  //         color: #AAAAAA;
+  //         background-color: #AAAAAA1F;
+  //         padding: 0.625rem 1.5rem;
+  //       }
+  //     }
+
+  //     .active {
+  //       background: rgba(233, 87, 58, 0.12);
+
+  //       button {
+  //         background: #E9573A;
+  //         color: #FFF;
+  //       }
+  //     }
+  //   }
+  // }
+
+    .img-login {
+      width: 18.75rem;
+      height: 11.20988rem;
+      margin: 3.12rem auto;
+    }
+
+    // .img-sin-cupon {
+    //   margin-top: 9.75rem;
+    //   margin-bottom: 11.36rem;
+    //   width: 18.75rem;
+    //   height: 10.88794rem;
+    // }
+
+    .buttons-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+
+      .log-in {
+        all: unset;
+        height: 2.5rem;
+        align-self: stretch;
+        border-radius: 6.25rem;
+        background: #E9573A;
+
+        color: #FFF;
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.25rem;
+        letter-spacing: 0.00625rem;
+        margin-bottom: 1rem;
+      }
+
+      .register {
+        all: unset;
+        height: 2.5rem;
+        margin-bottom: 6rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        align-self: stretch;
+
+        color: #E9573A;
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.25rem;
+        letter-spacing: 0.00625rem;
+      }
+    }
+    .icono-editar-container {
+      width: 100%;
+
+      img {
+        float: right;
+        margin-right: 1.5rem;
+        margin-bottom: 1.75rem;
+      }
+    }
+    .img-nombre-container {
+      
+      .imagen-perfil {
+        margin-bottom: 1rem;
+      }
+      .nombre-perfil {
+        
+        h2 {
+          text-align: center;
+        }
+      }
+    }
+    .datos-personales-container {
+      justify-content: flex-start; 
+      .datos-personales {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
 
 
+      }
 
-
-
-
-
-
-
-
-.paragraph-container {
-
-  width: 279px;
-  height: 78px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 137px auto 191px;
-
-  p {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 39px;
-    text-align: center;
-  }
-}
-
-.btns-container {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  .login-btn {
-
-    cursor: pointer;
-    width: 181.59px;
-    height: 49px;
-    border-color: red;
-    border-radius: 10.0882px;
-    font-weight: 500;
-    font-size: 25.9412px;
-    line-height: 31px;
-    background-color: red;
-    margin-bottom: 13px;
-
-    a {
-      text-decoration: none;
-      color: #FFFFFF;
     }
   }
 
-  .register-btn {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    color: black;
-  }
+  // .help {
+  //   height: 2.5rem;
+  //   justify-content: center;
+  //   align-items: center;
+  //   gap: 0.5rem;
+  //   align-self: stretch;
+
+  //   color: var(--sys-text, #111);
+  //   text-align: center;
+  //   font-size: 0.875rem;
+  //   font-family: Roboto;
+  //   font-style: normal;
+  //   font-weight: 700;
+  //   line-height: 1.25rem;
+  //   letter-spacing: 0.00625rem;
+  // }
+
 }

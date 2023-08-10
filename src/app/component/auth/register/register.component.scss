@@ -10,9 +10,9 @@
   align-items: center;
 
   img {
-    width: 165px;
-    height: 165px;
-    border-radius: 15px;
+    width: 10.3125rem;
+    height: 10.3125rem;
+    border-radius: 0.9375rem;
   }
 
   .input-container {
@@ -20,32 +20,32 @@
     margin: auto;
 
     input {
-      width: 315px;
-      height: 48px;
-      border-radius: 15px;
-      padding-left: 16px;
-      border: 1px solid #444444;
+      width: 19.6875rem;
+      height: 3rem;
+      border-radius: 0.9375rem;
+      padding-left: 1rem;
+      border: 0.0625rem solid #444444;
     }
   }
 
   button {
     all: unset;
-    width: 127px;
-    height: 40px;
+    width: 7.9375rem;
+    height: 2.5rem;
     background-color: #E9573A;
-    border-radius: 100px;
+    border-radius: 6.25rem;
 
     color: #FFFFFF;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.1px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.00625rem;
   }
 
   a {
-    height: 40px;
+    height: 2.5rem;
     display: block;
     text-decoration: none;
     color: #E9573A;
@@ -53,41 +53,41 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.1px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.00625rem;
 
   }
 
   .btn-continue {
     all: unset;
-    width: 205px;
-    height: 40px;
+    width: 12.8125rem;
+    height: 2.5rem;
     background: #F4AB9D;
-    border-radius: 100px;
+    border-radius: 6.25rem;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     color: #2C0B05;
 
     img {
-      width: 12px;
-      height: 12px;
-      margin-right: 8px;
+      width: 0.75rem;
+      height: 0.75rem;
+      margin-right: 0.5rem;
     }
   }
 
   p {
-    height: 32px;
+    height: 2rem;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.4px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.025rem;
     color: #555555;
-    margin-left: 16px;
+    margin-left: 1rem;
   }
 }
