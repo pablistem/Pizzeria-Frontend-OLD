@@ -1,6 +1,9 @@
 <ng-container *ngIf="producto; else sinProducto">
 
   <div class="card p-2">
+    <button class="btn btn-light mi-boton" type="button" (click)="volver()">
+      <span class="material-icons">arrow_back</span>
+    </button>
     <img class="card-img-top" [src]="producto.image" [alt]="producto.name">
     <div class="card-body">
       <h5 class="card-title">{{producto.name}}</h5>

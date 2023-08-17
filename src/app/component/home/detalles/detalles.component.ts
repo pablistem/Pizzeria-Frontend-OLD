@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from 'src/app/model/product';
 
 @Component({
@@ -8,6 +8,7 @@ import { Product } from 'src/app/model/product';
 })
 export class DetallesComponent {
 
+  @Output() eventoVolver: EventEmitter<void> = new EventEmitter();
   @Input() producto: Product | undefined;
   cantidad: number = 1;
 
@@ -21,4 +22,8 @@ export class DetallesComponent {
     this.cantidad++;
   }
 
+  volver() {
+    this.producto = undefined
+    this.eventoVolver.next();
+  }
 }

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-6 productos">
+    <div class="col-6 productos" [class.invisible]="invisibilizarProductos()" [class.col-12]="invisibilizarDetalles()">
 
       <div class="row pb-4">
         <div class="col-6">
@@ -12,33 +12,18 @@
       </div>
 
       <div class="row pb-4">
-        <div class="col-4">
+        <div class="col-6">
           <app-producto (productoEmmiter)="seleccionarProducto($event)"></app-producto>
         </div>
-        <div class="col-4">
-          <app-producto (productoEmmiter)="seleccionarProducto($event)"></app-producto>
-        </div>
-        <div class="col-4">
-          <app-producto (productoEmmiter)="seleccionarProducto($event)"></app-producto>
-        </div>
-      </div>
-
-      <div class="row pb-4">
-        <div class="col-4">
-          <app-producto (productoEmmiter)="seleccionarProducto($event)"></app-producto>
-        </div>
-        <div class="col-4">
-          <app-producto (productoEmmiter)="seleccionarProducto($event)"></app-producto>
-        </div>
-        <div class="col-4">
+        <div class="col-6">
           <app-producto (productoEmmiter)="seleccionarProducto($event)"></app-producto>
         </div>
       </div>
 
     </div>
 
-    <div class="col-6 detalles">
-      <app-detalles [producto]="productoSeleccionado"></app-detalles>
+    <div class="col-6 detalles" [class.col-12]="invisibilizarProductos()" [class.invisible]="invisibilizarDetalles()">
+      <app-detalles [producto]="productoSeleccionado" (eventoVolver)="volver()"></app-detalles>
     </div>
 
   </div>

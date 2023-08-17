@@ -11,6 +11,10 @@ export class RecomendacionesComponent {
   repeticiones: number[] = [1, 2, 3, 4, 5, 6];
   esCelular: boolean = false;
 
+  constructor() {
+    this.esCelular = window.innerWidth < 1000;
+  }
+
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: any): void {
     this.esCelular = window.innerWidth < 1000;
