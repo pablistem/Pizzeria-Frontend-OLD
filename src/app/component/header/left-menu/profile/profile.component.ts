@@ -9,7 +9,7 @@ export class ProfileComponent implements OnInit {
 
   constructor() { }
 
-  public isRegistered: boolean = true;
+  public isLogged: boolean = true;
 
   ngOnInit(): void {
   }
