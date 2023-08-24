@@ -38,6 +38,7 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { MenuComponent } from './component/home/menu/menu.component';
 import { ProductoComponent } from './component/home/producto/producto.component';
 import { DetallesComponent } from './component/home/detalles/detalles.component';
+import { ModalEditarPerfilComponent } from './component/header/left-menu/profile/modal-editar-perfil/modal-editar-perfil.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { DetallesComponent } from './component/home/detalles/detalles.component'
     RecomendacionesComponent,
     MenuComponent,
     ProductoComponent,
-    DetallesComponent
+    DetallesComponent,
+    ModalEditarPerfilComponent
   ],
   imports: [
     BrowserModule,

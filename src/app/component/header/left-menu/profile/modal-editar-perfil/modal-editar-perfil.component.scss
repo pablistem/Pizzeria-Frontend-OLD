@@ -1,0 +1,126 @@
+// * {
+//     border: 1px solid red;
+// }
+
+
+h5 {
+    color: #111;
+    font-family: Roboto;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.img-perfil {
+    position: relative;
+    opacity: 0.3;
+}
+
+.icono-editar-container {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6.25rem;
+    background: #F4AB9D;
+
+    .icono-editar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.inputs-container {
+    width: 100%;
+    padding: 0 1rem;
+
+    .inputs {
+        position: relative;
+
+        label {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            padding: 0 5px;
+            background-color: white;
+
+            color: #555;
+            font-family: Roboto;
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1rem;
+            letter-spacing: 0.025rem;
+
+
+
+        }
+
+        input {
+            width: 100%;
+            height: 2.5rem;
+            border: 1px solid #555555;
+            border-radius: 0.9375rem;
+            margin-bottom: 1.44rem;
+            padding: 0.25rem 1rem;
+        }
+
+        .custom-input:focus {
+            border-color: #E9573A;
+            box-shadow: 0 0 0 0.1rem #E9573A;
+        }
+    }
+}
+
+.btns-container {
+    border: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .btn-guardar {
+        all: unset;
+        cursor: pointer;
+        height: 2.5rem;
+        align-self: stretch;
+        border-radius: 6.25rem;
+        background: #E9573A;
+
+        color: #FFF;
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.25rem;
+        letter-spacing: 0.00625rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-cancelar {
+        all: unset;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        align-self: stretch;
+
+        color: #E9573A;
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.25rem;
+        letter-spacing: 0.00625rem;
+    }
+}

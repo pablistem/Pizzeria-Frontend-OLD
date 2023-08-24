@@ -1,0 +1,34 @@
+<div class="p-4">
+    <h5>Editar perfil</h5>
+
+    <div class="position-relative d-flex justify-content-center mb-4">
+            <img class="img-perfil" src="../../../../../assets/images/Ellipse 92.svg" alt="foto de perfil">
+            <div class="icono-editar-container">
+                <img class="icono-editar" src="../../../../../assets/icons/Edit.svg" alt="icono-editar">
+            </div>
+    </div>
+    <div class="inputs-container">
+        <div class="inputs">
+            <label for="nombre">Nombre</label>
+            <input class="form-control custom-input" type="text" id="nombre" value="Carlitos Tuki">
+        </div>
+        <div class="inputs">
+            <label for="direccion">Dirección</label>
+            <input class="form-control custom-input" type="text" id="direccion" value="Calle Falsa 123">
+        </div>
+        <div class="inputs">
+            <label for="mail">Mail</label>
+            <input class="form-control custom-input" type="mail" id="mail" value="Carlitostuki@gmail.com">
+        </div>
+        <div class="inputs">
+            <label for="telefono">Teléfono</label>
+            <input class="form-control custom-input" type="number" id="telefono" value="1165156514">
+        </div>
+    </div>
+    
+    <div class="btns-container">
+        <button type="button" class="btn-guardar" (click)="btnGuardar()">Guardar</button>
+        <button type="button" class="btn-cancelar" (click)="btnCancelar()">Cancelar</button>
+    </div>
+</div>
+

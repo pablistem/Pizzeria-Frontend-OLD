@@ -26,7 +26,9 @@
 
   <div class="general-container" *ngIf="isLogged">
     <div class="icono-editar-container">
-      <img src="../../../../../assets/icons/Edit.svg" alt="icono edit">
+      <button (click)="abrirModal()">
+        <img src="../../../../../assets/icons/Edit.svg" alt="icono edit">
+      </button>
     </div>
     <div class="img-nombre-container">
       <div class="imagen-perfil">

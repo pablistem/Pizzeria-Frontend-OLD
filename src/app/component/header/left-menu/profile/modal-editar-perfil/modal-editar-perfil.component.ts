@@ -2,17 +2,17 @@ import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-modal-cupon',
-  templateUrl: './modal-cupon.component.html',
-  styleUrls: ['./modal-cupon.component.scss']
+  selector: 'app-modal-editar-perfil',
+  templateUrl: './modal-editar-perfil.component.html',
+  styleUrls: ['./modal-editar-perfil.component.scss']
 })
-export class ModalCuponComponent {
+export class ModalEditarPerfilComponent {
 
   constructor (private ngbActiveModal : NgbActiveModal) {
 
   }
 
-  btnContinuar() {
+  btnGuardar() {
     this.ngbActiveModal.close();
   }
 

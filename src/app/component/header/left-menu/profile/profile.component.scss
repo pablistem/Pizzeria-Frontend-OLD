@@ -1,4 +1,7 @@
 @import '../../../../../styles.scss';
+// * {
+//   border: 1px solid red;
+// }
 
 .master-container {
   overflow-y: auto;
@@ -89,10 +92,13 @@
     .icono-editar-container {
       width: 100%;
 
-      img {
+      button {
+        all: unset;
+        cursor: pointer;
         float: right;
         margin-right: 1.5rem;
         margin-bottom: 1.75rem;
+        
       }
     }
 
