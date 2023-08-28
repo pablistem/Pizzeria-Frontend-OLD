@@ -4,7 +4,7 @@
   <app-right-menu></app-right-menu>
 </header>
 
-<body>
+<body [ngClass]="{'blur': blurActivo}">
   <router-outlet></router-outlet>
 </body>
 

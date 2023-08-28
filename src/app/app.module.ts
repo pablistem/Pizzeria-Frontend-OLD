@@ -74,7 +74,7 @@ import { ModalEditarPerfilComponent } from './component/header/left-menu/profile
     MenuComponent,
     ProductoComponent,
     DetallesComponent,
-    ModalEditarPerfilComponent
+    ModalEditarPerfilComponent,
   ],
   imports: [
     BrowserModule,
