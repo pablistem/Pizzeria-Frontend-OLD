@@ -3,11 +3,14 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Category } from 'src/app/model/category';
 import { CategoryService } from 'src/app/service/category.service';
 import { CrearCategoriaComponent } from "./crear-categoria/crear-categoria.component";
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-category-bo',
-  templateUrl: './category-bo.component.html',
-  styleUrls: ['./category-bo.component.scss']
+    selector: 'app-category-bo',
+    templateUrl: './category-bo.component.html',
+    styleUrls: ['./category-bo.component.scss'],
+    standalone: true,
+    imports: [NgIf, NgFor]
 })
 export class CategoryBOComponent implements OnInit {
 

@@ -5,11 +5,14 @@ import { ProductService } from 'src/app/service/product.service';
 import { CrearProductoComponent } from './crear-producto/crear-producto.component';
 import { EliminarProductoComponent } from './eliminar-producto/eliminar-producto.component';
 import { ActualizarProductoComponent } from './actualizar-producto/actualizar-producto.component';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-producto-bo',
-  templateUrl: './producto-bo.component.html',
-  styleUrls: ['./producto-bo.component.scss']
+    selector: 'app-producto-bo',
+    templateUrl: './producto-bo.component.html',
+    styleUrls: ['./producto-bo.component.scss'],
+    standalone: true,
+    imports: [NgIf, NgFor]
 })
 export class ProductoBOComponent implements OnInit {
 

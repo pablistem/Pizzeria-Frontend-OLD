@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { NgIf, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-discount',
-  templateUrl: './discount.component.html',
-  styleUrls: ['./discount.component.scss']
+    selector: 'app-discount',
+    templateUrl: './discount.component.html',
+    styleUrls: ['./discount.component.scss'],
+    standalone: true,
+    imports: [NgIf, RouterLink, NgClass]
 })
 export class DiscountComponent implements OnInit {
 

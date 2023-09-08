@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LeftEventService } from 'src/app/service/left-event.service';
 import { Constants } from 'src/app/util/constants';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.scss']
+    selector: 'app-order',
+    templateUrl: './order.component.html',
+    styleUrls: ['./order.component.scss'],
+    standalone: true,
+    imports: [NgIf]
 })
 export class OrderComponent {
 

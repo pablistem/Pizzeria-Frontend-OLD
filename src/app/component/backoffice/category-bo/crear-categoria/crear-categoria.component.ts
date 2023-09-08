@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { firstValueFrom } from 'rxjs';
 import { CategoryService } from 'src/app/service/category.service';
 import { longitudMaxima } from 'src/app/validators/utils.validator';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-crear-categoria',
-  templateUrl: './crear-categoria.component.html',
-  styleUrls: ['./crear-categoria.component.scss']
+    selector: 'app-crear-categoria',
+    templateUrl: './crear-categoria.component.html',
+    styleUrls: ['./crear-categoria.component.scss'],
+    standalone: true,
+    imports: [ReactiveFormsModule, NgIf]
 })
 export class CrearCategoriaComponent implements OnInit {
   constructor(

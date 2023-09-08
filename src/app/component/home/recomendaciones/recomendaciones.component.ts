@@ -1,9 +1,13 @@
 import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { ProductoComponent } from '../producto/producto.component';
+import { NgClass, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-recomendaciones',
-  templateUrl: './recomendaciones.component.html',
-  styleUrls: ['./recomendaciones.component.scss']
+    selector: 'app-recomendaciones',
+    templateUrl: './recomendaciones.component.html',
+    styleUrls: ['./recomendaciones.component.scss'],
+    standalone: true,
+    imports: [NgClass, NgFor, ProductoComponent]
 })
 export class RecomendacionesComponent {
 

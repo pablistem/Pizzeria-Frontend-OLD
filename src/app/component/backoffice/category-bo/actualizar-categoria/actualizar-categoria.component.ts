@@ -1,15 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { firstValueFrom } from 'rxjs';
 import { Category } from 'src/app/model/category';
 import { CategoryService } from 'src/app/service/category.service';
 import { longitudMaxima } from 'src/app/validators/utils.validator';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-actualizar-categoria',
-  templateUrl: './actualizar-categoria.component.html',
-  styleUrls: ['./actualizar-categoria.component.scss']
+    selector: 'app-actualizar-categoria',
+    templateUrl: './actualizar-categoria.component.html',
+    styleUrls: ['./actualizar-categoria.component.scss'],
+    standalone: true,
+    imports: [ReactiveFormsModule, NgIf]
 })
 export class ActualizarCategoriaComponent implements OnInit {
   constructor(

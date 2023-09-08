@@ -1,10 +1,14 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { Product } from 'src/app/model/product';
+import { DetallesComponent } from '../detalles/detalles.component';
+import { ProductoComponent } from '../producto/producto.component';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+    selector: 'app-menu',
+    templateUrl: './menu.component.html',
+    styleUrls: ['./menu.component.scss'],
+    standalone: true,
+    imports: [ProductoComponent, DetallesComponent]
 })
 export class MenuComponent {
 

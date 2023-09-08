@@ -1,11 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Category } from 'src/app/model/category';
 import { CategoryService } from 'src/app/service/category.service';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-categorias',
-  templateUrl: './categorias.component.html',
-  styleUrls: ['./categorias.component.scss']
+    selector: 'app-categorias',
+    templateUrl: './categorias.component.html',
+    styleUrls: ['./categorias.component.scss'],
+    standalone: true,
+    imports: [NgIf]
 })
 export class CategoriasComponent implements OnInit {
 

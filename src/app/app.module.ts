@@ -1,5 +1,5 @@
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+<<<<<<< HEAD
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -95,5 +95,13 @@ import { OrderDetailComponent } from './component/header/left-menu/my-orders/ord
     }
   ],
   bootstrap: [AppComponent]
+=======
+
+@NgModule({
+  declarations: [],
+  imports: [],
+  providers: [],
+  bootstrap: []
+>>>>>>> 211f96234ed65c5b90b23d4d9e86494a08d3513f
 })
 export class AppModule { }

@@ -3,11 +3,15 @@ import { AuthService } from 'src/app/service/auth.service';
 import { HeaderService } from 'src/app/service/header-service';
 import { LeftEventService } from 'src/app/service/left-event.service';
 import { Constants } from 'src/app/util/constants';
+import { RouterLink } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-hamburger-menu',
-  templateUrl: './hamburger-menu.component.html',
-  styleUrls: ['./hamburger-menu.component.scss']
+    selector: 'app-hamburger-menu',
+    templateUrl: './hamburger-menu.component.html',
+    styleUrls: ['./hamburger-menu.component.scss'],
+    standalone: true,
+    imports: [NgIf, RouterLink]
 })
 export class HamburgerMenuComponent implements OnInit {
 
