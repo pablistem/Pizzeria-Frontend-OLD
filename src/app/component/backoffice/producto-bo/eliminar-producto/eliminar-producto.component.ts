@@ -3,11 +3,14 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { firstValueFrom } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-eliminar-producto',
-  templateUrl: './eliminar-producto.component.html',
-  styleUrls: ['./eliminar-producto.component.scss']
+    selector: 'app-eliminar-producto',
+    templateUrl: './eliminar-producto.component.html',
+    styleUrls: ['./eliminar-producto.component.scss'],
+    standalone: true,
+    imports: [NgIf]
 })
 export class EliminarProductoComponent implements OnInit {
 

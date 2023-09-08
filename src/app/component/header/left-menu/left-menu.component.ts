@@ -2,11 +2,19 @@ import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LeftEventService } from 'src/app/service/left-event.service';
 import { Constants } from 'src/app/util/constants';
+import { DiscountComponent } from './discount/discount.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CouponsComponent } from './coupons/coupons.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-left-menu',
-  templateUrl: './left-menu.component.html',
-  styleUrls: ['./left-menu.component.scss']
+    selector: 'app-left-menu',
+    templateUrl: './left-menu.component.html',
+    styleUrls: ['./left-menu.component.scss'],
+    standalone: true,
+    imports: [NgIf, HamburgerMenuComponent, MyOrdersComponent, CouponsComponent, ProfileComponent, DiscountComponent]
 })
 export class LeftMenuComponent implements OnDestroy {
 

@@ -3,11 +3,14 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { firstValueFrom } from 'rxjs';
 import { Category } from 'src/app/model/category';
 import { CategoryService } from 'src/app/service/category.service';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-eliminar-categoria',
-  templateUrl: './eliminar-categoria.component.html',
-  styleUrls: ['./eliminar-categoria.component.scss']
+    selector: 'app-eliminar-categoria',
+    templateUrl: './eliminar-categoria.component.html',
+    styleUrls: ['./eliminar-categoria.component.scss'],
+    standalone: true,
+    imports: [NgIf]
 })
 export class EliminarCategoriaComponent implements OnInit {
   constructor(

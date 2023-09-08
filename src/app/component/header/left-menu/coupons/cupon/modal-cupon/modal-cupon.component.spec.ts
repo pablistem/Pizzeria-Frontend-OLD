@@ -8,8 +8,8 @@ describe('ModalCuponComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalCuponComponent]
-    });
+    imports: [ModalCuponComponent]
+});
     fixture = TestBed.createComponent(ModalCuponComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

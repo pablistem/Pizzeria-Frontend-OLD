@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { firstValueFrom } from 'rxjs';
 import { ProductService } from 'src/app/service/product.service';
 import { longitudMaxima } from 'src/app/validators/utils.validator';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-crear-producto',
-  templateUrl: './crear-producto.component.html',
-  styleUrls: ['./crear-producto.component.scss']
+    selector: 'app-crear-producto',
+    templateUrl: './crear-producto.component.html',
+    styleUrls: ['./crear-producto.component.scss'],
+    standalone: true,
+    imports: [ReactiveFormsModule, NgIf]
 })
 export class CrearProductoComponent implements OnInit {
 

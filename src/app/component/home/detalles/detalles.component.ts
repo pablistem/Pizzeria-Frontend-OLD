@@ -1,10 +1,14 @@
 import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { Product } from 'src/app/model/product';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-detalles',
-  templateUrl: './detalles.component.html',
-  styleUrls: ['./detalles.component.scss']
+    selector: 'app-detalles',
+    templateUrl: './detalles.component.html',
+    styleUrls: ['./detalles.component.scss'],
+    standalone: true,
+    imports: [NgIf, ReactiveFormsModule, FormsModule]
 })
 export class DetallesComponent {
 

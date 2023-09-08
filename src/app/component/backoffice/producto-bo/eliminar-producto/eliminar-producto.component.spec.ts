@@ -8,8 +8,8 @@ describe('EliminarProductoComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [EliminarProductoComponent]
-    });
+    imports: [EliminarProductoComponent]
+});
     fixture = TestBed.createComponent(EliminarProductoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

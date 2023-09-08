@@ -7,9 +7,10 @@ import { RightEventService } from 'src/app/service/right-event.service';
 import { Constants } from 'src/app/util/constants';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    standalone: true
 })
 export class HeaderComponent implements OnInit, OnDestroy  {
 

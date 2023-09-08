@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalCuponComponent } from './cupon/modal-cupon/modal-cupon.component';
+import { NgIf, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-coupons',
-  templateUrl: './coupons.component.html',
-  styleUrls: ['./coupons.component.scss']
+    selector: 'app-coupons',
+    templateUrl: './coupons.component.html',
+    styleUrls: ['./coupons.component.scss'],
+    standalone: true,
+    imports: [NgIf, NgClass]
 })
 export class CouponsComponent implements OnInit {
 
