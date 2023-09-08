@@ -38,10 +38,9 @@ export class LoginComponent {
     }
     this.authService.login(request).subscribe({
       next: respuesta => {
-        console.log(respuesta);
         this.invalidCredentials = false;
         this.serverError = false;
-        this.authService.guardarToken(respuesta.refreshToken)
+        this.authService.guardarToken(respuesta.token)
         this.router.navigateByUrl('/home');
       },
       error: err => {

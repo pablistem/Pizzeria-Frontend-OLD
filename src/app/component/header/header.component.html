@@ -1,7 +1,12 @@
 <header>
 
   <button (click)="callHamburgerMenu()">
-    <img src="../../../assets/icons/Arrow_big_left.svg" alt="icono menu izquierdo">
+    <ng-container *ngIf="leftMenuIsActive, else iconoFlecha">
+      <img src="../../../assets/icons/header/icono-flecha.svg" alt="icono menu izquierdo">
+    </ng-container>
+    <ng-template #iconoFlecha >
+      <img src="../../../assets/icons/header/icono-hamburguesa.svg" alt="icono menu izquierdo">
+    </ng-template>
   </button>
 
   <h1 (click)="redirigirAHome()">Pizzería Don Rémolo</h1>

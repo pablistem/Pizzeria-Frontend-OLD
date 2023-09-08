@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -10,7 +11,8 @@ import { Constants } from 'src/app/util/constants';
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
-    standalone: true
+    standalone: true,
+    imports: [CommonModule]
 })
 export class HeaderComponent implements OnInit, OnDestroy  {
 
@@ -34,7 +36,7 @@ export class HeaderComponent implements OnInit, OnDestroy  {
   ngOnInit(): void { }
 
   private rightMenuIsActive: boolean = false;
-  private leftMenuIsActive: boolean = false;
+  public leftMenuIsActive: boolean = false;
   private headerSubscription: Subscription;
   private leftEventSubscription: Subscription;
   private leftActiveWindow: String = '';
