@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { CouponsComponent } from './coupons/coupons.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
+import { OrderDetailComponent } from './my-orders/order/order-detail/order-detail.component'
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -14,7 +15,7 @@ import { NgIf } from '@angular/common';
     templateUrl: './left-menu.component.html',
     styleUrls: ['./left-menu.component.scss'],
     standalone: true,
-    imports: [NgIf, HamburgerMenuComponent, MyOrdersComponent, CouponsComponent, ProfileComponent, DiscountComponent]
+    imports: [NgIf, HamburgerMenuComponent, MyOrdersComponent, CouponsComponent, ProfileComponent, DiscountComponent, OrderDetailComponent]
 })
 export class LeftMenuComponent implements OnDestroy {
 
