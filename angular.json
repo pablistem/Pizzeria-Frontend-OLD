@@ -7,6 +7,9 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "skipImport": true,
+          "skipTests": true,
+          "standalone": true,
           "style": "scss"
         },
         "@schematics/angular:application": {
