@@ -12,6 +12,7 @@ export class LeftMenuComponent implements OnDestroy {
 
   public readonly hamburgerMenu: string = Constants.MENU_HAMBURGER;
   public readonly myOrders: string = Constants.MY_ORDERS;
+  public readonly orderDetail: string = Constants.ORDER_DETAIL;
   public readonly coupons: string = Constants.COUPONS;
   public readonly profile: string = Constants.PROFILE;
   public readonly discount: string = Constants.DISCOUNT;

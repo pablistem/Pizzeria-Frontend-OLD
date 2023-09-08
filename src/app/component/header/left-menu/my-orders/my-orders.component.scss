@@ -6,36 +6,102 @@
   min-height: calc(100vh - $header-height);
 
   h1 {
-    text-align: center;
-    margin-top: 1.25rem;
-    margin-bottom: 0.625rem;
+    text-align: left;
+    margin: 1rem 0 0 1.3rem;
+    color: #000;
+    font-size: 2rem;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.5rem;
   }
 
-  .general-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    .buttons-container {
+    .general-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-
-      .log-in {
-        background-color: rgb(167, 167, 167);
-        color: #fff;
-        border-radius: 0.625rem;
-        border-color: transparent;
-        font-size: xx-large;
+      justify-content: flex-start;
+      
+  
+      .h2-login {
+        margin-top: 4.08rem;
+        margin-left: .6rem;
+        color: #000;
+        text-align: center;
+        font-size: 1.375rem;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.75rem;
       }
-
-      .register {
-        border: transparent;
-        background-color: transparent;
+  
+      .h2-sin-pedidos {
+        color: #000;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 1.375rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.75rem;
+        margin-top: 4.94rem;
+      }
+  
+      .img-login {
+        width: 18.75rem;
+        height: 11.20988rem;
+        margin: 3.12rem auto;
+      }
+  
+      .img-sin-pedidos {
+        margin-top: 3.12rem;
+        margin-bottom: 9.69rem;
+      }
+  
+      .buttons-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1rem;
+  
+        .log-in {
+          all: unset;
+          height: 2.5rem;
+          align-self: stretch;
+          border-radius: 6.25rem;
+          background: #E9573A;
+  
+          color: #FFF;
+          text-align: center;
+          font-size: 0.875rem;
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.25rem;
+          letter-spacing: 0.00625rem;
+          margin-bottom: 1rem;
+        }
+  
+        .register {
+          all: unset;
+          height: 2.5rem;
+          margin-bottom: 6rem;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          align-self: stretch;
+  
+          color: #E9573A;
+          text-align: center;
+          font-size: 0.875rem;
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.25rem;
+          letter-spacing: 0.00625rem;
+        }
       }
     }
-  }
 
 }

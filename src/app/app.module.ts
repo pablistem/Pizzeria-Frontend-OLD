@@ -39,6 +39,7 @@ import { MenuComponent } from './component/home/menu/menu.component';
 import { ProductoComponent } from './component/home/producto/producto.component';
 import { DetallesComponent } from './component/home/detalles/detalles.component';
 import { ModalEditarPerfilComponent } from './component/header/left-menu/profile/modal-editar-perfil/modal-editar-perfil.component';
+import { OrderDetailComponent } from './component/header/left-menu/my-orders/order/order-detail/order-detail.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { ModalEditarPerfilComponent } from './component/header/left-menu/profile
     ProductoComponent,
     DetallesComponent,
     ModalEditarPerfilComponent,
+    OrderDetailComponent,
   ],
   imports: [
     BrowserModule,

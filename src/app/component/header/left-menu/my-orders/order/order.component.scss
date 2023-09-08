@@ -1,93 +1,103 @@
 .card-container {
+  all: unset;
   position: relative;
-  display: block;
-  width: 65vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 22.6rem;
+  height: 5.75rem;
   max-width: 43.75rem;
-  border: 0.125rem solid #ccc;
-  border-radius: 0.9375rem;
-  padding: 1.25rem;
-  margin-bottom: 1.25rem;
   text-align: start;
+  background: #FFFFFF;
+  margin-bottom: 0.94rem;
 
-  .state {
-    font-size: large;
-  }
+  .state-date-price-product {
 
-  .date {
-    font-size: small;
-    color: #aaa;
-  }
+    width: 12.6rem;
+    height: 3.88rem;
 
-  .more-info {
-
-    table {
-
-      width: 100%;
-
-      td {
-        text-align: start;
-      }
-
-      td:last-child {
-        text-align: end;
-      }
+    .state {
+      color: #111;
+      font-family: Roboto;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.5rem;
+      letter-spacing: 0.00938rem;
     }
 
-    table.subtotal {
-      font-weight: 600;
+    .point {
+      margin: 0 0.62rem;
+    }
+  
+    .date {
+      color: #111;
+      font-family: Roboto;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1rem;
+      letter-spacing: 0.03125rem;
     }
 
-    table.total {
-      font-size: x-large;
-      font-weight: 700;
-    }
-
-    .vertical-container {
+    .less-info {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-
-      .delivery-data {
-        text-align: start;
-
-        .title {
-          font-weight: 600;
-        }
-      }
-
-      .repeat{
-        border: transparent;
-        background-color: #ddd;
-        font-size: xx-large;
-        border-radius: 0.625rem;
-        z-index: 10;
-      }
-    }
-  }
-
-  .less-info {
-    .vertical-container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-
-      .repeat {
-        border: transparent;
-        background-color: #ddd;
-        font-size: xx-large;
-        border-radius: 0.625rem;
-      }
 
       .price {
-        font-size: xx-large;
-        font-weight: 600;
+        width: 6.4375rem;
+        color: #111;
+        font-family: Roboto;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2rem;
+      }
+
+      .products {
+        color: #111;
+        font-family: Roboto;
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1rem;
+        letter-spacing: 0.025rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+  }
+
+  .vertical-container {
+    width: 7.06rem;
+    height: 2.5rem;
+
+    .repeat {
+      all: unset;
+      width: 7.06rem;
+      height: 2.5rem;
+      border-radius: 6.25rem;
+      background: #E9573A;
+      color:#FFF;
+      text-align: center;
+      font-family: Roboto;
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.25rem;
+      letter-spacing: 0.00625rem;
+
+      img {
+        margin-right: 0.5rem;
       }
     }
   }
+}
 
-
+* {
+  // border: 1px solid red;
 }

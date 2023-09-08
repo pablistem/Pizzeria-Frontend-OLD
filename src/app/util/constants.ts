@@ -5,6 +5,7 @@ export abstract class Constants {
   static readonly MENU_HAMBURGER: string = 'MenuHamburger';
 
   static readonly MY_ORDERS: string = 'MyOrders';
+  static readonly ORDER_DETAIL: string = 'OrderDetail';
   static readonly COUPONS: string = 'Coupons';
 
   static readonly PROFILE: string = 'Profile';

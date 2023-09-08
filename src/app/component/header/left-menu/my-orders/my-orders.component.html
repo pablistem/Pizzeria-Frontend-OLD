@@ -5,13 +5,15 @@
   <!-- Si no está logueado -->
   <div class="general-container" *ngIf="!isLogged">
 
-    <h2>
-      Inicia sesion para ver tus pedidos
+    <h2 class="h2-login">
+      Debes tener una sesión iniciada para acceder a tus pedidos.
     </h2>
+
+    <img class="img-login" src="../../../../../assets/images/No login.png" alt="no login">
 
     <div class="buttons-container">
       <button class="log-in">
-        Iniciar Sesion
+        Iniciar sesion
       </button>
       <button class="register">
         Registrarme
@@ -23,9 +25,11 @@
   <!-- Si está logueado pero no tiene pedidos -->
   <div class="general-container" *ngIf="isLogged && !hasOrders">
 
-    <h2>
+    <h2 class="h2-sin-pedidos">
       Todavía no realizaste un pedido
     </h2>
+
+    <img class="img-sin-pedidos" src="../../../../../assets/images/Empy.svg" alt="sin pedidos imagen">
 
     <div class="buttons-container">
       <button class="log-in">
@@ -41,5 +45,6 @@
     <app-order *ngFor="let order of [1, 2, 3]"></app-order>
 
   </div>
+  
 
 </div>
