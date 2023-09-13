@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { ProductRequest } from '../model/product';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ProductService {
     return this.http.get<any>(`${this.url}/product`);
   }
 
-  create(request: any) {
+  create(request: ProductRequest) {
     return this.http.post<any>(`${this.url}/product`, request);
   }
 

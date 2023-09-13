@@ -1,4 +1,3 @@
-
 export interface Product {
   id: number
   name: string
@@ -9,5 +8,4 @@ export interface Product {
   stock: number
 }
 
-
-
+export interface ProductRequest extends Omit<Product, 'id'> { }

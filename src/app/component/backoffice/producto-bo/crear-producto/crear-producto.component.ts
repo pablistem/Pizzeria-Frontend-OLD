@@ -5,6 +5,7 @@ import { firstValueFrom } from 'rxjs';
 import { ProductService } from 'src/app/service/product.service';
 import { longitudMaxima } from 'src/app/validators/utils.validator';
 import { NgIf } from '@angular/common';
+import { ProductRequest } from 'src/app/model/product';
 
 @Component({
     selector: 'app-crear-producto',
@@ -69,8 +70,8 @@ export class CrearProductoComponent implements OnInit {
     this.btnCancelar()
   }
 
-  private obtenerBody() {
-    const request = {
+  private obtenerBody(): ProductRequest {
+    return {
       name: this.formulario.get('name')?.value!,
       description: this.formulario.get('description')?.value!,
       image: this.formulario.get('image')?.value!,
@@ -78,7 +79,6 @@ export class CrearProductoComponent implements OnInit {
       price: parseInt(this.formulario.get('price')?.value!, 10),
       stock: parseInt(this.formulario.get('stock')?.value!, 10),
     }
-    return request;
   }
 
 }
