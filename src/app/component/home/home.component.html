@@ -1,11 +1,28 @@
-<div class="container">
-  <div class="pb-4 pt-4">
-    <app-categorias *ngIf="categoria" [categoria]="categoria!" (categoriaEmitter)="categoriaListener($event)"></app-categorias>
-  </div>
-  <ng-container *ngIf="!categoria; else categoriaSeleccionada">
-    <app-recomendaciones (categoriaEmitter)="categoriaListener($event)"></app-recomendaciones>
-  </ng-container>
-  <ng-template #categoriaSeleccionada>
-    <app-menu [categoria]="categoria!"></app-menu>
-  </ng-template>
-</div>
+<nav class="d-flex">
+  <button class="btn btn-light contenedor-imagen" (click)="cambioCategoria('ofertas')">
+    <img src="../../../../assets/icons/category/icono-oferta.svg" alt="ofertas"
+    [class.imagen-naranja]="categoria == 'ofertas'">
+    <span class="categoria-nombre" *ngIf="categoria == 'ofertas'"><strong>Ofertas</strong></span>
+  </button>
+  <button class="btn btn-light contenedor-imagen" (click)="cambioCategoria('pizzas')">
+    <img src="../../../../assets/icons/category/icono-pizza.svg" alt="pizzas"
+    [class.imagen-naranja]="categoria === 'pizzas'">
+    <span class="categoria-nombre" *ngIf="categoria == 'pizzas'"><strong>Pizzas</strong></span>
+  </button>
+  <button class="btn btn-light contenedor-imagen" (click)="cambioCategoria('empanadas')">
+    <img src="../../../../assets/icons/category/icono-empanada.svg" alt="empanadas"
+    [class.imagen-naranja]="categoria === 'empanadas'">
+    <span class="categoria-nombre" *ngIf="categoria == 'empanadas'"><strong>Empanadas</strong></span>
+  </button>
+  <button class="btn btn-light contenedor-imagen" (click)="cambioCategoria('helados')">
+    <img src="../../../../assets/icons/category/icono-helado.svg" alt="helados"
+    [class.imagen-naranja]="categoria === 'helados'">
+    <span class="categoria-nombre" *ngIf="categoria == 'helados'"><strong>Helados</strong></span>
+  </button>
+  <button class="btn btn-light contenedor-imagen" (click)="cambioCategoria('bebidas')">
+    <img src="../../../../assets/icons/category/icono-bebida.svg" alt="bebidas"
+    [class.imagen-naranja]="categoria === 'bebidas'">
+    <span class="categoria-nombre" *ngIf="categoria == 'bebidas'"><strong>Bebidas</strong></span>
+  </button>
+</nav>
+<router-outlet></router-outlet>

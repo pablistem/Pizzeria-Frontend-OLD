@@ -1,36 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './component/home/home.component';
-import { NotFoundComponent } from './component/not-found/not-found.component';
 import { LoginComponent } from './component/auth/login/login.component';
 import { RegisterComponent } from './component/auth/register/register.component';
 import { BackofficeComponent } from './component/backoffice/backoffice.component';
-import { Title } from '@angular/platform-browser';
+import { HomeComponent } from './component/home/home.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/home/recomendaciones',
     pathMatch: 'full'
   },
   {
     path: 'home',
     component: HomeComponent,
-    title: 'Home',
     children: [
       {
         path: '',
-        redirectTo: 'inicio',
+        redirectTo: 'recomendaciones',
         pathMatch: 'full'
       },
       {
-        path: 'inicio',
-        loadComponent: () => import('./component/home/home.component').then(m => m.HomeComponent),
-        title: 'Inicio'
+        path: 'recomendaciones',
+        loadComponent: () => import('./component/home/recomendaciones/recomendaciones.component').then(m => m.RecomendacionesComponent),
+        title: 'Recomendaciones'
       },
       {
-        path: 'menu',
+        path: 'menu/:categoria',
         loadComponent: () => import('./component/home/menu/menu.component').then(m => m.MenuComponent),
         title: 'Menu'
       },

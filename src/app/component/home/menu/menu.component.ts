@@ -1,7 +1,8 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { DetallesComponent } from '../detalles/detalles.component';
 import { ProductoComponent } from '../producto/producto.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-menu',
@@ -10,18 +11,26 @@ import { ProductoComponent } from '../producto/producto.component';
     standalone: true,
     imports: [ProductoComponent, DetallesComponent]
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
 
-  @Input() categoria: string = '';
-  productoSeleccionado: Product | undefined;
-  anchoPantalla: number;
-
-  constructor() {
+  constructor(
+    private route: ActivatedRoute
+  ) {
     this.anchoPantalla = window.innerWidth;
   }
 
+  categoria: string = '';
+  productoSeleccionado: Product | undefined;
+  anchoPantalla: number;
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.categoria = params['categoria'];
+    });
+  }
+
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
+  private onResize(event: any): void {
     this.anchoPantalla = window.innerWidth;
   }
 
